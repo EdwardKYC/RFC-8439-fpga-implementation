@@ -10,9 +10,6 @@
 
 module tb_chacha;
 
-    // ==========================================
-    // 參數定義 (16384 Words)
-    // ==========================================
     localparam integer W = 256;
     localparam integer H = 256;
     localparam integer N = (W * H) / 4; 
@@ -20,9 +17,6 @@ module tb_chacha;
     reg         clk;
     reg         rst;
 
-    // ==========================================
-    // 對接 Chacha20 Core 訊號
-    // ==========================================
     reg         start;
     wire        ready;
     reg [255:0] key;
@@ -30,9 +24,6 @@ module tb_chacha;
     reg [31:0]  counter;
     wire [511:0] keystream;
 
-    // ==========================================
-    // RAM 介面 (TB 接管控制權)
-    // ==========================================
     wire        Img_cen = 1'b1;
     wire [13:0] Img_addr = 14'd0;
     wire [31:0] Img_Q;
@@ -51,9 +42,6 @@ module tb_chacha;
 
     always #(`CYCLE / 2.0) clk = ~clk;
 
-    // ==========================================
-    // 實例化 DUT 與 RAM
-    // ==========================================
     Chacha20 dut (
         .clk        (clk),
         .rst        (rst),
@@ -85,9 +73,6 @@ module tb_chacha;
         .Q   (Ans_Q)
     );
 
-    // ==========================================
-    // 任務：矩陣輸出
-    // ==========================================
     task dump_ans_matrix_to_file;
         integer r, c;
         integer word_idx;
@@ -114,9 +99,6 @@ module tb_chacha;
         end
     endtask
 
-    // ==========================================
-    // 主控制流程 (TB FSM)
-    // ==========================================
     initial begin
         clk     = 0;
         rst     = 0;
@@ -139,7 +121,6 @@ module tb_chacha;
 
         $display("Starting Encryption Process...");
 
-        // 模擬系統連續要資料
         for (i = 0; i < N; i = i + 16) begin
             start = 1;
             @(posedge clk);
@@ -147,7 +128,6 @@ module tb_chacha;
             
             @(posedge clk);
 
-            // 將 512 bits 拆成 16 塊 32-bit 進行 XOR
             for (w = 0; w < 16; w = w + 1) begin
                 if (i + w < N) begin
                     Dst_RAM.memory[i + w] = Src_RAM.memory[i + w] ^ keystream[w*32 +: 32];
