@@ -181,14 +181,14 @@ module tb_chacha;
     // 產生 FSDB 波形檔與 SDF 標註
     // ==========================================
     initial begin
-        $fsdbDumpfile("chacha.fsdb");
+        $fsdbDumpfile("Chacha20.fsdb");
         $fsdbDumpvars();
         $fsdbDumpvars("+struct", "+mda", tb_chacha);
     end
 
     `ifdef syn
     initial begin
-        $sdf_annotate("chacha20_syn.sdf", dut);
+        $sdf_annotate("Chacha20_syn.sdf", dut);
     end
     `endif
 
