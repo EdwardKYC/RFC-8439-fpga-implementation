@@ -2,6 +2,9 @@ TOP        = RFC8439
 CHACHA	   = Chacha20
 POLY	   = Poly1305
 
+FSDB_CHA   = Chacha20.fsdb
+FSDB_POLY  = Poly1305.fsdb
+
 VCS        = vcs -R -full64 -sverilog
 TARGET_DIR = src
 SRC        = $(TOP).v
@@ -29,8 +32,13 @@ rtlcha:
 rtlpoly:
 	cd $(TARGET_DIR) && $(VCS) tb_poly1305.sv $(POLY) $(DEFINE)
 
-# 2. 執行合成 (Synthesis)
-# 這裡會呼叫 dc_shell，並將 Makefile 裡的 $(TOP) 變數傳進去給 syn.tcl 使用
+nWavecha:
+	cd $(TARGET_DIR) && nWave -ssf $(FSDB_CHA) &
+
+nWavepoly:
+	cd $(TARGET_DIR) && nWave -ssf $(FSDB_POLY) &
+
+
 synthesize:
 	dc_shell -x "set TOP_MODULE $(TOP); source syn.tcl"
 
