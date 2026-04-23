@@ -1,0 +1,6 @@
+Module name：首字大寫後面小寫，單字用底線分隔
+Variable name：全小寫，單字用底線分隔
+input/output： 寫在module parameter中
+reg/wire/...：分區宣告
+enable訊號：*_en
+counter/enable/control signal/datapath盡量分開
