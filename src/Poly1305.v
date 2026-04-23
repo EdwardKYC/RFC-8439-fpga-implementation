@@ -1,4 +1,4 @@
-module poly1305_core (
+module Poly1305 (
     input  wire          clk,
     input  wire          rst,
     input  wire          valid_in,   // 告訴引擎：data_in 資料有效，請吃進去算

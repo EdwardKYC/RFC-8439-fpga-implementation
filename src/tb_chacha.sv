@@ -5,9 +5,9 @@
 
 `ifdef syn
     `include "/cad/designkit/Executable_Package/Collaterals/IP/stdcell/N16ADFP_StdCell/VERILOG/N16ADFP_StdCell.v"
-    `include "chacha20_syn.v"
+    `include "Chacha20_syn.v"
 `else
-    `include "chacha20.v"
+    `include "Chacha20.v"
 `endif
 
 module tb_chacha;
