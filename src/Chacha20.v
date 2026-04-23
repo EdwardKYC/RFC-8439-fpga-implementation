@@ -1,4 +1,4 @@
-module ChaCha20 (
+module Chacha20 (
     input  wire          clk,
     input  wire          rst,
     input  wire          start,      // 告訴引擎：開始算下一塊

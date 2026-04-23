@@ -1,6 +1,6 @@
-TOP        = RFC8439
-CHACHA	   = Chacha20
-POLY	   = Poly1305
+TOP        = RFC8439.v
+CHACHA	   = Chacha20.v
+POLY	   = Poly1305.v
 
 FSDB_CHA   = Chacha20.fsdb
 FSDB_POLY  = Poly1305.fsdb
@@ -27,10 +27,10 @@ rtl:
 	cd $(TARGET_DIR) && $(VCS) tb.sv $(SRC) $(DEFINE)
 
 rtlcha:
-	cd $(TARGET_DIR) && $(VCS) tb_chacha.sv $(CHACHA) $(DEFINE)
+	cd $(TARGET_DIR) && $(VCS) tb_chacha.sv Chacha20.v $(DEFINE)
 
 rtlpoly:
-	cd $(TARGET_DIR) && $(VCS) tb_poly1305.sv $(POLY) $(DEFINE)
+	cd $(TARGET_DIR) && $(VCS) tb_poly1305.sv $(DEFINE)
 
 nWavecha:
 	cd $(TARGET_DIR) && nWave -ssf $(FSDB_CHA) &
