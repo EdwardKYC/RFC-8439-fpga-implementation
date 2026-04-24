@@ -1,3 +1,5 @@
+`include "Quarter_round.v"
+
 module Chacha20 (
     input  wire          clk,
     input  wire          rst,
@@ -10,5 +12,5 @@ module Chacha20 (
 );
 // 註：C API 中的 nsec (Secret Nonce) 在標準 RFC 8439 通常不用，硬體直接忽略。
 
-    localparam IDLE = , START, GEN_KEY, QUARTER, ;
+    localparam IDLE = , START, GEN_POLY_KEY, GEN_KEY, QUARTER, DONE;
 endmodule
