@@ -3,6 +3,26 @@
 `define CYCLE 10.0
 `define MAX_CYCLE 300000
 
+// ==========================================
+// 根據外部 define 決定要讀取的測試檔案
+// 在 VCS 編譯時加入參數： +define+T2 (以此類推)
+// ==========================================
+`ifdef T1
+    `define TEST_FILE "../chacha_test.txt"
+`elsif T2
+    `define TEST_FILE "../chacha_test2.txt"
+`elsif T3
+    `define TEST_FILE "../chacha_test3.txt"
+`elsif T4
+    `define TEST_FILE "../chacha_test4.txt"
+`elsif T5
+    `define TEST_FILE "../chacha_test5.txt"
+`elsif T6
+    `define TEST_FILE "../chacha_test6.txt"
+`else
+    `define TEST_FILE "../chacha_test.txt" // 預設值
+`endif
+
 `ifdef syn
     `include "/cad/designkit/Executable_Package/Collaterals/IP/stdcell/N16ADFP_StdCell/VERILOG/N16ADFP_StdCell.v"
     `include "Chacha20_syn.v"
@@ -10,38 +30,33 @@
 
 module tb_chacha;
 
-    localparam integer W = 256;
-    localparam integer H = 256;
-    localparam integer N = (W * H) / 4; 
+    // 定義測資長度 (依據 65536 bits = 2048 bytes = 16384 個 32-bit words)
+    localparam integer N = 16384; 
 
     reg         clk;
     reg         rst;
 
     reg         start;
     wire        ready;
+
     reg [255:0] key;
     reg [95:0]  nonce;
     reg [31:0]  counter;
     wire [511:0] keystream;
 
-    wire        Img_cen = 1'b1;
-    wire [13:0] Img_addr = 14'd0;
-    wire [31:0] Img_Q;
-
-    wire        Ans_cen = 1'b1;
-    wire        Ans_wen = 1'b1;
-    wire [13:0] Ans_addr = 14'd0;
-    wire [31:0] Ans_D = 32'd0;
-    wire [31:0] Ans_Q;
-
-    // 內部驗證變數
+    // 內部驗證變數 (儲存黃金答案)
     reg [31:0]  Golden_ANS [0:N-1];
     integer     error;
     integer     i, w;
-    integer     f_out_matrix;
 
+    // ==========================================
+    // 時脈產生
+    // ==========================================
     always #(`CYCLE / 2.0) clk = ~clk;
 
+    // ==========================================
+    // DUT 實例化
+    // ==========================================
     Chacha20 dut (
         .clk        (clk),
         .rst        (rst),
@@ -53,161 +68,129 @@ module tb_chacha;
         .keystream  (keystream)
     );
 
-    MEM32 #(.depth(N)) Src_RAM (
-        .clk (clk),
-        .rst (1'b0),
-        .A   (Img_addr),
-        .CEN (Img_cen),
-        .WEN (1'b1), 
-        .D   (32'd0),
-        .Q   (Img_Q)
-    );
-
-    MEM32 #(.depth(N)) Dst_RAM (
-        .clk (clk),
-        .rst (rst),
-        .A   (Ans_addr),
-        .CEN (Ans_cen),
-        .WEN (Ans_wen),
-        .D   (Ans_D),
-        .Q   (Ans_Q)
-    );
-
-    task dump_ans_matrix_to_file;
-        integer r, c;
-        integer word_idx;
-        reg [31:0] cur_word;
-        begin
-            f_out_matrix = $fopen("chacha_matrix.txt", "w");
-            if (f_out_matrix == 0) begin
-                $display("Failed to open chacha_matrix.txt");
-                $finish;
-            end
-
-            for (r = 0; r < H; r = r + 1) begin
-                for (c = 0; c < W; c = c + 4) begin 
-                    word_idx = (r * W + c) / 4;
-                    cur_word = Dst_RAM.memory[word_idx];
-                    $fwrite(f_out_matrix, "%02x %02x %02x %02x ",
-                            cur_word[7:0], cur_word[15:8], cur_word[23:16], cur_word[31:24]);
-                end
-                $fwrite(f_out_matrix, "\n");
-            end
-
-            $fclose(f_out_matrix);
-            $display("Matrix dumped to chacha_matrix.txt");
-        end
-    endtask
-
+    // ==========================================
+    // 主控制與驗證流程
+    // ==========================================
     initial begin
         clk     = 0;
         rst     = 0;
         start   = 0;
         error   = 0;
+        
+        // 預設 Key 與 Nonce (依據前次 Python 腳本設定)
         key     = 256'h000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f;
         nonce   = 96'h000000000000000000000000;
-        counter = 32'd1;
+        
+        // 根據需求，測試資料可能從 counter 0 開始 (生成 Poly1305 key)
+        counter = 32'd0;
 
-        $display("        ****************************");
-        $display("        ** Simulation Start   **");
-        $display("        ****************************\n");
+        $display("        ********************************************");
+        $display("        ** Chacha20 Simulation Start      **");
+        $display("        ** Loading Test File: %s", `TEST_FILE);
+        $display("        ********************************************\n");
 
-        $readmemh("../chacha_test.txt", Src_RAM.memory);
-        $readmemh("../chacha_answer.txt", Golden_ANS);
+        // 讀取 Golden Keystream Answer
+        $readmemh(`TEST_FILE, Golden_ANS);
 
+        // 系統重置
         rst = 1;
         #(5 * `CYCLE);
         rst = 0;
 
-        $display("Starting Encryption Process...");
+        $display("Starting Keystream Generation and Verification...");
 
+        // 每次處理 16 個 Word (512 bits = 1 Block)
         for (i = 0; i < N; i = i + 16) begin
+            // 1. 發送 Start 訊號
             start = 1;
             @(posedge clk);
             start = 0;            
             
-            @(posedge clk);
-
+            // 2. 等待 ready 訊號為 High (加入 Timeout 防呆機制避免無限卡死)
+            fork
+                begin
+                    // 持續等待直到 ready 拉高
+                    wait(ready === 1'b1);
+                end
+                begin
+                    #(`CYCLE * 1000); // 如果等了 1000 個 cycle 還沒 ready 就切斷
+                    $display("\n[錯誤] Timeout! DUT did not assert 'ready' signal for Block %0d", i/16);
+                    $finish;
+                end
+            join_any
+            disable fork; // 觸發後關閉未執行的分支
+            
+            // 3. 在 ready 為 high 的當下，進行 Keystream 比對
             for (w = 0; w < 16; w = w + 1) begin
                 if (i + w < N) begin
-                    Dst_RAM.memory[i + w] = Src_RAM.memory[i + w] ^ keystream[w*32 +: 32];
+                    // 擷取 keystream 對應的 32-bit (Little-Endian 對齊)
+                    if (keystream[w*32 +: 32] !== Golden_ANS[i + w]) begin
+                        $display("Error at Block [%4d] Word [%2d] (Total Word %5d)! Expected: %08x, Got: %08x", 
+                                  i/16, w, i+w, Golden_ANS[i+w], keystream[w*32 +: 32]);
+                        error = error + 1;
+                        if (error > 20) begin
+                            $display("Too many errors, aborting verification...");
+                            break;
+                        end
+                    end
                 end
             end
             
+            // 如果錯誤過多，直接跳出外部迴圈
+            if (error > 20) break;
+            
+            // 4. 等待一個 clock 讓 ready 降下，並推進 Counter 進入下一個 Block
+            @(posedge clk);
             counter = counter + 1;
         end
 
-        $display("Computation Done. Starting Verification...");
-
-        for (i = 0; i < N; i = i + 1) begin
-            if (Dst_RAM.memory[i] !== Golden_ANS[i]) begin
-                $display("Error at Word [%5d]! Expected: %08x, Got: %08x", i, Golden_ANS[i], Dst_RAM.memory[i]);
-                error = error + 1;
-                if (error > 20) begin
-                    $display("Too many errors, aborting verification...");
-                    break;
-                end
-            end
-        end
-
+        // ==========================================
+        // 結算與報告輸出
+        // ==========================================
+        $display("\nComputation Done. Verification Finished.");
         if (error === 0) begin
             $display("-------------------------------------------------------------");
-            $display("TB RESULT : PASS");
-            dump_ans_matrix_to_file();
+            $display(" █████╗ ██╗     ██╗         ██████╗  █████╗ ███████╗███████╗");
+            $display("██╔══██╗██║     ██║         ██╔══██╗██╔══██╗██╔════╝██╔════╝");
+            $display("███████║██║     ██║         ██████╔╝███████║███████╗███████╗");
+            $display("██╔══██║██║     ██║         ██╔═══╝ ██╔══██║╚════██║╚════██║");
+            $display("██║  ██║███████╗███████╗    ██║     ██║  ██║███████║███████║");
+            $display("╚═╝  ╚═╝╚══════╝╚══════╝    ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝");
+            $display("-------------------------------------------------------------");
+            $display("TB RESULT : PASS (%0d Blocks Verified)", N/16);
         end else begin
             $display("-------------------------------------------------------------");
-            $display("Totally has %0d errors", error);
+            $display("        **************************** ");
+            $display("        ** ** |\\__||  ");
+            $display("        ** OOPS!!                 ** / X,X  | ");
+            $display("        ** ** /_____   | ");
+            $display("        ** Simulation Failed!!    ** /^ ^ ^ \\  |");
+            $display("        ** ** |^ ^ ^ ^ |w| ");
+            $display("        **************************** \\m___m__|_|");
+            $display("         Totally has %0d errors                     ", error);
+            $display("-------------------------------------------------------------");
             $display("TB RESULT : FAIL");
         end
 
         $finish;
     end
 
+    // ==========================================
+    // 系統安全 Timeout (保護機制)
+    // ==========================================
     initial begin
         #(`MAX_CYCLE * `CYCLE)
-        $display("-- Reach Max cycle!!!!!! Simulation terminated.");
+        $display("\n-- Reach Max cycle!!!!!! Simulation terminated.");
         $finish;
     end
 
+    // ==========================================
+    // 波形輸出
+    // ==========================================
     initial begin
         $fsdbDumpfile("Chacha20.fsdb");
         $fsdbDumpvars();
         $fsdbDumpvars("+struct", "+mda", tb_chacha);
     end
 
-endmodule
-
-module MEM32 #(parameter integer depth=65536) (
-  input  wire                         clk,
-  input  wire                         rst,
-  input  wire [$clog2(depth)-1:0]     A,
-  input  wire                         CEN,
-  input  wire                         WEN,
-  input  wire [31:0]                  D,
-  output reg  [31:0]                  Q
-);
-  reg [$clog2(depth)-1:0] latched_A;
-  reg [$clog2(depth)-1:0] latched_A_neg;
-  reg [31:0] memory [0:depth-1];
-  integer j;
-
-  always @(posedge clk or posedge rst) begin
-    if (rst) begin
-      for (j = 0; j < depth; j = j + 1)
-        memory[j] <= 32'd0;
-    end
-    else begin
-      if (~WEN && ~CEN) memory[A] <= D;
-      if (~CEN) latched_A <= A;
-    end
-  end
-
-  always @(negedge clk) begin
-    if (~CEN) latched_A_neg <= latched_A;
-  end
-
-  always @(*) begin
-    if (~CEN) Q = memory[latched_A_neg];
-    else Q = 32'hzzzz_zzzz;
-  end
 endmodule
