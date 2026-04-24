@@ -10,17 +10,17 @@ module Chacha20 (
     input  wire [31:0]   counter,    // 0: 生產 MAC Key, 1+: 生產加密密鑰流
     output wire [511:0]  keystream   
 );
-    integer i;
+    integer i, j;
     localparam IDLE = 2'd0, CALC = 2'd1, ADD = 2'd2, DONE = 2'd3;
     localparam CONSTANT1 = 32'h61707865, CONSTANT2 = 32'h3320646e, CONSTANT3 = 32'h79622d32, CONSTANT4 = 32'h6b206574;
 
     reg [1:0] state, next_state;
     reg [3:0] round_cnt;
-    reg [31:0] init_buf[15:0];
-    reg [31:0] keystream_buf[15:0];
+    reg [31:0] init_buf[0:15];
+    reg [31:0] keystream_buf[0:15];
 
-    wire [31:0] col_out[15:0];
-    wire [31:0] diagonal_out[15:0];
+    wire [31:0] col_out[0:15];
+    wire [31:0] diagonal_out[0:15];
 
     assign keystream = {keystream_buf[15], keystream_buf[14], keystream_buf[13], keystream_buf[12],
                         keystream_buf[11], keystream_buf[10],keystream_buf[9], keystream_buf[8],
@@ -79,7 +79,7 @@ module Chacha20 (
         else round_cnt <= (state == CALC) ? round_cnt + 4'd1 : 4'd0;
     end
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
          case (state)
             IDLE: begin
                 if(start) begin
@@ -91,18 +91,36 @@ module Chacha20 (
                     keystream_buf[1] <= CONSTANT2;
                     keystream_buf[2] <= CONSTANT3;
                     keystream_buf[3] <= CONSTANT4;
-                    for (i = 0; i < 8; i = i+1) begin
-                        init_buf[4+i] <= key[i*32 +:32];
-                        keystream_buf[4+i] <= key[i*32 +: 32];
+                    for (i = 0; i < 8; i = i + 1) begin
+                        init_buf[4+i] <= {
+                            key[231 - i*32 -: 8],
+                            key[239 - i*32 -: 8],
+                            key[247 - i*32 -: 8],
+                            key[255 - i*32 -: 8]
+                        };
+                        keystream_buf[4+i] <= {
+                            key[231 - i*32 -: 8],
+                            key[239 - i*32 -: 8],
+                            key[247 - i*32 -: 8],
+                            key[255 - i*32 -: 8]
+                        };
                     end
                     init_buf[12] <= counter;
-                    init_buf[13] <= nonce[31:0];
-                    init_buf[14] <= nonce[63:32];
-                    init_buf[15] <= nonce[95:64];
                     keystream_buf[12] <= counter;
-                    keystream_buf[13] <= nonce[31:0];
-                    keystream_buf[14] <= nonce[63:32];
-                    keystream_buf[15] <= nonce[95:64];
+                    for (j = 0; j < 3; j = j + 1) begin
+                        init_buf[13+j] <= {
+                            nonce[71 - j*32 -: 8],
+                            nonce[79 - j*32 -: 8],
+                            nonce[87 - j*32 -: 8],
+                            nonce[95 - j*32 -: 8] 
+                        };
+                        keystream_buf[13+j] <= {
+                            nonce[71 - j*32 -: 8],
+                            nonce[79 - j*32 -: 8],
+                            nonce[87 - j*32 -: 8],
+                            nonce[95 - j*32 -: 8] 
+                        };
+                    end
                 end
             end
             CALC: begin
