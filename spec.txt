@@ -34,3 +34,11 @@ top module port list:
     input  wire [31:0] Dst_RAM_Q     // 讀出資料 (通常目的端只寫不讀)
 
 Chacha20 port list:
+    input  wire          clk,
+    input  wire          rst,
+    input  wire          start,      
+    output reg           ready,      // 告訴 FSM：512-bit finish
+    input  wire [255:0]  key,        
+    input  wire [95:0]   nonce,      
+    input  wire [31:0]   counter,    // 0: 生產 MAC Key, 1+: 生產加密密鑰流
+    output wire [511:0]  keystream   
