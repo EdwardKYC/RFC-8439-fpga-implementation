@@ -10,10 +10,6 @@ module Poly1305 (
     output reg  [127:0]  mac_tag,    
     output reg           tag_valid   // 告訴 FSM：最終 Tag 出爐了！
 );
-
-    // ==========================================
-    // 狀態定義
-    // ==========================================
     localparam [2:0] ST_IDLE = 3'd0,
                      ST_M1   = 3'd1, // 計算 A0 * R0
                      ST_M2   = 3'd2, // 計算 A1 * R0
@@ -24,9 +20,6 @@ module Poly1305 (
 
     reg [2:0] state;
 
-    // ==========================================
-    // 內部暫存器
-    // ==========================================
     reg [130:0] acc;            // 累加器 (保持在 ~131 bits)
     reg [129:0] r_reg;
     reg [127:0] s_reg;
@@ -38,10 +31,12 @@ module Poly1305 (
     reg [132:0] p_mid;          // 儲存 (A1*R0 + A0*R1)
     reg [140:0] temp_acc;
     reg [130:0] final_val;
+    
     // 分割輸入以便小型乘法器使用 (65-bit limbs)
     // acc = A1 * 2^65 + A0
     wire [64:0] a0 = acc[64:0];
     wire [65:0] a1 = acc[130:65];
+    
     // r = R1 * 2^65 + R0
     wire [64:0] r0 = r_reg[64:0];
     wire [64:0] r1 = r_reg[129:65];
@@ -64,6 +59,10 @@ module Poly1305 (
             acc       <= 131'd0;
             is_first  <= 1'b1;
             mac_tag   <= 128'd0;
+
+            // 重置中間變數 (非強制，但對 GLS 比較好)
+            mul_a <= 66'd0; mul_b <= 66'd0;
+            p0 <= 132'd0; p_mid <= 133'd0;
         end else begin
             case (state)
                 ST_IDLE: begin
@@ -103,18 +102,22 @@ module Poly1305 (
                     state <= ST_REDU;
                 end
                 ST_REDU: begin
-                    temp_acc = p0 + {p_mid[64:0], 65'd0} + (p_mid[132:65] * 3'd5) + (mul_out * 3'd5);
-                    acc <= temp_acc[129:0] + (temp_acc[140:130] * 3'd5);
+                    temp_acc = p0 + {p_mid[64:0], 65'd0} + ({p_mid[132:65], 2'b00} + p_mid[132:65]) + ({mul_out, 2'b00} + mul_out);
+                    acc <= temp_acc[129:0] + ({temp_acc[140:130], 2'b00} + temp_acc[140:130]);
+
                     if (is_final) state <= ST_FIN;
                     else          state <= ST_IDLE;
                 end
                 ST_FIN: begin
-                    final_val = acc[129:0] + (acc[130] * 3'd5);
+                    final_val = acc[129:0] + ({acc[130], 2'b00} + acc[130]);
+
                     if (final_val >= 131'h3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFb) begin
                         final_val = final_val - 131'h3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFb;
                     end
+
                     mac_tag   <= final_val[127:0] + s_reg;
                     tag_valid <= 1'b1;
+                    ready_out <= 1'b1;
                     acc       <= 131'd0;
                     is_first  <= 1'b1;
                     state     <= ST_IDLE;

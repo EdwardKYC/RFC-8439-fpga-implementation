@@ -76,4 +76,4 @@ clean:
 	rm -rf simv simv.daidir sim_* csrc ucli.key *.log
 	rm -rf *.fsdb *.vcd novas.* nWaveLog *.history
 	rm -rf *_syn.v *.sdf *.ddc command.log default.svf
-	cd $(TARGET_DIR) && rm -rf simv simv.daidir sim_* csrc ucli.key *.log *.fsdb *.vcd novas.* nWaveLog *.history *_syn.v *.sdf *.ddc default.svf WORK
+	cd $(TARGET_DIR) && rm -rf simv simv.daidir sim_* csrc ucli.key *.log *.fsdb *.vcd novas.* nWaveLog *.history *.sdf *.ddc default.svf WORK
