@@ -70,6 +70,9 @@ module tb_poly;
     // 主控制流程 (自動化驗證 FSM)
     // ==========================================
     initial begin
+        `ifdef SDF
+        $sdf_annotate("Poly1305.sdf", dut);
+        `endif
         // 1. 初始狀態設定
         clk         = 0;
         rst         = 0;
@@ -85,15 +88,16 @@ module tb_poly;
         $display("==  Poly1305 Mass-Testbench (100 Cases)              ==");
         $display("=======================================================\n");
 
-        // 2. 讀取測資 (請確保檔名與路徑正確)
-        // 由於資料量龐大，讀取時會稍微花一點時間
+        // 2. 讀取測資
         $readmemh("../poly_test.txt", test_mem);
         $readmemh("../poly_answer.txt", ans_mem);
         $display("[INFO] Text files loaded into memory.\n");
-        
-        // 3. Reset 流程
+
+        // 3. Reset 流程 (修正：確保 Reset 釋放在時脈邊緣後)
         rst = 1;
         #(5 * `CYCLE);
+        @(posedge clk); 
+        #1;              // 關鍵：在 posedge 後延遲一點再放掉 Reset
         rst = 0;
         #(2 * `CYCLE);
 
@@ -103,53 +107,49 @@ module tb_poly;
             $display(">> Starting Test Case %0d...", tc + 1);
 
             // [讀取 Key]
-            mac_key[127:0]   = test_mem[ptr];       // Key: r
-            mac_key[255:128] = test_mem[ptr + 1];   // Key: s
+            // 修正：在時脈邊緣後給值，避免跟第一個 Block 的讀取衝突
+            mac_key[127:0]   = test_mem[ptr];   
+            mac_key[255:128] = test_mem[ptr + 1];
             ptr = ptr + 2;
 
             // [讀取訊息長度]
             msg_len = test_mem[ptr];
             ptr = ptr + 1;
 
-            // 計算需要的 16-byte Block 數量
-            if (msg_len == 0) 
-                num_blocks = 0;
-            else 
-                num_blocks = (msg_len + 15) / 16;
-            
+            if (msg_len == 0) num_blocks = 0;
+            else num_blocks = (msg_len + 15) / 16;
+
             $display("   Message Length: %0d Bytes, Total Blocks: %0d", msg_len, num_blocks);
 
             // [連續餵入 Data Blocks]
             for (b = 0; b < num_blocks; b = b + 1) begin
-                
-                // 等待引擎 ready_out 拉高，確保可以收資料
+                // 等待引擎 ready_out 拉高
                 wait(ready_out == 1'b1);
-                @(negedge clk); 
                 
-                data_in  = test_mem[ptr]; 
-                valid_in = 1'b1;
-                pad_bit  = 1'b1; // RFC 8439 規定每個 block 後面都要補 0x01
-                
-                // 若為最後一塊，觸發 finalize
-                if (b == num_blocks - 1) begin
-                    finalize = 1'b1;
-                end else begin
-                    finalize = 1'b0;
-                end
-                
-                // 維持 1 Cycle 後撤銷訊號
+                // 修正：在 negedge 之後再加上 #1，徹底避開 Setup/Hold 視窗
                 @(negedge clk);
+                #1; 
+                data_in  = test_mem[ptr];
+                valid_in = 1'b1;
+                pad_bit  = 1'b1; 
+
+                if (b == num_blocks - 1) finalize = 1'b1;
+                else                     finalize = 1'b0;
+
+                // 維持 1 Cycle 後撤銷
+                @(negedge clk);
+                #1;
                 valid_in = 1'b0;
                 pad_bit  = 1'b0;
                 finalize = 1'b0;
                 data_in  = 128'd0;
-                
-                ptr = ptr + 1; 
+                ptr = ptr + 1;
             end
 
-            // [等待引擎運算並給出最終 Tag]
+            // [等待最終 Tag]
             wait(tag_valid == 1'b1);
             @(negedge clk);
+            #1; // 確保讀取 tag 時資料已穩定
 
             // [核對正確性]
             if (mac_tag !== ans_mem[tc]) begin
@@ -160,8 +160,7 @@ module tb_poly;
             end else begin
                 $display("   [PASS] Tag Verified Successfully.");
             end
-            
-            // 每個 Test Case 之間等待幾拍，讓引擎徹底回到 Idle 狀態
+
             #(10 * `CYCLE);
         end
 

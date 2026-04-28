@@ -22,10 +22,9 @@ SRC        = $(TOP)
 # ==========================================
 # 40nm GLS 模擬設定
 # ==========================================
-# 請根據實際檔名修改，例如 sc9_base_rvt.v
-CELL_LIB   = /usr/cad/designkit/CBDK_TSMC40_Arm_f2.0/CIC/sc9_base_rvt.v
+VERILOG_LIB_DIR = /usr/cad/designkit/CBDK_TSMC40_Arm_f2.0/CIC/Verilog
+CELL_LIB = $(VERILOG_LIB_DIR)/sc9_cln40g_base_rvt.v -v $(VERILOG_LIB_DIR)/sc9_cln40g_base_rvt_udp.v
 
-# [修正] 使用 TOP_NAME 確保檔名為 RFC8439_syn.v 而非 RFC8439.v_syn.v
 SRC_GLS    = tb.sv $(TOP_NAME)_syn.v -v $(CELL_LIB)
 SRC_GLS_POLY = tb_poly1305.sv $(POLY_NAME)_syn.v -v $(CELL_LIB)
 
@@ -61,8 +60,7 @@ syn:
 	cd $(TARGET_DIR) && $(VCS) $(SRC_GLS) $(DEFINE_GLS)
 
 synpoly:
-	cd $(TARGET_DIR) && $(VCS) $(SRC_GLS_POLY) $(DEFINE_GLS)
-
+	cd $(TARGET_DIR) && $(VCS) tb_poly1305.sv Poly1305_syn.v $(CELL_LIB) $(DEFINE_GLS)
 # 4. 波形觀測
 nWavecha:
 	cd $(TARGET_DIR) && nWave -ssf $(FSDB_CHA) &
@@ -78,4 +76,4 @@ clean:
 	rm -rf simv simv.daidir sim_* csrc ucli.key *.log
 	rm -rf *.fsdb *.vcd novas.* nWaveLog *.history
 	rm -rf *_syn.v *.sdf *.ddc command.log default.svf
-	cd $(TARGET_DIR) && rm -rf simv simv.daidir sim_* csrc ucli.key *.log *.fsdb *.vcd novas.* nWaveLog *.history *_syn.v *.sdf *.ddc
+	cd $(TARGET_DIR) && rm -rf simv simv.daidir sim_* csrc ucli.key *.log *.fsdb *.vcd novas.* nWaveLog *.history *_syn.v *.sdf *.ddc default.svf WORK
