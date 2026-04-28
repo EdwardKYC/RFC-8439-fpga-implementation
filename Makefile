@@ -7,7 +7,7 @@ FSDB_POLY  = Poly1305.fsdb
 
 VCS        = vcs -R -full64 -sverilog
 TARGET_DIR = src
-SRC        = $(TOP).v
+SRC        = $(TOP)
 
 # GLS 模擬的檔案與設定
 # ⚠️ 注意：請將下方的 CELL_LIB 替換成比賽當天提供的 Cell Library 路徑 (例如 tsmc13_neg.v)
@@ -30,7 +30,7 @@ rtlcha:
 	cd $(TARGET_DIR) && $(VCS) tb_chacha.sv Chacha20.v $(DEFINE)
 
 rtlpoly:
-	cd $(TARGET_DIR) && $(VCS) tb_poly1305.sv $(DEFINE)
+	cd $(TARGET_DIR) && $(VCS) tb_poly1305.sv $(POLY) $(DEFINE)
 
 nWavecha:
 	cd $(TARGET_DIR) && nWave -ssf $(FSDB_CHA) &
@@ -47,10 +47,10 @@ syn:
 	$(VCS) $(SRC_GLS) $(DEFINE_GLS)
 
 clean:
-	rm -rf sim_* csrc ucli.key *.log
+	rm -rf simv simv.daidir sim_* csrc ucli.key *.log
 	rm -rf *.fsdb *.vcd
 	rm -rf novas.* nWaveLog *.history
 	rm -rf *_syn.* *.sdf *.ddc command.log default.svf
-
+	cd $(TARGET_DIR) && rm -rf simv simv.daidir sim_* csrc ucli.key *.log *.fsdb *.vcd novas.* nWaveLog *.history
 wave:
 	nWave &
