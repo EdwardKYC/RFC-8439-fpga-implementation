@@ -1,6 +1,13 @@
-analyze -format verilog "${TOP_MODULE}.v"
+analyze -format verilog {
+    Quarter_round.v
+    Chacha20.v
+    Poly1305.v
+    RFC8439.v
+}
 elaborate $TOP_MODULE
 current_design $TOP_MODULE
+link
+uniquify
 
 set CLK_PERIOD 10.0
 create_clock -name clk -period $CLK_PERIOD [get_ports clk]
