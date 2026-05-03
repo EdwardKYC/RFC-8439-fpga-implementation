@@ -1,0 +1,4 @@
+echo "*.fsdb" >> .gitignore
+echo "simv*" >> .gitignore
+echo "csrc/" >> .gitignore
+echo "VerdiLog/" >> .gitignore
