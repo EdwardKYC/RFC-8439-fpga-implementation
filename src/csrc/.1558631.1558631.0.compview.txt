@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1777768669.311325948, "rt":5.48, "ut":4.71, "st":0.31}}
+{"vcselab":{"timestamp_begin":1777768674.845022095, "rt":1.41, "ut":1.01, "st":0.07}}
+{"link":{"timestamp_begin":1777768676.302898086, "rt":0.37, "ut":0.25, "st":0.13}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1777768669.018793130}
+{"VCS_COMP_START_TIME": 1777768669.018793130}
+{"VCS_COMP_END_TIME": 1777768694.398343063}
+{"VCS_USER_OPTIONS": "-R -full64 -sverilog tb.sv RFC8439_syn.v -v /usr/cad/designkit/CBDK_TSMC40_Arm_f2.0/CIC/Verilog/sc9_cln40g_base_rvt.v -v /usr/cad/designkit/CBDK_TSMC40_Arm_f2.0/CIC/Verilog/sc9_cln40g_base_rvt_udp.v -debug_access+all +define+SDF +neg_tchk"}
+{"vcs1": {"peak_mem": 412312}}
+{"vcselab": {"peak_mem": 237732}}
