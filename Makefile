@@ -4,6 +4,7 @@
 TOP        = RFC8439.v
 CHACHA     = Chacha20.v
 POLY       = Poly1305.v
+QR         = Quarter_round.v
 
 # 利用 basename 取得不含 .v 的名稱 (例如 RFC8439)，用於合成與 GLS
 TOP_NAME   = $(basename $(TOP))
@@ -40,10 +41,10 @@ all: rtlpoly
 
 # 1. RTL 模擬
 rtl:
-	cd $(TARGET_DIR) && $(VCS) tb.sv $(SRC) $(CHACHA) $(POLY) $(DEFINE)
+	cd $(TARGET_DIR) && $(VCS) tb.sv $(TOP) $(CHACHA) $(POLY) $(QR) $(DEFINE)
 
 rtlcha:
-	cd $(TARGET_DIR) && $(VCS) tb_chacha.sv $(CHACHA) $(DEFINE)
+	cd $(TARGET_DIR) && $(VCS) tb_chacha.sv $(CHACHA) $(QR) $(DEFINE)
 
 rtlpoly:
 	cd $(TARGET_DIR) && $(VCS) tb_poly1305.sv $(POLY) $(DEFINE)
@@ -76,4 +77,4 @@ clean:
 	rm -rf simv simv.daidir sim_* csrc ucli.key *.log
 	rm -rf *.fsdb *.vcd novas.* nWaveLog *.history
 	rm -rf *_syn.v *.sdf *.ddc command.log default.svf
-	cd $(TARGET_DIR) && rm -rf simv simv.daidir sim_* csrc ucli.key *.log *.fsdb *.vcd novas.* nWaveLog *.history *_syn.v *.sdf *.ddc default.svf WORK
+	cd $(TARGET_DIR) && rm -rf simv simv.daidir sim_* csrc ucli.key *.log *.fsdb *.vcd novas.* nWaveLog *.history *.ddc default.svf WORK

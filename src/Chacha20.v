@@ -1,10 +1,8 @@
-`include "Quarter_round.v"
-
 module Chacha20 (
     input  wire          clk,
     input  wire          rst,
     input  wire          start,      
-    output reg           ready,      // 告訴 FSM：512-bit finish
+    output wire          ready,      // 告訴 FSM：512-bit finish
     input  wire [255:0]  key,        
     input  wire [95:0]   nonce,      
     input  wire [31:0]   counter,    // 0: 生產 MAC Key, 1+: 生產加密密鑰流

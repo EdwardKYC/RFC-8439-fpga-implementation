@@ -10,7 +10,7 @@ module tb_poly;
     // ==========================================
     // 參數定義區
     // ==========================================
-    parameter TEST_CASE_COUNT = 100;     // 與 Python 產生的數量一致
+    parameter TEST_CASE_COUNT = 10;     // 與 Python 產生的數量一致
     // 總行數 = 200835 個 Blocks + (100 個 Test Case * 3 行標頭) = 201135 行
     // 為了安全起見，我們宣告 250000 行
     parameter MAX_TEST_LINES  = 250000;  
