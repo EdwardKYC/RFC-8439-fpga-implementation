@@ -38,6 +38,8 @@ module Poly1305 (
     localparam [4:0] ST_RED10 = 5'd22;
 
     localparam [4:0] ST_FIN  = 5'd23;
+    localparam [4:0] ST_FIN_1 = 5'd24;
+    localparam [4:0] ST_FIN_2 = 5'd25;
 
     localparam [31:0] LIMB_MASK32 = 32'h03ff_ffff;
     localparam [130:0] P130 = 131'h3fffffffffffffffffffffffffffffffb;
@@ -195,6 +197,9 @@ module Poly1305 (
     wire [31:0] fn_h1_a2 = fn_h1_m1 + (fn_h0_a2 >> 26);
     wire [31:0] fn_h1_m2 = fn_h1_a2 & LIMB_MASK32;
 
+    reg [130:0] h_full_r;
+    reg [130:0] h_red_r;
+
     // =====================================================
     // Multiplier input select
     // =====================================================
@@ -302,8 +307,12 @@ module Poly1305 (
             ST_RED2:  next_state = ST_RED3;
             ST_RED3:  next_state = ST_RED4;
             ST_RED4:  next_state = ST_RED5;
-
-            ST_RED5: begin
+            ST_RED5:  next_state = ST_RED6;
+            ST_RED6:  next_state = ST_RED7;
+            ST_RED7:  next_state = ST_RED8;
+            ST_RED8:  next_state = ST_RED9;
+            ST_RED9:  next_state = ST_RED10;
+            ST_RED10: begin
                 if (is_final) next_state = ST_FIN;
                 else          next_state = ST_IDLE;
             end
@@ -448,16 +457,43 @@ module Poly1305 (
                 end
 
                 ST_RED5: begin
-                    // Fast final carry cleanup.
-                    // This replaces the old ST_RED5 ~ ST_RED10 sequential carry chain.
-                    h0 <= fn_h0_m2;
-                    h1 <= fn_h1_m2;
-                    h2 <= fn_h2_m1;
-                    h3 <= fn_h3_m1;
-                    h4 <= fn_h4_m1;
+                    h1 <= h1 + (h0 >> 26);
+                    h0 <= h0 & LIMB_MASK32;
                 end
-
-                ST_FIN: begin
+                ST_RED6: begin
+                    h2 <= h2 + (h1 >> 26);
+                    h1 <= h1 & LIMB_MASK32;
+                end
+                ST_RED7: begin
+                    h3 <= h3 + (h2 >> 26);
+                    h2 <= h2 & LIMB_MASK32;
+                end
+                ST_RED8: begin
+                    h4 <= h4 + (h3 >> 26);
+                    h3 <= h3 & LIMB_MASK32;
+                end
+                ST_RED9: begin
+                    // 這裡乘 5，對應 Poly1305 的 2^130 - 5 特性
+                    h0 <= h0 + ((h4 >> 26) + ((h4 >> 26) << 2));
+                    h4 <= h4 & LIMB_MASK32;
+                end
+                ST_RED10: begin
+                    h1 <= h1 + (h0 >> 26);
+                    h0 <= h0 & LIMB_MASK32;
+                end
+                ST_FIN: begin // 專心做拼接與加法
+                    h_full_r <= {104'd0, h0[26:0]} +
+                                {78'd0,  h1[26:0], 26'd0} +
+                                {52'd0,  h2[26:0], 52'd0} +
+                                {26'd0,  h3[26:0], 78'd0} +
+                                {        h4[26:0], 104'd0};
+                end
+                ST_FIN_1: begin // 專心做比較與減法
+                    h_red_r <= (h_full_r >= P130) ? (h_full_r - P130) : h_full_r;
+                end
+                ST_FIN_2: begin // 專心做最後的 AES key 相加
+                    mac_tag   <= h_red_r[127:0] + s_reg;
+                    tag_valid <= 1'b1;
                     h0 <= 32'd0;
                     h1 <= 32'd0;
                     h2 <= 32'd0;
@@ -500,116 +536,4 @@ module Poly1305 (
         end
     end
 
-    // ==========================================
-    // 狀態定義
-    // ==========================================
-    localparam [2:0] ST_IDLE = 3'd0,
-                     ST_M1   = 3'd1, // 計算 A0 * R0
-                     ST_M2   = 3'd2, // 計算 A1 * R0
-                     ST_M3   = 3'd3, // 計算 A0 * R1
-                     ST_M4   = 3'd4, // 計算 A1 * R1
-                     ST_REDU = 3'd5, // 組合結果並進行 Modulo 降維
-                     ST_FIN  = 3'd6;
-
-    reg [2:0] state;
-
-    // ==========================================
-    // 內部暫存器
-    // ==========================================
-    reg [130:0] acc;            // 累加器 (保持在 ~131 bits)
-    reg [129:0] r_reg;
-    reg [127:0] s_reg;
-    reg         is_first;
-    reg         is_final;
-
-    // 中間乘積暫存器
-    reg [131:0] p0;             // 儲存 A0 * R0
-    reg [132:0] p_mid;          // 儲存 (A1*R0 + A0*R1)
-    reg [140:0] temp_acc;
-    reg [130:0] final_val;
-    // 分割輸入以便小型乘法器使用 (65-bit limbs)
-    // acc = A1 * 2^65 + A0
-    wire [64:0] a0 = acc[64:0];
-    wire [65:0] a1 = acc[130:65];
-    // r = R1 * 2^65 + R0
-    wire [64:0] r0 = r_reg[64:0];
-    wire [64:0] r1 = r_reg[129:65];
-
-    // 共享乘法器元件
-    reg  [65:0] mul_a, mul_b;
-    wire [131:0] mul_out = mul_a * mul_b;
-
-    // RFC 8439 Mask
-    wire [129:0] r_mask = 130'h0_0FFF_FFFC_0FFF_FFFC_0FFF_FFFC_0FFFFFFF;
-
-    // ==========================================
-    // 核心 FSM
-    // ==========================================
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            state     <= ST_IDLE;
-            ready_out <= 1'b1;
-            tag_valid <= 1'b0;
-            acc       <= 131'd0;
-            is_first  <= 1'b1;
-            mac_tag   <= 128'd0;
-        end else begin
-            case (state)
-                ST_IDLE: begin
-                    tag_valid <= 1'b0;
-                    ready_out <= 1'b1;
-                    if (valid_in) begin
-                        ready_out <= 1'b0;
-                        is_final  <= finalize;
-                        if (is_first) begin
-                            r_reg    <= {2'b00, mac_key[127:0]} & r_mask;
-                            s_reg    <= mac_key[255:128];
-                            acc      <= {2'b00, pad_bit, data_in};
-                            is_first <= 1'b0;
-                        end else begin
-                            acc      <= acc + {2'b00, pad_bit, data_in};
-                        end
-                        state <= ST_M1;
-                    end
-                end
-                ST_M1: begin// Step 1: A0 * R0
-                    mul_a <= a0; mul_b <= r0;
-                    state <= ST_M2;
-                end
-                ST_M2: begin// Step 2: A1 * R0
-                    p0    <= mul_out; // 鎖存 A0 * R0
-                    mul_a <= a1; mul_b <= r0;
-                    state <= ST_M3;
-                end
-                ST_M3: begin// Step 3: A0 * R1
-                    p_mid <= mul_out; // 鎖存 A1 * R0
-                    mul_a <= a0; mul_b <= r1;
-                    state <= ST_M4;
-                end
-                ST_M4: begin// Step 4: A1 * R1
-                    p_mid <= p_mid + mul_out; // 鎖存 (A1*R0 + A0*R1)
-                    mul_a <= a1; mul_b <= r1;
-                    state <= ST_REDU;
-                end
-                ST_REDU: begin
-                    temp_acc = p0 + {p_mid[64:0], 65'd0} + (p_mid[132:65] * 3'd5) + (mul_out * 3'd5);
-                    acc <= temp_acc[129:0] + (temp_acc[140:130] * 3'd5);
-                    if (is_final) state <= ST_FIN;
-                    else          state <= ST_IDLE;
-                end
-                ST_FIN: begin
-                    final_val = acc[129:0] + (acc[130] * 3'd5);
-                    if (final_val >= 131'h3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFb) begin
-                        final_val = final_val - 131'h3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFb;
-                    end
-                    mac_tag   <= final_val[127:0] + s_reg;
-                    tag_valid <= 1'b1;
-                    acc       <= 131'd0;
-                    is_first  <= 1'b1;
-                    state     <= ST_IDLE;
-                end
-                default: state <= ST_IDLE;
-            endcase
-        end
-    end
 endmodule
