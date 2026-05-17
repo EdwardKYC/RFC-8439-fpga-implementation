@@ -52,11 +52,11 @@ vcom -work xpm -93  -incr \
 "C:/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/35de/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_15 -l processing_system7_vip_v1_0_17 -l axi_bram_ctrl_v4_1_9 -l blk_mem_gen_v8_4_7 -l xlconstant_v1_1_8 -l lib_cdc_v1_0_2 -l proc_sys_reset_v5_0_14 -l smartconnect_v1_0 -l axi_register_slice_v2_1_29 \
-"../../../bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0_S00_AXI.v" \
-"../../../bd/design_1/ipshared/a7d3/src/Chacha20.v" \
-"../../../bd/design_1/ipshared/a7d3/src/Poly1305.v" \
-"../../../bd/design_1/ipshared/a7d3/src/RFC8439.v" \
-"../../../bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0.v" \
+"../../../bd/design_1/ipshared/c687/hdl/RFC8439_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/c687/src/Chacha20.v" \
+"../../../bd/design_1/ipshared/c687/src/Poly1305.v" \
+"../../../bd/design_1/ipshared/c687/src/RFC8439.v" \
+"../../../bd/design_1/ipshared/c687/hdl/RFC8439_v1_0.v" \
 "../../../bd/design_1/ip/design_1_RFC8439_0_0/sim/design_1_RFC8439_0_0.v" \
 
 vlog -work axi_infrastructure_v1_1_0  -incr -v2k5 "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/35de/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_15 -l processing_system7_vip_v1_0_17 -l axi_bram_ctrl_v4_1_9 -l blk_mem_gen_v8_4_7 -l xlconstant_v1_1_8 -l lib_cdc_v1_0_2 -l proc_sys_reset_v5_0_14 -l smartconnect_v1_0 -l axi_register_slice_v2_1_29 \
@@ -84,7 +84,6 @@ vlog -work blk_mem_gen_v8_4_7  -incr -v2k5 "+incdir+../../../../RFC8439_sys.gen/
 vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/35de/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_15 -l processing_system7_vip_v1_0_17 -l axi_bram_ctrl_v4_1_9 -l blk_mem_gen_v8_4_7 -l xlconstant_v1_1_8 -l lib_cdc_v1_0_2 -l proc_sys_reset_v5_0_14 -l smartconnect_v1_0 -l axi_register_slice_v2_1_29 \
 "../../../bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v" \
 "../../../bd/design_1/ip/design_1_blk_mem_gen_0_1/sim/design_1_blk_mem_gen_0_1.v" \
-"../../../bd/design_1/ip/design_1_axi_smc_0/bd_0/sim/bd_afc3.v" \
 
 vlog -work xlconstant_v1_1_8  -incr -v2k5 "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/35de/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_15 -l processing_system7_vip_v1_0_17 -l axi_bram_ctrl_v4_1_9 -l blk_mem_gen_v8_4_7 -l xlconstant_v1_1_8 -l lib_cdc_v1_0_2 -l proc_sys_reset_v5_0_14 -l smartconnect_v1_0 -l axi_register_slice_v2_1_29 \
 "../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v" \
@@ -176,6 +175,9 @@ vlog -work xil_defaultlib  -incr "+incdir+../../../../RFC8439_sys.gen/sources_1/
 "../../../bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_34/sim/bd_afc3_m02wn_0.sv" \
 "../../../bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_35/sim/bd_afc3_m02bn_0.sv" \
 "../../../bd/design_1/ip/design_1_axi_smc_0/bd_0/ip/ip_36/sim/bd_afc3_m02e_0.sv" \
+
+vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/35de/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_15 -l processing_system7_vip_v1_0_17 -l axi_bram_ctrl_v4_1_9 -l blk_mem_gen_v8_4_7 -l xlconstant_v1_1_8 -l lib_cdc_v1_0_2 -l proc_sys_reset_v5_0_14 -l smartconnect_v1_0 -l axi_register_slice_v2_1_29 \
+"../../../bd/design_1/ip/design_1_axi_smc_0/bd_0/sim/bd_afc3.v" \
 
 vlog -work axi_register_slice_v2_1_29  -incr -v2k5 "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/35de/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_15 -l processing_system7_vip_v1_0_17 -l axi_bram_ctrl_v4_1_9 -l blk_mem_gen_v8_4_7 -l xlconstant_v1_1_8 -l lib_cdc_v1_0_2 -l proc_sys_reset_v5_0_14 -l smartconnect_v1_0 -l axi_register_slice_v2_1_29 \
 "../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v" \

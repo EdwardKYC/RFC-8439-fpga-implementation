@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Sat May 16 12:58:00 2026
+// Date        : Sat May 16 12:57:59 2026
 // Host        : LAPTOP-9PRMHLIN running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_axi_bram_ctrl_0_0 -prefix
+//               design_1_axi_bram_ctrl_0_0_ design_1_axi_bram_ctrl_0_0_stub.v
 // Design      : design_1_axi_bram_ctrl_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

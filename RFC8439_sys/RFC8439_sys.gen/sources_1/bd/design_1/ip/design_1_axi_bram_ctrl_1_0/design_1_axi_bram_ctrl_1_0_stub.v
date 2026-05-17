@@ -2,11 +2,11 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Sat May 16 12:58:00 2026
+// Date        : Sat May 16 12:57:59 2026
 // Host        : LAPTOP-9PRMHLIN running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_1_0/design_1_axi_bram_ctrl_1_0_stub.v
-// Design      : design_1_axi_bram_ctrl_1_0
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_axi_bram_ctrl_1_0 -prefix
+//               design_1_axi_bram_ctrl_1_0_ design_1_axi_bram_ctrl_0_0_stub.v
+// Design      : design_1_axi_bram_ctrl_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
 // --------------------------------------------------------------------------------
@@ -22,12 +22,12 @@ module design_1_axi_bram_ctrl_1_0(s_axi_aclk, s_axi_aresetn, s_axi_awaddr,
   s_axi_arsize, s_axi_arburst, s_axi_arlock, s_axi_arcache, s_axi_arprot, s_axi_arvalid, 
   s_axi_arready, s_axi_rdata, s_axi_rresp, s_axi_rlast, s_axi_rvalid, s_axi_rready, bram_rst_a, 
   bram_clk_a, bram_en_a, bram_we_a, bram_addr_a, bram_wrdata_a, bram_rddata_a)
-/* synthesis syn_black_box black_box_pad_pin="s_axi_aresetn,s_axi_awaddr[14:0],s_axi_awlen[7:0],s_axi_awsize[2:0],s_axi_awburst[1:0],s_axi_awlock,s_axi_awcache[3:0],s_axi_awprot[2:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wlast,s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[14:0],s_axi_arlen[7:0],s_axi_arsize[2:0],s_axi_arburst[1:0],s_axi_arlock,s_axi_arcache[3:0],s_axi_arprot[2:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rlast,s_axi_rvalid,s_axi_rready,bram_rst_a,bram_en_a,bram_we_a[3:0],bram_addr_a[14:0],bram_wrdata_a[31:0],bram_rddata_a[31:0]" */
+/* synthesis syn_black_box black_box_pad_pin="s_axi_aresetn,s_axi_awaddr[15:0],s_axi_awlen[7:0],s_axi_awsize[2:0],s_axi_awburst[1:0],s_axi_awlock,s_axi_awcache[3:0],s_axi_awprot[2:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wlast,s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[15:0],s_axi_arlen[7:0],s_axi_arsize[2:0],s_axi_arburst[1:0],s_axi_arlock,s_axi_arcache[3:0],s_axi_arprot[2:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rlast,s_axi_rvalid,s_axi_rready,bram_rst_a,bram_en_a,bram_we_a[3:0],bram_addr_a[15:0],bram_wrdata_a[31:0],bram_rddata_a[31:0]" */
 /* synthesis syn_force_seq_prim="s_axi_aclk" */
 /* synthesis syn_force_seq_prim="bram_clk_a" */;
   input s_axi_aclk /* synthesis syn_isclock = 1 */;
   input s_axi_aresetn;
-  input [14:0]s_axi_awaddr;
+  input [15:0]s_axi_awaddr;
   input [7:0]s_axi_awlen;
   input [2:0]s_axi_awsize;
   input [1:0]s_axi_awburst;
@@ -44,7 +44,7 @@ module design_1_axi_bram_ctrl_1_0(s_axi_aclk, s_axi_aresetn, s_axi_awaddr,
   output [1:0]s_axi_bresp;
   output s_axi_bvalid;
   input s_axi_bready;
-  input [14:0]s_axi_araddr;
+  input [15:0]s_axi_araddr;
   input [7:0]s_axi_arlen;
   input [2:0]s_axi_arsize;
   input [1:0]s_axi_arburst;
@@ -62,7 +62,7 @@ module design_1_axi_bram_ctrl_1_0(s_axi_aclk, s_axi_aresetn, s_axi_awaddr,
   output bram_clk_a /* synthesis syn_isclock = 1 */;
   output bram_en_a;
   output [3:0]bram_we_a;
-  output [14:0]bram_addr_a;
+  output [15:0]bram_addr_a;
   output [31:0]bram_wrdata_a;
   input [31:0]bram_rddata_a;
 endmodule

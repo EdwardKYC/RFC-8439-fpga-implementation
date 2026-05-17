@@ -193,7 +193,7 @@
     "components": {
       "RFC8439_0": {
         "vlnv": "xilinx.com:user:RFC8439:1.0",
-        "ip_revision": "9",
+        "ip_revision": "10",
         "xci_name": "design_1_RFC8439_0_0",
         "xci_path": "ip\\design_1_RFC8439_0_0\\design_1_RFC8439_0_0.xci",
         "inst_hier_path": "RFC8439_0"
@@ -1921,7 +1921,7 @@
         },
         "hdl_attributes": {
           "BMM_INFO_PROCESSOR": {
-            "value": "arm > design_1 axi_bram_ctrl_0",
+            "value": "arm > design_1 axi_bram_ctrl_0 design_1 axi_bram_ctrl_1",
             "value_src": "default"
           },
           "KEEP_HIERARCHY": {
@@ -1961,6 +1961,16 @@
         "parameters": {
           "SINGLE_PORT_BRAM": {
             "value": "1"
+          }
+        },
+        "hdl_attributes": {
+          "BMM_INFO_ADDRESS_SPACE": {
+            "value": "byte  0x42000000 32 > design_1 blk_mem_gen_1",
+            "value_src": "default"
+          },
+          "KEEP_HIERARCHY": {
+            "value": "yes",
+            "value_src": "default"
           }
         }
       },
@@ -2285,9 +2295,8 @@
               },
               "SEG_axi_bram_ctrl_1_Mem0": {
                 "address_block": "/axi_bram_ctrl_1/S_AXI/Mem0",
-                "offset": "0x00000000",
-                "range": "1",
-                "is_excluded": "TRUE"
+                "offset": "0x42000000",
+                "range": "64K"
               }
             }
           }

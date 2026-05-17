@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:RFC8439:1.0
-// IP Revision: 9
+// IP Revision: 10
 
 (* X_CORE_INFO = "RFC8439_v1_0,Vivado 2023.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_RFC8439_0_0,RFC8439_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_RFC8439_0_0,RFC8439_v1_0,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=RFC8439,x_ipVersion=1.0,x_ipCoreRevision=9,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6}" *)
+(* CORE_GENERATION_INFO = "design_1_RFC8439_0_0,RFC8439_v1_0,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=RFC8439,x_ipVersion=1.0,x_ipCoreRevision=10,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_RFC8439_0_0 (
   Src_RAM_addr,

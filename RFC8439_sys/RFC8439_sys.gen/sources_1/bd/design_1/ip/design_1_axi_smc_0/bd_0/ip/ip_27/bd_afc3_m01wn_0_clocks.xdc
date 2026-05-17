@@ -46,3 +46,137 @@
 # PART OF THIS FILE AT ALL TIMES.
 #
 ################################################################################
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/gen_single_rank.inst_cntr/*}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/gen_single_rank.*}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -from [get_pins -quiet -filter REF_PIN_NAME=~*C -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.slow_clk_div2_reg}]] \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.posedge_finder_*_reg}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -from [get_pins -quiet -filter REF_PIN_NAME=~*C -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.slow_clk_div2_reg}]] \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.sample_cycle_r_reg}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*CE -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/gen_single_rank.data_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.posedge_finder_*_reg}]]
+
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.sample_cycle_r_reg}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/gen_single_rank.full_r_reg}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/gen_single_rank.inst_cntr/count_r_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/gen_single_rank.inst_cntr/is_zero_r_reg}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_rd_b.gen_rd_b_synth_template.gen_rf_narrow_reg.doutb_reg_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-4} -user "sc_node" -desc "Reads to LUTRAM are asyncronous,no synchronizer for xpm configurations" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_related_clocks.*_addr*_sync_i_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-4} -user "sc_node" -desc "Reads to LUTRAM are asyncronous,no synchronizer for xpm configurations" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_related_clocks.*_addr*_sync_i_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-2} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_related_clocks.*_addr*_sync_i_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-2} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_related_clocks.*_addr*_sync_i_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-2} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.gen_delay[*].sample_cycle_d_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-2} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.gen_delay[*].sample_cycle_d_reg[*]}]]
+
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*CE -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/gen_single_rank.data_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-10} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.gen_delay[*].sample_cycle_d_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-10} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.gen_delay[*].sample_cycle_d_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_related_clocks.*_addr*_sync_i_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_related_clocks.*_addr*_sync_i_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/gen_single_rank.empty_*_reg}]]
+
+create_waiver -type CDC -id {CDC-13} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.gen_delay[*].sample_cycle_d_reg[*]_sr*}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_no_downsizer.inst_fifo_req_suppress/gen_pipe[*].pipe_reg[*][*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.inst_fifo_node_payld_pop_pipeline/gen_pipe[*].pipe_reg[*][*]}]]
+
+create_waiver -type CDC -id {CDC-13} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_reg_fifo.inst_reg_fifo/inst_sample_cycle_ratio/gen_sample_cycle.gen_delay[*].sample_cycle_d_reg[*]_sr*}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_no_downsizer.inst_fifo_req_suppress/gen_pipe[*].pipe_reg[*][*]}]]
+
+create_waiver -type CDC -id {CDC-10} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.inst_fifo_node_payld_pop_pipeline/gen_pipe[*].pipe_reg[*][*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_downsizer.inst_downsizer/active_reg}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*CE -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_downsizer.inst_downsizer/downsizer_pntr_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*CE -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_downsizer.inst_downsizer/downsizer_repeat_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-2} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.inst_fifo_node_payld_pop_pipeline/gen_pipe[*].pipe_reg[*][*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_downsizer.inst_downsizer/downsizer_pntr_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_downsizer.inst_downsizer/downsizer_repeat_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.inst_fifo_send/gen_AB_reg_slice.payld_*_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-10} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_downsizer.inst_downsizer/inst_payld_xfer_data/gen_pipe[*].pipe_reg[*][*]}]]
+
+create_waiver -type CDC -id {CDC-4} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_fifo_wrapper.inst_fifo/gen_xpm_fifo_async.inst_xpm_fifo_async/gnuram_async_fifo.xpm_fifo_base_inst/gen_pntr_pf_rc.wpr_rc_reg/reg_out_i_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-4} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_fifo_wrapper.inst_fifo/gen_xpm_fifo_async.inst_xpm_fifo_async/gnuram_async_fifo.xpm_fifo_base_inst/gen_pntr_pf_rc.wpr_rc_reg/reg_out_i_reg[*]}]]
+
+
+create_waiver -type CDC -id {CDC-4} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_fifo_wrapper.inst_fifo/gen_xpm_fifo_async.inst_xpm_fifo_async/gnuram_async_fifo.xpm_fifo_base_inst/gen_pntr_pf_rc.rpw_rc_reg/reg_out_i_reg[*]}]]
+
+create_waiver -type CDC -id {CDC-4} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_fifo_wrapper.inst_fifo/gen_xpm_fifo_async.inst_xpm_fifo_async/gnuram_async_fifo.xpm_fifo_base_inst/gen_pntr_pf_rc.rpw_rc_reg/reg_out_i_reg[*]}]]
+
+
+create_waiver -type CDC -id {CDC-1} -user "sc_node" -desc "Timing uncritical paths" -tags "1166090" -scope -internal \
+    -to [get_pins -quiet -filter REF_PIN_NAME=~*D -of_objects [get_cells -hierarchical -filter {NAME =~ */inst_mi_handler/gen_normal_area.gen_downsizer.inst_downsizer/gen_*_payld.inst_downsizer_node_payld_pipe/gen_pipe[*].pipe_reg[*][*]}]]
+
+
+

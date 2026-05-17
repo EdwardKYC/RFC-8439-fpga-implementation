@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "sc_switchboard_v1_0_7_top,Vivado 2023.2" *)
 (* CHECK_LICENSE_TYPE = "bd_afc3_arsw_0,sc_switchboard_v1_0_7_top,{}" *)
-(* CORE_GENERATION_INFO = "bd_afc3_arsw_0,sc_switchboard_v1_0_7_top,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_switchboard,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_PAYLD_WIDTH=144,K_MAX_INFO_WIDTH=1,C_S_PIPELINES=0,C_M_PIPELINES=1,C_S_LATENCY=0,C_NUM_SI=1,C_NUM_MI=3,C_TESTING_MODE=0,C_CONNECTIVITY=0b101}" *)
+(* CORE_GENERATION_INFO = "bd_afc3_arsw_0,sc_switchboard_v1_0_7_top,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_switchboard,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_PAYLD_WIDTH=144,K_MAX_INFO_WIDTH=1,C_S_PIPELINES=0,C_M_PIPELINES=1,C_S_LATENCY=0,C_NUM_SI=1,C_NUM_MI=3,C_TESTING_MODE=0,C_CONNECTIVITY=0b111}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module bd_afc3_arsw_0 (
   aclk,
@@ -106,11 +106,11 @@ output wire [431 : 0] m_sc_payld;
     .C_NUM_SI(1),
     .C_NUM_MI(3),
     .C_TESTING_MODE(0),
-    .C_CONNECTIVITY(3'B101)
+    .C_CONNECTIVITY(3'B111)
   ) inst (
     .aclk(aclk),
     .aclken(aclken),
-    .connectivity(3'B101),
+    .connectivity(3'B111),
     .s_sc_send(s_sc_send),
     .s_sc_req(s_sc_req),
     .s_sc_info(s_sc_info),

@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Sun May 17 13:38:15 2026
+//Date        : Sun May 17 20:50:26 2026
 //Host        : LAPTOP-9PRMHLIN running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -69,7 +69,7 @@ module design_1
   wire axi_bram_ctrl_0_BRAM_PORTA_EN;
   wire axi_bram_ctrl_0_BRAM_PORTA_RST;
   wire [3:0]axi_bram_ctrl_0_BRAM_PORTA_WE;
-  wire [14:0]axi_bram_ctrl_1_BRAM_PORTA_ADDR;
+  wire [15:0]axi_bram_ctrl_1_BRAM_PORTA_ADDR;
   wire axi_bram_ctrl_1_BRAM_PORTA_CLK;
   wire [31:0]axi_bram_ctrl_1_BRAM_PORTA_DIN;
   wire [31:0]axi_bram_ctrl_1_BRAM_PORTA_DOUT;
@@ -107,7 +107,7 @@ module design_1
   wire axi_smc_M00_AXI_WREADY;
   wire [3:0]axi_smc_M00_AXI_WSTRB;
   wire axi_smc_M00_AXI_WVALID;
-  wire [14:0]axi_smc_M01_AXI_ARADDR;
+  wire [15:0]axi_smc_M01_AXI_ARADDR;
   wire [1:0]axi_smc_M01_AXI_ARBURST;
   wire [3:0]axi_smc_M01_AXI_ARCACHE;
   wire [7:0]axi_smc_M01_AXI_ARLEN;
@@ -116,7 +116,7 @@ module design_1
   wire axi_smc_M01_AXI_ARREADY;
   wire [2:0]axi_smc_M01_AXI_ARSIZE;
   wire axi_smc_M01_AXI_ARVALID;
-  wire [14:0]axi_smc_M01_AXI_AWADDR;
+  wire [15:0]axi_smc_M01_AXI_AWADDR;
   wire [1:0]axi_smc_M01_AXI_AWBURST;
   wire [3:0]axi_smc_M01_AXI_AWCACHE;
   wire [7:0]axi_smc_M01_AXI_AWLEN;
@@ -296,6 +296,8 @@ module design_1
         .s_axi_wready(axi_smc_M00_AXI_WREADY),
         .s_axi_wstrb(axi_smc_M00_AXI_WSTRB),
         .s_axi_wvalid(axi_smc_M00_AXI_WVALID));
+  (* BMM_INFO_ADDRESS_SPACE = "byte  0x42000000 32 > design_1 blk_mem_gen_1" *) 
+  (* KEEP_HIERARCHY = "yes" *) 
   design_1_axi_bram_ctrl_1_0 axi_bram_ctrl_1
        (.bram_addr_a(axi_bram_ctrl_1_BRAM_PORTA_ADDR),
         .bram_clk_a(axi_bram_ctrl_1_BRAM_PORTA_CLK),
@@ -475,7 +477,7 @@ module design_1
         .wea(axi_bram_ctrl_0_BRAM_PORTA_WE),
         .web(RFC8439_0_Src_RAM_we));
   design_1_blk_mem_gen_0_1 blk_mem_gen_1
-       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_1_BRAM_PORTA_ADDR}),
+       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_1_BRAM_PORTA_ADDR}),
         .addrb(RFC8439_0_Dst_RAM_addr),
         .clka(axi_bram_ctrl_1_BRAM_PORTA_CLK),
         .clkb(processing_system7_0_FCLK_CLK0),
@@ -489,7 +491,7 @@ module design_1
         .rstb(rst_ps7_0_100M_peripheral_aresetn),
         .wea(axi_bram_ctrl_1_BRAM_PORTA_WE),
         .web(RFC8439_0_Dst_RAM_we));
-  (* BMM_INFO_PROCESSOR = "arm > design_1 axi_bram_ctrl_0" *) 
+  (* BMM_INFO_PROCESSOR = "arm > design_1 axi_bram_ctrl_0 design_1 axi_bram_ctrl_1" *) 
   (* KEEP_HIERARCHY = "yes" *) 
   design_1_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),

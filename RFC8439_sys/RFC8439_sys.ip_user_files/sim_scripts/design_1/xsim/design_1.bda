@@ -208,6 +208,24 @@
             },
             "V4": {
                 "VT": "AC",
+                "BA": "0x42000000",
+                "HA": "0x4200FFFF",
+                "BP": "C_S_AXI_BASEADDR",
+                "HP": "C_S_AXI_HIGHADDR",
+                "MA": "Data",
+                "MX": "/processing_system7_0",
+                "MI": "M_AXI_GP0",
+                "MS": "SEG_axi_bram_ctrl_1_Mem0",
+                "MV": "xilinx.com:ip:processing_system7:5.5",
+                "SX": "/axi_bram_ctrl_1",
+                "SI": "S_AXI",
+                "SS": "Mem0",
+                "SV": "xilinx.com:ip:axi_bram_ctrl:4.1",
+                "TM": "both",
+                "TU": "memory"
+            },
+            "V5": {
+                "VT": "AC",
                 "BA": "0x43C00000",
                 "HA": "0x43C0FFFF",
                 "BP": "C_S00_AXI_BASEADDR",
@@ -223,24 +241,6 @@
                 "SV": "xilinx.com:user:RFC8439:1.0",
                 "TM": "both",
                 "TU": "register"
-            },
-            "V5": {
-                "VT": "ACE",
-                "BA": "0x00000000",
-                "HA": "0x00000000",
-                "BP": "C_S_AXI_BASEADDR",
-                "HP": "C_S_AXI_HIGHADDR",
-                "MA": "Data",
-                "MX": "/processing_system7_0",
-                "MI": "M_AXI_GP0",
-                "MS": "SEG_axi_bram_ctrl_1_Mem0",
-                "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/axi_bram_ctrl_1",
-                "SI": "S_AXI",
-                "SS": "Mem0",
-                "SV": "xilinx.com:ip:axi_bram_ctrl:4.1",
-                "TM": "both",
-                "TU": "memory"
             }
         },
         "edges": [

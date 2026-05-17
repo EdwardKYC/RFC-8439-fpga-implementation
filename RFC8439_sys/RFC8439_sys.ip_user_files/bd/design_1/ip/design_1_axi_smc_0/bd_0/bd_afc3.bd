@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xBB8FB804F04E6605",
+      "boundary_crc": "0x122BB17E11F7F6DC",
       "design_src": "SBD",
       "device": "xc7z020clg400-1",
       "name": "bd_afc3",
@@ -336,7 +336,7 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "15",
+            "value": "16",
             "value_src": "ip_prop"
           },
           "ARUSER_WIDTH": {
@@ -878,7 +878,7 @@
                 "value": "1"
               },
               "M01_S00_CONNECTIVITY": {
-                "value": "0"
+                "value": "1"
               },
               "M02_S00_CONNECTIVITY": {
                 "value": "1"
@@ -925,7 +925,7 @@
                 "value": "1"
               },
               "M00_S01_CONNECTIVITY": {
-                "value": "0"
+                "value": "1"
               },
               "M00_S02_CONNECTIVITY": {
                 "value": "1"
@@ -984,7 +984,7 @@
                 "value": "1"
               },
               "M01_S00_CONNECTIVITY": {
-                "value": "0"
+                "value": "1"
               },
               "M02_S00_CONNECTIVITY": {
                 "value": "1"
@@ -1031,7 +1031,7 @@
                 "value": "1"
               },
               "M01_S00_CONNECTIVITY": {
-                "value": "0"
+                "value": "1"
               },
               "M02_S00_CONNECTIVITY": {
                 "value": "1"
@@ -1078,7 +1078,7 @@
                 "value": "1"
               },
               "M00_S01_CONNECTIVITY": {
-                "value": "0"
+                "value": "1"
               },
               "M00_S02_CONNECTIVITY": {
                 "value": "1"
@@ -1321,7 +1321,7 @@
                 "value": "8"
               },
               "NUM_SEG": {
-                "value": "2"
+                "value": "3"
               },
               "NUM_WRITE_OUTSTANDING": {
                 "value": "8"
@@ -1354,7 +1354,7 @@
                 "value": "1"
               },
               "SEG001_BASE_ADDR": {
-                "value": "0x0000000043C00000"
+                "value": "0x0000000042000000"
               },
               "SEG001_SECURE_READ": {
                 "value": "0"
@@ -1363,7 +1363,7 @@
                 "value": "0"
               },
               "SEG001_SEP_ROUTE": {
-                "value": "0b0000000000000000000000000000000000000000000000000000000000000010"
+                "value": "0b0000000000000000000000000000000000000000000000000000000000000001"
               },
               "SEG001_SIZE": {
                 "value": "16"
@@ -1372,6 +1372,27 @@
                 "value": "1"
               },
               "SEG001_SUPPORTS_WRITE": {
+                "value": "1"
+              },
+              "SEG002_BASE_ADDR": {
+                "value": "0x0000000043C00000"
+              },
+              "SEG002_SECURE_READ": {
+                "value": "0"
+              },
+              "SEG002_SECURE_WRITE": {
+                "value": "0"
+              },
+              "SEG002_SEP_ROUTE": {
+                "value": "0b0000000000000000000000000000000000000000000000000000000000000010"
+              },
+              "SEG002_SIZE": {
+                "value": "16"
+              },
+              "SEG002_SUPPORTS_READ": {
+                "value": "1"
+              },
+              "SEG002_SUPPORTS_WRITE": {
                 "value": "1"
               },
               "SUPPORTS_NARROW": {
@@ -1534,7 +1555,7 @@
                 "value": "4"
               },
               "NUM_SEG": {
-                "value": "2"
+                "value": "3"
               },
               "NUM_WRITE_OUTSTANDING": {
                 "value": "8"
@@ -1558,12 +1579,21 @@
                 "value": "32"
               },
               "SEP001_PROTOCOL": {
-                "value": "AXI4LITE"
+                "value": "AXI4"
               },
               "SEP001_RDATA_WIDTH": {
                 "value": "32"
               },
               "SEP001_WDATA_WIDTH": {
+                "value": "32"
+              },
+              "SEP002_PROTOCOL": {
+                "value": "AXI4LITE"
+              },
+              "SEP002_RDATA_WIDTH": {
+                "value": "32"
+              },
+              "SEP002_WDATA_WIDTH": {
                 "value": "32"
               },
               "SUPPORTS_NARROW": {
@@ -3821,7 +3851,7 @@
         "inst_hier_path": "m01_sc2axi",
         "parameters": {
           "AXI_ADDR_WIDTH": {
-            "value": "15"
+            "value": "16"
           },
           "AXI_ID_WIDTH": {
             "value": "3"
@@ -3966,9 +3996,6 @@
               },
               "CHANNEL": {
                 "value": "2"
-              },
-              "DISABLE_IP": {
-                "value": "1"
               },
               "ID_WIDTH": {
                 "value": "3"
@@ -4123,9 +4150,6 @@
               "CHANNEL": {
                 "value": "0"
               },
-              "DISABLE_IP": {
-                "value": "1"
-              },
               "ID_WIDTH": {
                 "value": "3"
               },
@@ -4279,9 +4303,6 @@
               "CHANNEL": {
                 "value": "3"
               },
-              "DISABLE_IP": {
-                "value": "1"
-              },
               "ID_WIDTH": {
                 "value": "3"
               },
@@ -4433,9 +4454,6 @@
                 "value": "32"
               },
               "CHANNEL": {
-                "value": "1"
-              },
-              "DISABLE_IP": {
                 "value": "1"
               },
               "ID_WIDTH": {
@@ -4593,9 +4611,6 @@
               },
               "CHANNEL": {
                 "value": "4"
-              },
-              "DISABLE_IP": {
-                "value": "1"
               },
               "ID_WIDTH": {
                 "value": "3"
@@ -4869,7 +4884,7 @@
             "inst_hier_path": "m01_exit_pipeline/m01_exit",
             "parameters": {
               "ADDR_WIDTH": {
-                "value": "15"
+                "value": "16"
               },
               "HAS_BURST": {
                 "value": "1"
