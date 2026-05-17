@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCC6CFA53F622E079",
+      "boundary_crc": "0xCC6CFA53B4580162",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../RFC8439_sys.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -193,7 +193,7 @@
     "components": {
       "RFC8439_0": {
         "vlnv": "xilinx.com:user:RFC8439:1.0",
-        "ip_revision": "5",
+        "ip_revision": "9",
         "xci_name": "design_1_RFC8439_0_0",
         "xci_path": "ip\\design_1_RFC8439_0_0\\design_1_RFC8439_0_0.xci",
         "inst_hier_path": "RFC8439_0"

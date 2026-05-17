@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "design_1_RFC8439_0_0_synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
-set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
@@ -93,7 +92,7 @@ set_property ip_output_repo c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/bd/design_1/ip/design_1_RFC8439_0_0/design_1_RFC8439_0_0.xci
+read_ip -quiet C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/bd/design_1/ip/design_1_RFC8439_0_0/design_1_RFC8439_0_0.xci
 set_property used_in_implementation false [get_files -all c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_0/src/RFC8439_ooc.xdc]
 
 OPTRACE "Adding files" END { }

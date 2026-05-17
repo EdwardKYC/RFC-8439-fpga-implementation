@@ -14,7 +14,7 @@ ECHO 已關閉。
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source design_1_RFC8439_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 486.199 ; gain = 181.621
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 486.984 ; gain = 181.305
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/RFC-8439-fpga-implementation/IP_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
@@ -26,31 +26,75 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 11048
+INFO: [Synth 8-7075] Helper process launched with PID 16232
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1360.375 ; gain = 438.109
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1359.828 ; gain = 438.559
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6901] identifier 'core_mac_error' is used before its declaration [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/hdl/RFC8439_v1_0_S00_AXI.v:510]
-WARNING: [Synth 8-6901] identifier 'core_done' is used before its declaration [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/hdl/RFC8439_v1_0_S00_AXI.v:510]
+WARNING: [Synth 8-6901] identifier 'core_mac_error' is used before its declaration [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0_S00_AXI.v:510]
+WARNING: [Synth 8-6901] identifier 'core_done' is used before its declaration [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0_S00_AXI.v:510]
 INFO: [Synth 8-6157] synthesizing module 'design_1_RFC8439_0_0' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_0/synth/design_1_RFC8439_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'RFC8439_v1_0' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/hdl/RFC8439_v1_0.v:4]
-INFO: [Synth 8-6157] synthesizing module 'RFC8439_v1_0_S00_AXI' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/hdl/RFC8439_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-226] default block is never used [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/hdl/RFC8439_v1_0_S00_AXI.v:267]
-INFO: [Synth 8-226] default block is never used [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/hdl/RFC8439_v1_0_S00_AXI.v:504]
-INFO: [Synth 8-6157] synthesizing module 'RFC8439' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/RFC8439.v:1]
-INFO: [Synth 8-6157] synthesizing module 'Chacha20' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/Chacha20.v:1]
-INFO: [Synth 8-6157] synthesizing module 'Quarter_round' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/Quarter_round.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'Quarter_round' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/Quarter_round.v:1]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/Chacha20.v:81]
-INFO: [Synth 8-6155] done synthesizing module 'Chacha20' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/Chacha20.v:1]
-INFO: [Synth 8-6157] synthesizing module 'Poly1305' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/Poly1305.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'Poly1305' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/Poly1305.v:1]
-INFO: [Synth 8-226] default block is never used [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/RFC8439.v:376]
-INFO: [Synth 8-6155] done synthesizing module 'RFC8439' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/src/RFC8439.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'RFC8439_v1_0_S00_AXI' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/hdl/RFC8439_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'RFC8439_v1_0' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/hdl/RFC8439_v1_0.v:4]
+INFO: [Synth 8-6157] synthesizing module 'RFC8439_v1_0' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0.v:4]
+INFO: [Synth 8-6157] synthesizing module 'RFC8439_v1_0_S00_AXI' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-226] default block is never used [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0_S00_AXI.v:267]
+INFO: [Synth 8-226] default block is never used [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0_S00_AXI.v:504]
+INFO: [Synth 8-6157] synthesizing module 'RFC8439' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/RFC8439.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Chacha20' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Chacha20.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Quarter_round_Half1' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Chacha20.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'Quarter_round_Half1' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Chacha20.v:168]
+INFO: [Synth 8-6157] synthesizing module 'Quarter_round_Half2' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Chacha20.v:189]
+INFO: [Synth 8-6155] done synthesizing module 'Quarter_round_Half2' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Chacha20.v:189]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Chacha20.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'Chacha20' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Chacha20.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Poly1305' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:11]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:163]
+INFO: [Synth 8-6155] done synthesizing module 'Poly1305' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:11]
+INFO: [Synth 8-226] default block is never used [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/RFC8439.v:364]
+INFO: [Synth 8-6155] done synthesizing module 'RFC8439' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/RFC8439.v:1]
+WARNING: [Synth 8-689] width (4) of port connection 'Src_RAM_we' does not match port width (1) of module 'RFC8439' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0_S00_AXI.v:562]
+INFO: [Synth 8-6155] done synthesizing module 'RFC8439_v1_0_S00_AXI' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'RFC8439_v1_0' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_RFC8439_0_0' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_0/synth/design_1_RFC8439_0_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/aa81/hdl/RFC8439_v1_0_S00_AXI.v:252]
+WARNING: [Synth 8-7137] Register H0_add_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:175]
+WARNING: [Synth 8-7137] Register H1_add_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:176]
+WARNING: [Synth 8-7137] Register H2_add_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:177]
+WARNING: [Synth 8-7137] Register H3_add_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:178]
+WARNING: [Synth 8-7137] Register H4_add_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:179]
+WARNING: [Synth 8-7137] Register p00_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:183]
+WARNING: [Synth 8-7137] Register p01_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:183]
+WARNING: [Synth 8-7137] Register p02_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:183]
+WARNING: [Synth 8-7137] Register p03_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:183]
+WARNING: [Synth 8-7137] Register p04_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:183]
+WARNING: [Synth 8-7137] Register p10_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:184]
+WARNING: [Synth 8-7137] Register p11_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:184]
+WARNING: [Synth 8-7137] Register p12_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:184]
+WARNING: [Synth 8-7137] Register p13_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:184]
+WARNING: [Synth 8-7137] Register p14_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:184]
+WARNING: [Synth 8-7137] Register p20_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:185]
+WARNING: [Synth 8-7137] Register p21_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:185]
+WARNING: [Synth 8-7137] Register p22_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:185]
+WARNING: [Synth 8-7137] Register p23_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:185]
+WARNING: [Synth 8-7137] Register p24_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:185]
+WARNING: [Synth 8-7137] Register p30_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:186]
+WARNING: [Synth 8-7137] Register p31_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:186]
+WARNING: [Synth 8-7137] Register p32_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:186]
+WARNING: [Synth 8-7137] Register p33_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:186]
+WARNING: [Synth 8-7137] Register p34_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:186]
+WARNING: [Synth 8-7137] Register p40_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:187]
+WARNING: [Synth 8-7137] Register p41_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:187]
+WARNING: [Synth 8-7137] Register p42_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:187]
+WARNING: [Synth 8-7137] Register p43_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:187]
+WARNING: [Synth 8-7137] Register p44_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:187]
+WARNING: [Synth 8-7137] Register d0_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:191]
+WARNING: [Synth 8-7137] Register d1_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:192]
+WARNING: [Synth 8-7137] Register d2_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:193]
+WARNING: [Synth 8-7137] Register d3_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:194]
+WARNING: [Synth 8-7137] Register d4_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:195]
+WARNING: [Synth 8-7137] Register hc0_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:199]
+WARNING: [Synth 8-7137] Register hc1_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:200]
+WARNING: [Synth 8-7137] Register hc2_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:201]
+WARNING: [Synth 8-7137] Register hc3_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:202]
+WARNING: [Synth 8-7137] Register hc4_reg in module Poly1305 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/src/Poly1305.v:203]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ipshared/a7d3/hdl/RFC8439_v1_0_S00_AXI.v:252]
 WARNING: [Synth 8-7129] Port Dst_RAM_Q[31] in module RFC8439 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Dst_RAM_Q[30] in module RFC8439 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port Dst_RAM_Q[29] in module RFC8439 is either unconnected or has no load
@@ -90,18 +134,18 @@ WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module RFC8439_v1_0_S00_AXI is e
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module RFC8439_v1_0_S00_AXI is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module RFC8439_v1_0_S00_AXI is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1504.902 ; gain = 582.637
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1507.375 ; gain = 586.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1504.902 ; gain = 582.637
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1507.375 ; gain = 586.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1504.902 ; gain = 582.637
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1507.375 ; gain = 586.105
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 1504.902 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.088 . Memory (MB): peak = 1507.375 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -115,41 +159,43 @@ Parsing XDC File [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/d
 Finished Parsing XDC File [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/design_1_RFC8439_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1603.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1607.793 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 系統找不到指定的路徑。
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.125 . Memory (MB): peak = 1608.613 ; gain = 5.500
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.160 . Memory (MB): peak = 1613.531 ; gain = 5.738
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1608.613 ; gain = 686.348
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1613.531 ; gain = 692.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1608.613 ; gain = 686.348
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1613.531 ; gain = 692.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/design_1_RFC8439_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1608.613 ; gain = 686.348
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1613.531 ; gain = 692.262
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Chacha20'
-INFO: [Synth 8-802] inferred FSM for state register 'main_state_reg' in module 'RFC8439'
 INFO: [Synth 8-802] inferred FSM for state register 'rd_state_reg' in module 'RFC8439'
 INFO: [Synth 8-802] inferred FSM for state register 'wr_state_reg' in module 'RFC8439'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE |                               00 |                               00
-                    CALC |                               01 |                               01
-                     ADD |                               10 |                               10
-                    DONE |                               11 |                               11
+                    IDLE |                              000 |                              000
+             CALC_COL_H1 |                              001 |                              001
+             CALC_COL_H2 |                              010 |                              010
+            CALC_DIAG_H1 |                              011 |                              011
+            CALC_DIAG_H2 |                              100 |                              100
+                     ADD |                              101 |                              101
+                    DONE |                              110 |                              110
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Chacha20'
 ---------------------------------------------------------------------------------------------------
@@ -169,106 +215,81 @@ INFO: [Synth 8-3354] encoded FSM with state register 'wr_state_reg' using encodi
                   R_DONE |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'rd_state_reg' using encoding 'sequential' in module 'RFC8439'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                  M_IDLE |                            01010 |                            00000
-              M_INIT_KEY |                            01110 |                            00001
-             M_INIT_WAIT |                            01100 |                            00010
-             M_AAD_CHECK |                            01000 |                            00011
-               M_AAD_REQ |                            01001 |                            00100
-              M_AAD_WAIT |                            10100 |                            00101
-              M_AAD_POLY |                            10011 |                            00110
-             M_MSG_CHECK |                            00011 |                            00111
-            M_MSG_KS_REQ |                            10010 |                            01000
-           M_MSG_KS_WAIT |                            10001 |                            01001
-               M_MSG_REQ |                            10000 |                            01010
-              M_MSG_WAIT |                            01111 |                            01011
-              M_MSG_DISP |                            00100 |                            01100
-           M_MSG_WR_WAIT |                            00010 |                            01101
-              M_LEN_POLY |                            00000 |                            01110
-              M_TAG_WAIT |                            00001 |                            01111
-            M_TAG_VERIFY |                            01101 |                            10000
-          M_TAG_VER_WAIT |                            01011 |                            10001
-             M_TAG_WRITE |                            00111 |                            10010
-           M_TAG_WR_WAIT |                            00101 |                            10011
-                  M_DONE |                            00110 |                            10100
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'main_state_reg' using encoding 'sequential' in module 'RFC8439'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1608.613 ; gain = 686.348
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1613.531 ; gain = 692.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   5 Input  131 Bit       Adders := 1     
-	   2 Input  128 Bit       Adders := 2     
-	   2 Input   64 Bit       Adders := 4     
-	   5 Input   60 Bit       Adders := 1     
-	   2 Input   57 Bit       Adders := 4     
-	   2 Input   54 Bit       Adders := 5     
-	   3 Input   33 Bit       Adders := 1     
-	   2 Input   32 Bit       Adders := 76    
-	   3 Input   32 Bit       Adders := 6     
-	   2 Input   25 Bit       Adders := 1     
-	   3 Input    5 Bit       Adders := 4     
+	   5 Input  132 Bit       Adders := 1     
+	   3 Input  128 Bit       Adders := 1     
+	   5 Input   59 Bit       Adders := 5     
+	   2 Input   56 Bit       Adders := 10    
+	   2 Input   54 Bit       Adders := 15    
+	   2 Input   40 Bit       Adders := 5     
+	   2 Input   32 Bit       Adders := 38    
+	   3 Input   32 Bit       Adders := 3     
+	   2 Input   28 Bit       Adders := 10    
 	   2 Input    4 Bit       Adders := 1     
 	   3 Input    3 Bit       Adders := 2     
 	   2 Input    3 Bit       Adders := 2     
 	   2 Input    2 Bit       Adders := 1     
 +---XORs : 
 	   2 Input    128 Bit         XORs := 1     
-	   2 Input     32 Bit         XORs := 32    
+	   2 Input     32 Bit         XORs := 16    
 +---Registers : 
 	              512 Bit    Registers := 2     
 	              256 Bit    Registers := 2     
 	              160 Bit    Registers := 1     
+	              132 Bit    Registers := 1     
 	              128 Bit    Registers := 5     
 	               96 Bit    Registers := 1     
-	               64 Bit    Registers := 5     
-	               32 Bit    Registers := 60    
-	               27 Bit    Registers := 5     
+	               60 Bit    Registers := 5     
+	               56 Bit    Registers := 25    
+	               40 Bit    Registers := 5     
+	               32 Bit    Registers := 71    
+	               29 Bit    Registers := 4     
+	               28 Bit    Registers := 10    
+	               26 Bit    Registers := 10    
 	                6 Bit    Registers := 2     
 	                5 Bit    Registers := 3     
-	                4 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 17    
+	                1 Bit    Registers := 16    
++---Multipliers : 
+	               3x40  Multipliers := 1     
+	               3x26  Multipliers := 3     
+	               3x28  Multipliers := 1     
 +---Muxes : 
 	   2 Input  512 Bit        Muxes := 4     
 	  13 Input  256 Bit        Muxes := 1     
 	   2 Input  160 Bit        Muxes := 1     
-	   2 Input  128 Bit        Muxes := 5     
 	   4 Input  128 Bit        Muxes := 1     
-	   3 Input  128 Bit        Muxes := 1     
+	   2 Input  128 Bit        Muxes := 4     
 	  13 Input   96 Bit        Muxes := 1     
-	  20 Input   64 Bit        Muxes := 1     
-	   2 Input   56 Bit        Muxes := 4     
-	   4 Input   32 Bit        Muxes := 16    
-	   2 Input   32 Bit        Muxes := 32    
-	  20 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 38    
+	   6 Input   32 Bit        Muxes := 16    
 	  16 Input   32 Bit        Muxes := 15    
 	   2 Input   30 Bit        Muxes := 2     
-	   2 Input   27 Bit        Muxes := 10    
-	   6 Input   27 Bit        Muxes := 10    
-	   2 Input    8 Bit        Muxes := 3     
-	   2 Input    5 Bit        Muxes := 4     
-	  28 Input    5 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 6     
+	  10 Input   28 Bit        Muxes := 5     
+	   2 Input    5 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 5     
+	   5 Input    4 Bit        Muxes := 1     
+	  11 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 7     
 	   3 Input    3 Bit        Muxes := 1     
-	   7 Input    2 Bit        Muxes := 1     
+	  22 Input    3 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 5     
 	   4 Input    2 Bit        Muxes := 1     
-	   4 Input    1 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 39    
-	  20 Input    1 Bit        Muxes := 14    
-	   6 Input    1 Bit        Muxes := 4     
-	   3 Input    1 Bit        Muxes := 4     
-	   5 Input    1 Bit        Muxes := 2     
-	  21 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 34    
+	   6 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 5     
+	  10 Input    1 Bit        Muxes := 11    
+	   5 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -285,66 +306,306 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Report: Generating DSP p1_w, operation Mode is: A*B.
-DSP Report: operator p1_w is absorbed into DSP p1_w.
-DSP Report: operator p1_w is absorbed into DSP p1_w.
-DSP Report: Generating DSP p1_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p1_w is absorbed into DSP p1_w.
-DSP Report: operator p1_w is absorbed into DSP p1_w.
-DSP Report: Generating DSP p1_w, operation Mode is: A*B.
-DSP Report: operator p1_w is absorbed into DSP p1_w.
-DSP Report: operator p1_w is absorbed into DSP p1_w.
-DSP Report: Generating DSP p1_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p1_w is absorbed into DSP p1_w.
-DSP Report: operator p1_w is absorbed into DSP p1_w.
-DSP Report: Generating DSP p2_w, operation Mode is: A*B.
-DSP Report: operator p2_w is absorbed into DSP p2_w.
-DSP Report: operator p2_w is absorbed into DSP p2_w.
-DSP Report: Generating DSP p2_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p2_w is absorbed into DSP p2_w.
-DSP Report: operator p2_w is absorbed into DSP p2_w.
-DSP Report: Generating DSP p2_w, operation Mode is: A*B.
-DSP Report: operator p2_w is absorbed into DSP p2_w.
-DSP Report: operator p2_w is absorbed into DSP p2_w.
-DSP Report: Generating DSP p2_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p2_w is absorbed into DSP p2_w.
-DSP Report: operator p2_w is absorbed into DSP p2_w.
-DSP Report: Generating DSP p3_w, operation Mode is: A*B.
-DSP Report: operator p3_w is absorbed into DSP p3_w.
-DSP Report: operator p3_w is absorbed into DSP p3_w.
-DSP Report: Generating DSP p3_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p3_w is absorbed into DSP p3_w.
-DSP Report: operator p3_w is absorbed into DSP p3_w.
-DSP Report: Generating DSP p3_w, operation Mode is: A*B.
-DSP Report: operator p3_w is absorbed into DSP p3_w.
-DSP Report: operator p3_w is absorbed into DSP p3_w.
-DSP Report: Generating DSP p3_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p3_w is absorbed into DSP p3_w.
-DSP Report: operator p3_w is absorbed into DSP p3_w.
-DSP Report: Generating DSP p4_w, operation Mode is: A*B.
-DSP Report: operator p4_w is absorbed into DSP p4_w.
-DSP Report: operator p4_w is absorbed into DSP p4_w.
-DSP Report: Generating DSP p4_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p4_w is absorbed into DSP p4_w.
-DSP Report: operator p4_w is absorbed into DSP p4_w.
-DSP Report: Generating DSP p4_w, operation Mode is: A*B.
-DSP Report: operator p4_w is absorbed into DSP p4_w.
-DSP Report: operator p4_w is absorbed into DSP p4_w.
-DSP Report: Generating DSP p4_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p4_w is absorbed into DSP p4_w.
-DSP Report: operator p4_w is absorbed into DSP p4_w.
-DSP Report: Generating DSP p0_w, operation Mode is: A*B.
-DSP Report: operator p0_w is absorbed into DSP p0_w.
-DSP Report: operator p0_w is absorbed into DSP p0_w.
-DSP Report: Generating DSP p0_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p0_w is absorbed into DSP p0_w.
-DSP Report: operator p0_w is absorbed into DSP p0_w.
-DSP Report: Generating DSP p0_w, operation Mode is: A*B.
-DSP Report: operator p0_w is absorbed into DSP p0_w.
-DSP Report: operator p0_w is absorbed into DSP p0_w.
-DSP Report: Generating DSP p0_w, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator p0_w is absorbed into DSP p0_w.
-DSP Report: operator p0_w is absorbed into DSP p0_w.
+DSP Report: Generating DSP p130, operation Mode is: A*B.
+DSP Report: operator p130 is absorbed into DSP p130.
+DSP Report: operator p130 is absorbed into DSP p130.
+DSP Report: Generating DSP p130, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p130 is absorbed into DSP p130.
+DSP Report: operator p130 is absorbed into DSP p130.
+DSP Report: Generating DSP p130, operation Mode is: A*B.
+DSP Report: operator p130 is absorbed into DSP p130.
+DSP Report: operator p130 is absorbed into DSP p130.
+DSP Report: Generating DSP p130, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p130 is absorbed into DSP p130.
+DSP Report: operator p130 is absorbed into DSP p130.
+DSP Report: Generating DSP p140, operation Mode is: A*B.
+DSP Report: operator p140 is absorbed into DSP p140.
+DSP Report: operator p140 is absorbed into DSP p140.
+DSP Report: Generating DSP p140, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p140 is absorbed into DSP p140.
+DSP Report: operator p140 is absorbed into DSP p140.
+DSP Report: Generating DSP p140, operation Mode is: A*B.
+DSP Report: operator p140 is absorbed into DSP p140.
+DSP Report: operator p140 is absorbed into DSP p140.
+DSP Report: Generating DSP p140, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p140 is absorbed into DSP p140.
+DSP Report: operator p140 is absorbed into DSP p140.
+DSP Report: Generating DSP p230, operation Mode is: A*B.
+DSP Report: operator p230 is absorbed into DSP p230.
+DSP Report: operator p230 is absorbed into DSP p230.
+DSP Report: Generating DSP p230, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p230 is absorbed into DSP p230.
+DSP Report: operator p230 is absorbed into DSP p230.
+DSP Report: Generating DSP p230, operation Mode is: A*B.
+DSP Report: operator p230 is absorbed into DSP p230.
+DSP Report: operator p230 is absorbed into DSP p230.
+DSP Report: Generating DSP p230, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p230 is absorbed into DSP p230.
+DSP Report: operator p230 is absorbed into DSP p230.
+DSP Report: Generating DSP p100, operation Mode is: A*B.
+DSP Report: operator p100 is absorbed into DSP p100.
+DSP Report: operator p100 is absorbed into DSP p100.
+DSP Report: Generating DSP p100, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p100 is absorbed into DSP p100.
+DSP Report: operator p100 is absorbed into DSP p100.
+DSP Report: Generating DSP p100, operation Mode is: A*B.
+DSP Report: operator p100 is absorbed into DSP p100.
+DSP Report: operator p100 is absorbed into DSP p100.
+DSP Report: Generating DSP p100, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p100 is absorbed into DSP p100.
+DSP Report: operator p100 is absorbed into DSP p100.
+DSP Report: Generating DSP p240, operation Mode is: A*B.
+DSP Report: operator p240 is absorbed into DSP p240.
+DSP Report: operator p240 is absorbed into DSP p240.
+DSP Report: Generating DSP p240, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p240 is absorbed into DSP p240.
+DSP Report: operator p240 is absorbed into DSP p240.
+DSP Report: Generating DSP p240, operation Mode is: A*B.
+DSP Report: operator p240 is absorbed into DSP p240.
+DSP Report: operator p240 is absorbed into DSP p240.
+DSP Report: Generating DSP p240, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p240 is absorbed into DSP p240.
+DSP Report: operator p240 is absorbed into DSP p240.
+DSP Report: Generating DSP p330, operation Mode is: A*B.
+DSP Report: operator p330 is absorbed into DSP p330.
+DSP Report: operator p330 is absorbed into DSP p330.
+DSP Report: Generating DSP p330, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p330 is absorbed into DSP p330.
+DSP Report: operator p330 is absorbed into DSP p330.
+DSP Report: Generating DSP p330, operation Mode is: A*B.
+DSP Report: operator p330 is absorbed into DSP p330.
+DSP Report: operator p330 is absorbed into DSP p330.
+DSP Report: Generating DSP p330, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p330 is absorbed into DSP p330.
+DSP Report: operator p330 is absorbed into DSP p330.
+DSP Report: Generating DSP p110, operation Mode is: A*B.
+DSP Report: operator p110 is absorbed into DSP p110.
+DSP Report: operator p110 is absorbed into DSP p110.
+DSP Report: Generating DSP p110, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p110 is absorbed into DSP p110.
+DSP Report: operator p110 is absorbed into DSP p110.
+DSP Report: Generating DSP p110, operation Mode is: A*B.
+DSP Report: operator p110 is absorbed into DSP p110.
+DSP Report: operator p110 is absorbed into DSP p110.
+DSP Report: Generating DSP p110, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p110 is absorbed into DSP p110.
+DSP Report: operator p110 is absorbed into DSP p110.
+DSP Report: Generating DSP p200, operation Mode is: A*B.
+DSP Report: operator p200 is absorbed into DSP p200.
+DSP Report: operator p200 is absorbed into DSP p200.
+DSP Report: Generating DSP p200, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p200 is absorbed into DSP p200.
+DSP Report: operator p200 is absorbed into DSP p200.
+DSP Report: Generating DSP p200, operation Mode is: A*B.
+DSP Report: operator p200 is absorbed into DSP p200.
+DSP Report: operator p200 is absorbed into DSP p200.
+DSP Report: Generating DSP p200, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p200 is absorbed into DSP p200.
+DSP Report: operator p200 is absorbed into DSP p200.
+DSP Report: Generating DSP p340, operation Mode is: A*B.
+DSP Report: operator p340 is absorbed into DSP p340.
+DSP Report: operator p340 is absorbed into DSP p340.
+DSP Report: Generating DSP p340, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p340 is absorbed into DSP p340.
+DSP Report: operator p340 is absorbed into DSP p340.
+DSP Report: Generating DSP p340, operation Mode is: A*B.
+DSP Report: operator p340 is absorbed into DSP p340.
+DSP Report: operator p340 is absorbed into DSP p340.
+DSP Report: Generating DSP p340, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p340 is absorbed into DSP p340.
+DSP Report: operator p340 is absorbed into DSP p340.
+DSP Report: Generating DSP p430, operation Mode is: A*B.
+DSP Report: operator p430 is absorbed into DSP p430.
+DSP Report: operator p430 is absorbed into DSP p430.
+DSP Report: Generating DSP p430, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p430 is absorbed into DSP p430.
+DSP Report: operator p430 is absorbed into DSP p430.
+DSP Report: Generating DSP p430, operation Mode is: A*B.
+DSP Report: operator p430 is absorbed into DSP p430.
+DSP Report: operator p430 is absorbed into DSP p430.
+DSP Report: Generating DSP p430, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p430 is absorbed into DSP p430.
+DSP Report: operator p430 is absorbed into DSP p430.
+DSP Report: Generating DSP p120, operation Mode is: A*B.
+DSP Report: operator p120 is absorbed into DSP p120.
+DSP Report: operator p120 is absorbed into DSP p120.
+DSP Report: Generating DSP p120, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p120 is absorbed into DSP p120.
+DSP Report: operator p120 is absorbed into DSP p120.
+DSP Report: Generating DSP p120, operation Mode is: A*B.
+DSP Report: operator p120 is absorbed into DSP p120.
+DSP Report: operator p120 is absorbed into DSP p120.
+DSP Report: Generating DSP p120, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p120 is absorbed into DSP p120.
+DSP Report: operator p120 is absorbed into DSP p120.
+DSP Report: Generating DSP p210, operation Mode is: A*B.
+DSP Report: operator p210 is absorbed into DSP p210.
+DSP Report: operator p210 is absorbed into DSP p210.
+DSP Report: Generating DSP p210, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p210 is absorbed into DSP p210.
+DSP Report: operator p210 is absorbed into DSP p210.
+DSP Report: Generating DSP p210, operation Mode is: A*B.
+DSP Report: operator p210 is absorbed into DSP p210.
+DSP Report: operator p210 is absorbed into DSP p210.
+DSP Report: Generating DSP p210, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p210 is absorbed into DSP p210.
+DSP Report: operator p210 is absorbed into DSP p210.
+DSP Report: Generating DSP p300, operation Mode is: A*B.
+DSP Report: operator p300 is absorbed into DSP p300.
+DSP Report: operator p300 is absorbed into DSP p300.
+DSP Report: Generating DSP p300, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p300 is absorbed into DSP p300.
+DSP Report: operator p300 is absorbed into DSP p300.
+DSP Report: Generating DSP p300, operation Mode is: A*B.
+DSP Report: operator p300 is absorbed into DSP p300.
+DSP Report: operator p300 is absorbed into DSP p300.
+DSP Report: Generating DSP p300, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p300 is absorbed into DSP p300.
+DSP Report: operator p300 is absorbed into DSP p300.
+DSP Report: Generating DSP p440, operation Mode is: A*B.
+DSP Report: operator p440 is absorbed into DSP p440.
+DSP Report: operator p440 is absorbed into DSP p440.
+DSP Report: Generating DSP p440, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p440 is absorbed into DSP p440.
+DSP Report: operator p440 is absorbed into DSP p440.
+DSP Report: Generating DSP p440, operation Mode is: A*B.
+DSP Report: operator p440 is absorbed into DSP p440.
+DSP Report: operator p440 is absorbed into DSP p440.
+DSP Report: Generating DSP p440, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p440 is absorbed into DSP p440.
+DSP Report: operator p440 is absorbed into DSP p440.
+DSP Report: Generating DSP p030, operation Mode is: A*B.
+DSP Report: operator p030 is absorbed into DSP p030.
+DSP Report: operator p030 is absorbed into DSP p030.
+DSP Report: Generating DSP p030, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p030 is absorbed into DSP p030.
+DSP Report: operator p030 is absorbed into DSP p030.
+DSP Report: Generating DSP p030, operation Mode is: A*B.
+DSP Report: operator p030 is absorbed into DSP p030.
+DSP Report: operator p030 is absorbed into DSP p030.
+DSP Report: Generating DSP p030, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p030 is absorbed into DSP p030.
+DSP Report: operator p030 is absorbed into DSP p030.
+DSP Report: Generating DSP p020, operation Mode is: A*B.
+DSP Report: operator p020 is absorbed into DSP p020.
+DSP Report: operator p020 is absorbed into DSP p020.
+DSP Report: Generating DSP p020, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p020 is absorbed into DSP p020.
+DSP Report: operator p020 is absorbed into DSP p020.
+DSP Report: Generating DSP p020, operation Mode is: A*B.
+DSP Report: operator p020 is absorbed into DSP p020.
+DSP Report: operator p020 is absorbed into DSP p020.
+DSP Report: Generating DSP p020, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p020 is absorbed into DSP p020.
+DSP Report: operator p020 is absorbed into DSP p020.
+DSP Report: Generating DSP p420, operation Mode is: A*B.
+DSP Report: operator p420 is absorbed into DSP p420.
+DSP Report: operator p420 is absorbed into DSP p420.
+DSP Report: Generating DSP p420, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p420 is absorbed into DSP p420.
+DSP Report: operator p420 is absorbed into DSP p420.
+DSP Report: Generating DSP p420, operation Mode is: A*B.
+DSP Report: operator p420 is absorbed into DSP p420.
+DSP Report: operator p420 is absorbed into DSP p420.
+DSP Report: Generating DSP p420, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p420 is absorbed into DSP p420.
+DSP Report: operator p420 is absorbed into DSP p420.
+DSP Report: Generating DSP p010, operation Mode is: A*B.
+DSP Report: operator p010 is absorbed into DSP p010.
+DSP Report: operator p010 is absorbed into DSP p010.
+DSP Report: Generating DSP p010, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p010 is absorbed into DSP p010.
+DSP Report: operator p010 is absorbed into DSP p010.
+DSP Report: Generating DSP p010, operation Mode is: A*B.
+DSP Report: operator p010 is absorbed into DSP p010.
+DSP Report: operator p010 is absorbed into DSP p010.
+DSP Report: Generating DSP p010, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p010 is absorbed into DSP p010.
+DSP Report: operator p010 is absorbed into DSP p010.
+DSP Report: Generating DSP p320, operation Mode is: A*B.
+DSP Report: operator p320 is absorbed into DSP p320.
+DSP Report: operator p320 is absorbed into DSP p320.
+DSP Report: Generating DSP p320, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p320 is absorbed into DSP p320.
+DSP Report: operator p320 is absorbed into DSP p320.
+DSP Report: Generating DSP p320, operation Mode is: A*B.
+DSP Report: operator p320 is absorbed into DSP p320.
+DSP Report: operator p320 is absorbed into DSP p320.
+DSP Report: Generating DSP p320, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p320 is absorbed into DSP p320.
+DSP Report: operator p320 is absorbed into DSP p320.
+DSP Report: Generating DSP p410, operation Mode is: A*B.
+DSP Report: operator p410 is absorbed into DSP p410.
+DSP Report: operator p410 is absorbed into DSP p410.
+DSP Report: Generating DSP p410, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p410 is absorbed into DSP p410.
+DSP Report: operator p410 is absorbed into DSP p410.
+DSP Report: Generating DSP p410, operation Mode is: A*B.
+DSP Report: operator p410 is absorbed into DSP p410.
+DSP Report: operator p410 is absorbed into DSP p410.
+DSP Report: Generating DSP p410, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p410 is absorbed into DSP p410.
+DSP Report: operator p410 is absorbed into DSP p410.
+DSP Report: Generating DSP p000, operation Mode is: A*B.
+DSP Report: operator p000 is absorbed into DSP p000.
+DSP Report: operator p000 is absorbed into DSP p000.
+DSP Report: Generating DSP p000, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p000 is absorbed into DSP p000.
+DSP Report: operator p000 is absorbed into DSP p000.
+DSP Report: Generating DSP p000, operation Mode is: A*B.
+DSP Report: operator p000 is absorbed into DSP p000.
+DSP Report: operator p000 is absorbed into DSP p000.
+DSP Report: Generating DSP p000, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p000 is absorbed into DSP p000.
+DSP Report: operator p000 is absorbed into DSP p000.
+DSP Report: Generating DSP p220, operation Mode is: A*B.
+DSP Report: operator p220 is absorbed into DSP p220.
+DSP Report: operator p220 is absorbed into DSP p220.
+DSP Report: Generating DSP p220, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p220 is absorbed into DSP p220.
+DSP Report: operator p220 is absorbed into DSP p220.
+DSP Report: Generating DSP p220, operation Mode is: A*B.
+DSP Report: operator p220 is absorbed into DSP p220.
+DSP Report: operator p220 is absorbed into DSP p220.
+DSP Report: Generating DSP p220, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p220 is absorbed into DSP p220.
+DSP Report: operator p220 is absorbed into DSP p220.
+DSP Report: Generating DSP p310, operation Mode is: A*B.
+DSP Report: operator p310 is absorbed into DSP p310.
+DSP Report: operator p310 is absorbed into DSP p310.
+DSP Report: Generating DSP p310, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p310 is absorbed into DSP p310.
+DSP Report: operator p310 is absorbed into DSP p310.
+DSP Report: Generating DSP p310, operation Mode is: A*B.
+DSP Report: operator p310 is absorbed into DSP p310.
+DSP Report: operator p310 is absorbed into DSP p310.
+DSP Report: Generating DSP p310, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p310 is absorbed into DSP p310.
+DSP Report: operator p310 is absorbed into DSP p310.
+DSP Report: Generating DSP p400, operation Mode is: A*B.
+DSP Report: operator p400 is absorbed into DSP p400.
+DSP Report: operator p400 is absorbed into DSP p400.
+DSP Report: Generating DSP p400, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p400 is absorbed into DSP p400.
+DSP Report: operator p400 is absorbed into DSP p400.
+DSP Report: Generating DSP p400, operation Mode is: A*B.
+DSP Report: operator p400 is absorbed into DSP p400.
+DSP Report: operator p400 is absorbed into DSP p400.
+DSP Report: Generating DSP p400, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p400 is absorbed into DSP p400.
+DSP Report: operator p400 is absorbed into DSP p400.
+DSP Report: Generating DSP p040, operation Mode is: A*B.
+DSP Report: operator p040 is absorbed into DSP p040.
+DSP Report: operator p040 is absorbed into DSP p040.
+DSP Report: Generating DSP p040, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p040 is absorbed into DSP p040.
+DSP Report: operator p040 is absorbed into DSP p040.
+DSP Report: Generating DSP p040, operation Mode is: A*B.
+DSP Report: operator p040 is absorbed into DSP p040.
+DSP Report: operator p040 is absorbed into DSP p040.
+DSP Report: Generating DSP p040, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p040 is absorbed into DSP p040.
+DSP Report: operator p040 is absorbed into DSP p040.
 WARNING: [Synth 8-7129] Port mac_key[127] in module Poly1305 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port mac_key[126] in module Poly1305 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port mac_key[125] in module Poly1305 is either unconnected or has no load
@@ -406,28 +667,108 @@ WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module RFC8439_v1_0_S00_AXI is e
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module RFC8439_v1_0_S00_AXI is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module RFC8439_v1_0_S00_AXI is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1608.613 ; gain = 686.348
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1613.531 ; gain = 692.262
 ---------------------------------------------------------------------------------
- Sort Area is  p0_w_0 : 0 0 : 2701 4226 : Used 1 time 0
- Sort Area is  p0_w_0 : 0 1 : 1525 4226 : Used 1 time 0
- Sort Area is  p1_w_c : 0 0 : 2701 4226 : Used 1 time 0
- Sort Area is  p1_w_c : 0 1 : 1525 4226 : Used 1 time 0
- Sort Area is  p2_w_a : 0 0 : 2701 4226 : Used 1 time 0
- Sort Area is  p2_w_a : 0 1 : 1525 4226 : Used 1 time 0
- Sort Area is  p3_w_8 : 0 0 : 2701 4226 : Used 1 time 0
- Sort Area is  p3_w_8 : 0 1 : 1525 4226 : Used 1 time 0
- Sort Area is  p4_w_6 : 0 0 : 2701 4226 : Used 1 time 0
- Sort Area is  p4_w_6 : 0 1 : 1525 4226 : Used 1 time 0
- Sort Area is  p0_w_3 : 0 0 : 1556 2527 : Used 1 time 0
- Sort Area is  p0_w_3 : 0 1 : 971 2527 : Used 1 time 0
- Sort Area is  p1_w_d : 0 0 : 1556 2527 : Used 1 time 0
- Sort Area is  p1_w_d : 0 1 : 971 2527 : Used 1 time 0
- Sort Area is  p2_w_b : 0 0 : 1556 2527 : Used 1 time 0
- Sort Area is  p2_w_b : 0 1 : 971 2527 : Used 1 time 0
- Sort Area is  p3_w_9 : 0 0 : 1556 2527 : Used 1 time 0
- Sort Area is  p3_w_9 : 0 1 : 971 2527 : Used 1 time 0
- Sort Area is  p4_w_7 : 0 0 : 1556 2527 : Used 1 time 0
- Sort Area is  p4_w_7 : 0 1 : 971 2527 : Used 1 time 0
+ Sort Area is  p140_36 : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p140_36 : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p230_34 : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p230_34 : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p240_20 : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p240_20 : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p320_32 : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p320_32 : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p330_1e : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p330_1e : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p340_16 : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p340_16 : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p410_30 : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p410_30 : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p420_1c : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p420_1c : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p430_14 : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p430_14 : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p440_c : 0 0 : 2701 4526 : Used 1 time 0
+ Sort Area is  p440_c : 0 1 : 1825 4526 : Used 1 time 0
+ Sort Area is  p000_0 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p000_0 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p010_1a : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p010_1a : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p020_12 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p020_12 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p030_a : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p030_a : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p040_6 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p040_6 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p100_22 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p100_22 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p110_24 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p110_24 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p120_28 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p120_28 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p130_2e : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p130_2e : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p200_18 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p200_18 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p210_26 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p210_26 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p220_2c : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p220_2c : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p300_10 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p300_10 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p310_2a : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p310_2a : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p400_8 : 0 0 : 2701 4021 : Used 1 time 0
+ Sort Area is  p400_8 : 0 1 : 1320 4021 : Used 1 time 0
+ Sort Area is  p140_37 : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p140_37 : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p230_35 : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p230_35 : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p240_21 : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p240_21 : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p320_33 : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p320_33 : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p330_1f : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p330_1f : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p340_17 : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p340_17 : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p410_31 : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p410_31 : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p420_1d : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p420_1d : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p430_15 : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p430_15 : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p440_e : 0 0 : 1670 2860 : Used 1 time 0
+ Sort Area is  p440_e : 0 1 : 1190 2860 : Used 1 time 0
+ Sort Area is  p000_3 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p000_3 : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p010_1b : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p010_1b : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p020_13 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p020_13 : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p030_b : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p030_b : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p040_7 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p040_7 : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p100_23 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p100_23 : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p110_25 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p110_25 : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p120_29 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p120_29 : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p130_2f : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p130_2f : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p200_19 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p200_19 : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p210_27 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p210_27 : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p220_2d : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p220_2d : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p300_11 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p300_11 : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p310_2b : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p310_2b : 0 1 : 889 2559 : Used 1 time 0
+ Sort Area is  p400_9 : 0 0 : 1670 2559 : Used 1 time 0
+ Sort Area is  p400_9 : 0 1 : 889 2559 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -436,8 +777,10 @@ ROM: Preliminary Mapping Report
 +------------+------------+---------------+----------------+
 |Module Name | RTL Object | Depth x Width | Implemented As | 
 +------------+------------+---------------+----------------+
+|RFC8439     | base_mask  | 32x16         | LUT            | 
 |RFC8439     | mask128    | 32x16         | LUT            | 
 |RFC8439     | mask128    | 32x16         | LUT            | 
+|RFC8439     | base_mask  | 32x16         | LUT            | 
 |RFC8439     | mask128    | 32x16         | LUT            | 
 |RFC8439     | mask128    | 32x16         | LUT            | 
 +------------+------------+---------------+----------------+
@@ -447,26 +790,106 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 +------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 13     | 12     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 12     | 10     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 10     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 +------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -477,19 +900,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1608.613 ; gain = 686.348
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1613.531 ; gain = 692.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1608.613 ; gain = 686.348
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1613.531 ; gain = 692.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1608.613 ; gain = 686.348
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1613.531 ; gain = 692.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -507,67 +930,147 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1613.195 ; gain = 690.930
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1619.613 ; gain = 698.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1613.195 ; gain = 690.930
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1619.613 ; gain = 698.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 1613.195 ; gain = 690.930
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1619.613 ; gain = 698.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 1613.195 ; gain = 690.930
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1619.613 ; gain = 698.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1613.195 ; gain = 690.930
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1619.613 ; gain = 698.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1613.195 ; gain = 690.930
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1619.613 ; gain = 698.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Poly1305    | A*B'          | 14     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 14     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 6      | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 6      | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 12     | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 12     | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 6      | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 6      | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 12     | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 12     | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 6      | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 6      | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 12     | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 12     | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 6      | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 6      | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 14     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 14     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 12     | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 12     | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 12     | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 12     | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B' | 12     | 11     | -      | -      | 22     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 12     | -      | -      | 39     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 9      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 9      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B'          | 17     | 11     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 11     | 3      | -      | -      | 20     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A'*B          | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A'*B | 17     | 3      | -      | -      | 37     | 1    | 0    | -    | -    | -     | 0    | 0    | 
++------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -580,48 +1083,48 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |CARRY4  |   981|
-|2     |DSP48E1 |    20|
-|3     |LUT1    |    57|
-|4     |LUT2    |  1969|
-|5     |LUT3    |  1463|
-|6     |LUT4    |  1905|
-|7     |LUT5    |  1126|
-|8     |LUT6    |  1743|
-|9     |MUXF7   |   140|
-|10    |MUXF8   |    32|
-|11    |FDCE    |  3287|
-|12    |FDPE    |     5|
-|13    |FDRE    |  1421|
-|14    |FDSE    |     1|
+|1     |CARRY4  |   961|
+|2     |DSP48E1 |   100|
+|4     |LUT1    |    80|
+|5     |LUT2    |  3147|
+|6     |LUT3    |  1592|
+|7     |LUT4    |  1326|
+|8     |LUT5    |   508|
+|9     |LUT6    |  1567|
+|10    |MUXF7   |   110|
+|11    |MUXF8   |    41|
+|12    |FDCE    |  3271|
+|13    |FDPE    |     1|
+|14    |FDRE    |  3709|
+|15    |FDSE    |    57|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1613.195 ; gain = 690.930
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1619.613 ; gain = 698.344
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 61 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 1613.195 ; gain = 587.219
-Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1613.195 ; gain = 690.930
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 1619.613 ; gain = 592.188
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1619.613 ; gain = 698.344
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.164 . Memory (MB): peak = 1625.207 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1173 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.140 . Memory (MB): peak = 1631.660 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1212 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1630.797 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1636.367 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 系統找不到指定的路徑。
-Synth Design complete | Checksum: be8af2cd
+Synth Design complete | Checksum: 1ae0d286
 INFO: [Common 17-83] Releasing license: Synthesis
-45 Infos, 103 Warnings, 1 Critical Warnings and 0 Errors encountered.
+46 Infos, 144 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1630.797 ; gain = 1127.613
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1630.797 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 1636.367 ; gain = 1133.559
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1636.367 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/design_1_RFC8439_0_0_synth_1/design_1_RFC8439_0_0.dcp' has been generated.
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Coretcl 2-1174] Renamed 13 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1630.797 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1636.367 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/design_1_RFC8439_0_0_synth_1/design_1_RFC8439_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_RFC8439_0_0_utilization_synth.rpt -pb design_1_RFC8439_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat May 16 13:24:54 2026...
+INFO: [Common 17-206] Exiting Vivado at Sun May 17 13:39:31 2026...
