@@ -1,77 +1,27 @@
-NUM_CASES = 8
-MAX_MSG_WORDS = 256
-MAX_SRC_WORDS = 320
-MAX_PT_WORDS = 256
+NUM_CASES = 4
+MAX_MSG_WORDS = 1024
+MAX_PT_WORDS = 1024
+MAX_SRC_WORDS = 2048
+TAG_WORDS = 4
+SEED = 8439
 
-CASE 0: TC0_AD12_MSG114
-ad_length  = 12
-msg_length = 114
-tag words:
-590be11a
-6ae2094f
-cb2e907e
-910660d0
+CASE 0: RAND000_AD38_MSG4000
+ad_length  = 38
+msg_length = 4000
+tag_words  = d17bd113 5c421e66 5be15404 0c07ee2c
 
-CASE 1: TC1_AD0_MSG114
-ad_length  = 0
-msg_length = 114
-tag words:
-68a4236a
-5694d51f
-9fd2a1ae
-16724782
+CASE 1: RAND001_AD80_MSG4000
+ad_length  = 80
+msg_length = 4000
+tag_words  = 807fc787 0347f43b 849424bb e4df23f6
 
-CASE 2: TC2_AD12_MSG64
-ad_length  = 12
-msg_length = 64
-tag words:
-898d7257
-e3441f81
-1c0d9f44
-5ee9a325
+CASE 2: RAND002_AD31_MSG4000
+ad_length  = 31
+msg_length = 4000
+tag_words  = 51fc5194 57502062 c723f2ba 9e7c76a5
 
-CASE 3: TC3_AD12_MSG65
-ad_length  = 12
-msg_length = 65
-tag words:
-2a2c4471
-3f333963
-32b58eb3
-27fd646d
-
-CASE 4: TC4_AD7_MSG13
-ad_length  = 7
-msg_length = 13
-tag words:
-c236ff1c
-c515ef3f
-ac013b3b
-31a6f8be
-
-CASE 5: TC5_AD12_MSG0
-ad_length  = 12
-msg_length = 0
-tag words:
-64e522e6
-67d9387a
-b4bceca7
-5c677f6c
-
-CASE 6: TC6_AD0_MSG0
-ad_length  = 0
-msg_length = 0
-tag words:
-7a4d78a0
-fef31647
-7f4ef6b4
-04bf394b
-
-CASE 7: TC7_AD15_MSG17
-ad_length  = 15
-msg_length = 17
-tag words:
-0e1e411e
-6d770202
-e6e33e9d
-e70bb107
+CASE 3: RAND003_AD36_MSG4000
+ad_length  = 36
+msg_length = 4000
+tag_words  = b6a656a1 23085961 ed844383 dacdb227
 

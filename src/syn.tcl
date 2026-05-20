@@ -9,7 +9,7 @@ current_design $TOP_MODULE
 link
 uniquify
 
-set CLK_PERIOD 10.0
+set CLK_PERIOD 8.0
 create_clock -name clk -period $CLK_PERIOD [get_ports clk]
 
 set_clock_uncertainty 0.2 [get_clocks clk]
