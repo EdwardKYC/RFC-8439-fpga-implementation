@@ -16,11 +16,6 @@ top module port list:
 
     input  wire [31:0] msg_length,   // 明文/密文的總 Byte 數
     input  wire [31:0] ad_length,    // 附加關聯資料(AD)的總 Byte 數
-
-    input  wire [3:0]  config_addr,  // 決定現在寫入的是 Key[0~7] 還是 Nonce[0~2]
-    input  wire [31:0] config_data,  // 32-bit 配置資料
-    input  wire        config_we,    // 配置資料寫入致能 (Write Enable)
-
     output wire [31:0] Src_RAM_addr,
     output wire        Src_RAM_en,   // Chip Enable
     output wire [3:0]  Src_RAM_we,   // Write Enable (0000 代表純讀取)

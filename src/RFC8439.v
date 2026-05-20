@@ -59,7 +59,7 @@ module RFC8439 #(
     reg [1:0]   wr_state, next_wr_state;
 
     reg [31:0]  process_pos;
-    reg [31:0]  bytes_left;  // [優化] 取代 total_len，消除 32-bit 減法器
+    reg [31:0]  total_len;
     reg [1:0]   chunk_idx;
 
     reg [511:0] ks_buffer;
@@ -84,6 +84,8 @@ module RFC8439 #(
     reg [127:0] wr_buf_reg;
     reg         wr_valid;
 
+    integer bi;
+
     function [31:0] ram_addr_from_byte(input [31:0] byte_addr);
         begin
             if (ADDR_MODE_WORD) ram_addr_from_byte = byte_addr[31:2];
@@ -91,9 +93,21 @@ module RFC8439 #(
         end
     endfunction
 
-    // [優化] 直接由 bytes_left 判斷 current_len，無需做減法
+    function [7:0] get_byte32(input [31:0] word, input [1:0] sel);
+        begin
+            case (sel)
+                2'd0: get_byte32 = word[7:0];
+                2'd1: get_byte32 = word[15:8];
+                2'd2: get_byte32 = word[23:16];
+                2'd3: get_byte32 = word[31:24];
+                default: get_byte32 = 8'd0;
+            endcase
+        end
+    endfunction
+
     function [4:0] min16(input [31:0] value);
         begin
+            // Equivalent to value >= 16, but avoids a 32-bit comparator.
             min16 = (|value[31:4]) ? 5'd16 : value[4:0];
         end
     endfunction
@@ -123,62 +137,40 @@ module RFC8439 #(
         end
     endfunction
 
-    // [優化] 產生給 memory write 的 Byte Enable Mask
-    function [19:0] get_be_mask(input [4:0] len, input [1:0] offset);
-        reg [19:0] base_mask;
-        begin
-            case (len)
-                5'd0:  base_mask = 20'h00000;
-                5'd1:  base_mask = 20'h00001;
-                5'd2:  base_mask = 20'h00003;
-                5'd3:  base_mask = 20'h00007;
-                5'd4:  base_mask = 20'h0000F;
-                5'd5:  base_mask = 20'h0001F;
-                5'd6:  base_mask = 20'h0003F;
-                5'd7:  base_mask = 20'h0007F;
-                5'd8:  base_mask = 20'h000FF;
-                5'd9:  base_mask = 20'h001FF;
-                5'd10: base_mask = 20'h003FF;
-                5'd11: base_mask = 20'h007FF;
-                5'd12: base_mask = 20'h00FFF;
-                5'd13: base_mask = 20'h01FFF;
-                5'd14: base_mask = 20'h03FFF;
-                5'd15: base_mask = 20'h07FFF;
-                5'd16: base_mask = 20'h0FFFF;
-                default: base_mask = 20'h00000;
-            endcase
-            get_be_mask = base_mask << offset;
-        end
-    endfunction
-
     wire poly_ready_w;
     wire poly_tag_valid_w;
     wire [127:0] poly_tag_w;
     wire chacha_ready_w;
     wire [511:0] chacha_keystream_w;
     
-    // [優化] 關鍵路徑縮短，不需用 total_len 減法
-    wire [4:0] current_len = min16(bytes_left);
+    wire [4:0] current_len = min16(total_len - process_pos);
 
-    wire prefetch_from_chunk2_w = (chunk_idx == 2'd2) && (bytes_left > 32'd32);
-    wire prefetch_from_chunk3_w = (chunk_idx == 2'd3) && (bytes_left > {27'd0, current_len});
+    wire prefetch_from_chunk2_w = (chunk_idx == 2'd2) && ((process_pos + 32'd32) < total_len);
+
+    wire prefetch_from_chunk3_w = (chunk_idx == 2'd3) && ((process_pos + {27'd0, current_len}) < total_len);
 
     wire prefetch_start_w = (main_state == M_MSG_WR_WAIT) && wr_valid && !ks_prefetch_busy && !ks_next_valid && (prefetch_from_chunk2_w || prefetch_from_chunk3_w);
+
     wire chacha_demand_start_w = (main_state == M_INIT_KEY) || ((main_state == M_MSG_KS_REQ) && !ks_prefetch_busy);
+
     wire chacha_start_w = chacha_demand_start_w || prefetch_start_w;
+
     wire [31:0] chacha_counter_input_w = (main_state == M_INIT_KEY) ? 32'd0 : chacha_counter_reg;
+
     wire chacha_msg_ready_w = (main_state == M_MSG_KS_WAIT) && chacha_ready_w;
+
     wire chacha_prefetch_ready_w = ks_prefetch_busy && chacha_ready_w;
 
     wire msg_fire_w = (main_state == M_MSG_DISP) && poly_ready_w && (wr_state == W_IDLE);
+
     wire req_rd_w = (main_state == M_AAD_REQ) || (main_state == M_MSG_REQ) || (main_state == M_TAG_VERIFY);
+
     wire req_wr_w = msg_fire_w || (main_state == M_TAG_WRITE);
 
     wire [31:0] rd_addr_w = (main_state == M_TAG_VERIFY) ? (ad_len_reg + msg_len_reg) : (main_state == M_MSG_REQ) ? (ad_len_reg + process_pos) : process_pos;
     wire [4:0]  rd_len_w  = (main_state == M_TAG_VERIFY) ? 5'd16 : current_len;
     wire [31:0] wr_addr_w = (main_state == M_TAG_WRITE) ? msg_len_reg : process_pos;
     wire [4:0]  wr_len_w  = (main_state == M_TAG_WRITE) ? 5'd16 : current_len;
-    
     wire [127:0] current_ks = (chunk_idx == 2'd0) ? ks_buffer[127:0] : (chunk_idx == 2'd1) ? ks_buffer[255:128] : (chunk_idx == 2'd2) ? ks_buffer[383:256] : ks_buffer[511:384];
 
     wire [2:0] rd_total_words = (rd_len > 0) ? (((rd_addr + rd_len - 1) >> 2) - (rd_addr >> 2) + 1) : 3'd0;
@@ -187,6 +179,7 @@ module RFC8439 #(
     reg [159:0] raw_rd_buf_next_w;
     always @(*) begin
         raw_rd_buf_next_w = raw_rd_buf;
+
         case (rd_word_idx)
             3'd0: raw_rd_buf_next_w[31:0]    = Src_RAM_Q;
             3'd1: raw_rd_buf_next_w[63:32]   = Src_RAM_Q;
@@ -197,26 +190,33 @@ module RFC8439 #(
         endcase
     end
 
-    wire [127:0] rd_aligned_w = (raw_rd_buf_next_w >> ({3'd0, rd_addr[1:0]} << 3)) & mask128(rd_len);
+    wire [127:0] rd_aligned_w =
+        (raw_rd_buf_next_w >> ({3'd0, rd_addr[1:0]} << 3)) & mask128(rd_len);
     wire [2:0] wr_total_words = (wr_len > 0) ? (((wr_addr + wr_len - 1) >> 2) - (wr_addr >> 2) + 1) : 3'd0;
     wire [31:0] current_wr_byte_base = (wr_addr & 32'hFFFF_FFFC) + {27'd0, wr_word_idx, 2'b00};
 
-    // [優化] Data Path 邏輯層次優化
+    reg [127:0] xor_masked;
+    reg [127:0] masked_rd_data;
+    reg [127:0] poly_data_msg;
+
     wire [127:0] current_len_mask = mask128(current_len);
-    wire [127:0] active_data_w = mode_dec_reg ? rd_data : (rd_data ^ current_ks);
-    wire [127:0] xor_masked = (rd_data ^ current_ks) & current_len_mask;
-    wire [127:0] poly_data_msg = active_data_w & current_len_mask;
+
+    always @(*) begin
+        masked_rd_data = rd_data & current_len_mask;
+        xor_masked     = (rd_data ^ current_ks) & current_len_mask;
+        poly_data_msg  = mode_dec_reg ? masked_rd_data : xor_masked;
+    end
 
     wire [127:0] wr_data_w = (main_state == M_TAG_WRITE) ? tag_buffer : xor_masked;
     wire [127:0] length_block_w = {32'd0, msg_len_reg, 32'd0, ad_len_reg};
-    
     wire [127:0] poly_data_w =
-        (main_state == M_AAD_POLY) ? (rd_data & current_len_mask) :
+        (main_state == M_AAD_POLY) ? masked_rd_data :
         (main_state == M_MSG_DISP) ? poly_data_msg :
         (main_state == M_LEN_POLY) ? length_block_w :
         128'd0;
 
     wire poly_valid_w = ((main_state == M_AAD_POLY) && poly_ready_w) || msg_fire_w || ((main_state == M_LEN_POLY) && poly_ready_w);
+
     wire poly_finalize_w = (main_state == M_LEN_POLY);
 
     assign Src_RAM_en = (rd_state == R_REQ);
@@ -224,39 +224,52 @@ module RFC8439 #(
     assign Src_RAM_we = 1'b0;
     assign Src_RAM_D = 32'd0;
 
-    // ====================================================================
-    // [優化] Write Memory Path 完全重構：使用位移器(Shifter)與 LUT 取代加法與比較器
-    // ====================================================================
-    reg [3:0]  wr_be_w;
+    reg [3:0] wr_be_w;
     reg [31:0] wr_word_w;
-    wire [1:0] wr_offset = wr_addr[1:0];
-    
-    // 將 128-bit 的 wr_buf_reg 根據 offset (0~3) 位移 0~24 bits，得到 160-bit 暫存結果
-    wire [159:0] wr_buf_shifted = {32'd0, wr_buf_reg} << ({6'd0, wr_offset} * 8);
-    
-    // 獲取 20-bit 的完整 Byte Enable
-    wire [19:0] full_wr_be = get_be_mask(wr_len, wr_offset);
+
+    wire [31:0] wr_word_byte0 = current_wr_byte_base;
+    wire [31:0] wr_word_byte1 = current_wr_byte_base + 32'd1;
+    wire [31:0] wr_word_byte2 = current_wr_byte_base + 32'd2;
+    wire [31:0] wr_word_byte3 = current_wr_byte_base + 32'd3;
+
+    wire [31:0] wr_end_byte = wr_addr + {27'd0, wr_len};
+
+    wire lane0_hit = (wr_word_byte0 >= wr_addr) && (wr_word_byte0 < wr_end_byte);
+    wire lane1_hit = (wr_word_byte1 >= wr_addr) && (wr_word_byte1 < wr_end_byte);
+    wire lane2_hit = (wr_word_byte2 >= wr_addr) && (wr_word_byte2 < wr_end_byte);
+    wire lane3_hit = (wr_word_byte3 >= wr_addr) && (wr_word_byte3 < wr_end_byte);
+
+    wire [4:0] lane0_idx = wr_word_byte0[4:0] - wr_addr[4:0];
+    wire [4:0] lane1_idx = wr_word_byte1[4:0] - wr_addr[4:0];
+    wire [4:0] lane2_idx = wr_word_byte2[4:0] - wr_addr[4:0];
+    wire [4:0] lane3_idx = wr_word_byte3[4:0] - wr_addr[4:0];
 
     always @(*) begin
+        wr_be_w = {lane3_hit, lane2_hit, lane1_hit, lane0_hit};
         wr_word_w = 32'd0;
-        wr_be_w   = 4'd0;
-        case (wr_word_idx)
-            3'd0: begin wr_word_w = wr_buf_shifted[31:0];    wr_be_w = full_wr_be[3:0];   end
-            3'd1: begin wr_word_w = wr_buf_shifted[63:32];   wr_be_w = full_wr_be[7:4];   end
-            3'd2: begin wr_word_w = wr_buf_shifted[95:64];   wr_be_w = full_wr_be[11:8];  end
-            3'd3: begin wr_word_w = wr_buf_shifted[127:96];  wr_be_w = full_wr_be[15:12]; end
-            3'd4: begin wr_word_w = wr_buf_shifted[159:128]; wr_be_w = full_wr_be[19:16]; end
-            default: ;
-        endcase
+
+        if (lane0_hit) begin
+            wr_word_w[7:0] = wr_buf_reg[lane0_idx*8 +: 8];
+        end
+
+        if (lane1_hit) begin
+            wr_word_w[15:8] = wr_buf_reg[lane1_idx*8 +: 8];
+        end
+
+        if (lane2_hit) begin
+            wr_word_w[23:16] = wr_buf_reg[lane2_idx*8 +: 8];
+        end
+
+        if (lane3_hit) begin
+            wr_word_w[31:24] = wr_buf_reg[lane3_idx*8 +: 8];
+        end
     end
-    // ====================================================================
 
     assign Dst_RAM_en = (wr_state == W_WR_REQ);
     assign Dst_RAM_we = (wr_state == W_WR_REQ) ? wr_be_w : 4'b0000;
     assign Dst_RAM_addr = (wr_state == W_WR_REQ) ? ram_addr_from_byte(current_wr_byte_base) : 32'd0;
     assign Dst_RAM_D = (wr_state == W_WR_REQ) ? wr_word_w : 32'd0;
 
-    // Submodules (不變動)
     Chacha20 u_chacha20 (
         .clk       (clk),
         .rst       (rst),
@@ -267,7 +280,6 @@ module RFC8439 #(
         .counter   (chacha_counter_input_w),
         .keystream (chacha_keystream_w)
     );
-    
     Poly1305 u_poly1305 (
         .clk       (clk),
         .rst       (rst),
@@ -281,7 +293,6 @@ module RFC8439 #(
         .tag_valid (poly_tag_valid_w)
     );
 
-    // Config FSM (保持不變)
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             key_cfg <= 256'd0;
@@ -304,7 +315,6 @@ module RFC8439 #(
         end
     end
 
-    // FSM State Register
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             main_state <= M_IDLE;
@@ -317,23 +327,26 @@ module RFC8439 #(
         end
     end
 
-    // Main FSM Logic (使用 bytes_left 簡化跳轉條件)
     always @(*) begin
         next_main_state = main_state;
         case (main_state)
             M_IDLE: if (start) next_main_state = M_INIT_KEY;
             M_INIT_KEY: next_main_state = M_INIT_WAIT;
             M_INIT_WAIT: if (chacha_ready_w) next_main_state = M_AAD_CHECK;
-            M_AAD_CHECK: if (bytes_left != 0) next_main_state = M_AAD_REQ; else next_main_state = M_MSG_CHECK;
+            M_AAD_CHECK: if (process_pos < total_len) next_main_state = M_AAD_REQ; else next_main_state = M_MSG_CHECK;
             M_AAD_REQ: next_main_state = M_AAD_WAIT;
             M_AAD_WAIT: if (rd_valid) next_main_state = M_AAD_POLY;
             M_AAD_POLY: if (poly_ready_w) next_main_state = M_AAD_CHECK;
             M_MSG_CHECK: begin
-                if (bytes_left != 0) begin
+                if (process_pos < total_len) begin
                     if (chunk_idx == 2'd0) begin
-                        if (ks_next_valid) next_main_state = M_MSG_REQ;
-                        else if (ks_prefetch_busy) next_main_state = M_MSG_KS_WAIT;
-                        else next_main_state = M_MSG_KS_REQ;
+                        if (ks_next_valid) begin
+                            next_main_state = M_MSG_REQ;
+                        end else if (ks_prefetch_busy) begin
+                            next_main_state = M_MSG_KS_WAIT;
+                        end else begin
+                            next_main_state = M_MSG_KS_REQ;
+                        end
                     end else begin
                         next_main_state = M_MSG_REQ;
                     end
@@ -358,7 +371,6 @@ module RFC8439 #(
         endcase
     end
 
-    // Read FSM & Write FSM (保持不變)
     always @(*) begin
         next_rd_state = rd_state;
         case (rd_state)
@@ -380,7 +392,6 @@ module RFC8439 #(
         endcase
     end
 
-    // 狀態存儲暫存器
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             msg_len_reg <= 32'd0;
@@ -403,47 +414,44 @@ module RFC8439 #(
         end
     end
 
-    // Process Tracker (同步更新 process_pos 與 bytes_left)
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             process_pos <= 32'd0;
-            bytes_left <= 32'd0;
+            total_len <= 32'd0;
             chunk_idx <= 2'd0;
             chacha_counter_reg <= 32'd0;
         end else begin
             if (main_state == M_IDLE && start) begin
                 process_pos <= 32'd0;
+                total_len <= 32'd0;
                 chunk_idx <= 2'd0;
                 chacha_counter_reg <= 32'd0;
             end else if (main_state == M_INIT_WAIT && chacha_ready_w) begin
                 process_pos <= 32'd0;
-                bytes_left <= ad_len_reg;
-            end else if (main_state == M_AAD_CHECK && bytes_left == 0) begin
+                total_len <= ad_len_reg;
+            end else if (main_state == M_AAD_CHECK && process_pos >= total_len) begin
                 process_pos <= 32'd0;
-                bytes_left <= msg_len_reg;
+                total_len <= msg_len_reg;
                 chacha_counter_reg <= 32'd1;
                 chunk_idx <= 2'd0;
             end else if (main_state == M_AAD_POLY && poly_ready_w) begin
                 process_pos <= process_pos + {27'd0, current_len};
-                bytes_left <= bytes_left - {27'd0, current_len};
             end else if (main_state == M_MSG_KS_WAIT && chacha_ready_w) begin
                 chacha_counter_reg <= chacha_counter_reg + 32'd1;
             end else if (chacha_prefetch_ready_w) begin
                 chacha_counter_reg <= chacha_counter_reg + 32'd1;
             end else if ((main_state == M_MSG_CHECK) &&
-                         (bytes_left != 0) &&
+                         (process_pos < total_len) &&
                          (chunk_idx == 2'd0) &&
                          ks_next_valid) begin
                 chunk_idx <= 2'd0;
             end else if (main_state == M_MSG_WR_WAIT && wr_valid) begin
                 process_pos <= process_pos + {27'd0, current_len};
-                bytes_left <= bytes_left - {27'd0, current_len};
                 chunk_idx <= chunk_idx + 2'd1;
             end
         end
     end
 
-    // Read Path
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             rd_addr <= 32'd0;
@@ -454,6 +462,7 @@ module RFC8439 #(
             rd_valid <= 1'b0;
         end else begin
             rd_valid <= 1'b0;
+
             if (rd_state == R_IDLE) begin
                 if (req_rd_w && rd_len_w > 0) begin
                     rd_addr <= rd_addr_w;
@@ -464,6 +473,7 @@ module RFC8439 #(
                 end
             end else if (rd_state == R_CAP) begin
                 raw_rd_buf <= raw_rd_buf_next_w;
+
                 if (rd_word_idx + 3'd1 == rd_total_words) begin
                     rd_data <= rd_aligned_w;
                     rd_valid <= 1'b1;
@@ -474,7 +484,6 @@ module RFC8439 #(
         end
     end
 
-    // Write Path
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             wr_addr <= 32'd0;
@@ -498,7 +507,6 @@ module RFC8439 #(
         end
     end
 
-    // ChaCha Key/Tag Tracking
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             poly_key_reg <= 256'd0;
@@ -529,7 +537,7 @@ module RFC8439 #(
                 ks_next_valid <= 1'b1;
                 ks_prefetch_busy <= 1'b0;
             end else if ((main_state == M_MSG_CHECK) &&
-                         (bytes_left != 0) &&
+                         (process_pos < total_len) &&
                          (chunk_idx == 2'd0) &&
                          ks_next_valid) begin
                 ks_buffer <= ks_next_buffer;
