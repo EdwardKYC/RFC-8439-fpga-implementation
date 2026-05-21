@@ -61,6 +61,10 @@ module RFC8439 #(
     reg [31:0]  msg_len_reg, ad_len_reg;
     reg         mode_dec_reg;
 
+    reg         start_d;
+    wire        start_pulse;
+    assign start_pulse = start & ~start_d;
+
     reg [4:0]   main_state, next_main_state;
     reg [1:0]   rd_state, next_rd_state;
     reg [1:0]   wr_state, next_wr_state;
@@ -306,7 +310,7 @@ module RFC8439 #(
             key_cfg   <= 256'd0;
             nonce_cfg <= 96'd0;
         end else begin
-            if (main_state == M_IDLE && start) begin
+            if (main_state == M_IDLE && start_pulse) begin
                 key_cfg   <= 256'd0;
                 nonce_cfg <= 96'd0;
             end else if (main_state == M_LOAD_KEY0_WAIT && rd_valid) begin
@@ -342,7 +346,7 @@ module RFC8439 #(
     always @(*) begin
         next_main_state = main_state;
         case (main_state)
-            M_IDLE: if (start) next_main_state = M_LOAD_KEY0_REQ;
+            M_IDLE: if (start_pulse) next_main_state = M_LOAD_KEY0_REQ;
             M_LOAD_KEY0_REQ: next_main_state = M_LOAD_KEY0_WAIT;
             M_LOAD_KEY0_WAIT: if (rd_valid) next_main_state = M_LOAD_KEY1_REQ;
             M_LOAD_KEY1_REQ: next_main_state = M_LOAD_KEY1_WAIT;
@@ -418,6 +422,14 @@ module RFC8439 #(
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
+            start_d <= 1'b0;
+        end else begin
+            start_d <= start;
+        end
+    end
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
             msg_len_reg <= 32'd0;
             ad_len_reg <= 32'd0;
             mode_dec_reg <= 1'b0;
@@ -425,7 +437,7 @@ module RFC8439 #(
             mac_error <= 1'b0;
         end else begin
             done <= 1'b0;
-            if (main_state == M_IDLE && start) begin
+            if (main_state == M_IDLE && start_pulse) begin
                 msg_len_reg <= msg_length;
                 ad_len_reg <= ad_length;
                 mode_dec_reg <= mode_decrypt;
@@ -445,7 +457,7 @@ module RFC8439 #(
             chunk_idx <= 2'd0;
             chacha_counter_reg <= 32'd0;
         end else begin
-            if (main_state == M_IDLE && start) begin
+            if (main_state == M_IDLE && start_pulse) begin
                 process_pos <= 32'd0;
                 total_len <= 32'd0;
                 chunk_idx <= 2'd0;
@@ -541,7 +553,7 @@ module RFC8439 #(
             ks_prefetch_busy <= 1'b0;
             tag_buffer <= 128'd0;
         end else begin
-            if (main_state == M_IDLE && start) begin
+            if (main_state == M_IDLE && start_pulse) begin
                 ks_next_buffer <= 512'd0;
                 ks_next_valid <= 1'b0;
                 ks_prefetch_busy <= 1'b0;
