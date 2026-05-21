@@ -16,14 +16,14 @@
       "axi_bram_ctrl_1": "",
       "blk_mem_gen_0": "",
       "blk_mem_gen_1": "",
-      "RFC8439_0": "",
       "axi_gpio_0": "",
       "axi_gpio_1": "",
       "xlslice_0": "",
       "xlslice_1": "",
       "xlconcat_0": "",
       "axi_smc": "",
-      "rst_ps7_0_100M": ""
+      "rst_ps7_0_100M": "",
+      "RFC8439_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -2002,127 +2002,6 @@
           }
         }
       },
-      "RFC8439_0": {
-        "vlnv": "xilinx.com:module_ref:RFC8439:1.0",
-        "ip_revision": "1",
-        "xci_name": "design_1_RFC8439_0_2",
-        "xci_path": "ip\\design_1_RFC8439_0_2\\design_1_RFC8439_0_2.xci",
-        "inst_hier_path": "RFC8439_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "RFC8439",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_HIGH",
-                "value_src": "const_prop"
-              }
-            }
-          },
-          "start": {
-            "direction": "I"
-          },
-          "mode_decrypt": {
-            "direction": "I"
-          },
-          "done": {
-            "direction": "O"
-          },
-          "mac_error": {
-            "direction": "O"
-          },
-          "msg_length": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "ad_length": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "config_addr": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "config_data": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "config_we": {
-            "direction": "I"
-          },
-          "Src_RAM_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "Src_RAM_en": {
-            "direction": "O"
-          },
-          "Src_RAM_we": {
-            "direction": "O"
-          },
-          "Src_RAM_D": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "Src_RAM_Q": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "Dst_RAM_addr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "Dst_RAM_en": {
-            "direction": "O"
-          },
-          "Dst_RAM_we": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "Dst_RAM_D": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "Dst_RAM_Q": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "axi_gpio_0": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "ip_revision": "31",
@@ -2371,6 +2250,116 @@
         "xci_name": "design_1_rst_ps7_0_100M_1",
         "xci_path": "ip\\design_1_rst_ps7_0_100M_1\\design_1_rst_ps7_0_100M_1.xci",
         "inst_hier_path": "rst_ps7_0_100M"
+      },
+      "RFC8439_0": {
+        "vlnv": "xilinx.com:module_ref:RFC8439:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_RFC8439_0_4",
+        "xci_path": "ip\\design_1_RFC8439_0_4\\design_1_RFC8439_0_4.xci",
+        "inst_hier_path": "RFC8439_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "RFC8439",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "start": {
+            "direction": "I"
+          },
+          "mode_decrypt": {
+            "direction": "I"
+          },
+          "done": {
+            "direction": "O"
+          },
+          "mac_error": {
+            "direction": "O"
+          },
+          "msg_length": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ad_length": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Src_RAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Src_RAM_en": {
+            "direction": "O"
+          },
+          "Src_RAM_we": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "Src_RAM_D": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Src_RAM_Q": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Dst_RAM_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Dst_RAM_en": {
+            "direction": "O"
+          },
+          "Dst_RAM_we": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "Dst_RAM_D": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Dst_RAM_Q": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -2454,6 +2443,12 @@
           "blk_mem_gen_1/web"
         ]
       },
+      "RFC8439_0_Src_RAM_D": {
+        "ports": [
+          "RFC8439_0/Src_RAM_D",
+          "blk_mem_gen_0/dinb"
+        ]
+      },
       "RFC8439_0_Src_RAM_addr": {
         "ports": [
           "RFC8439_0/Src_RAM_addr",
@@ -2469,8 +2464,7 @@
       "RFC8439_0_Src_RAM_we": {
         "ports": [
           "RFC8439_0/Src_RAM_we",
-          "blk_mem_gen_0/web",
-          "blk_mem_gen_0/dinb"
+          "blk_mem_gen_0/web"
         ]
       },
       "RFC8439_0_done": {
@@ -2526,9 +2520,9 @@
           "axi_bram_ctrl_1/s_axi_aclk",
           "axi_gpio_0/s_axi_aclk",
           "axi_gpio_1/s_axi_aclk",
-          "RFC8439_0/clk",
           "blk_mem_gen_0/clkb",
-          "blk_mem_gen_1/clkb"
+          "blk_mem_gen_1/clkb",
+          "RFC8439_0/clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2540,18 +2534,17 @@
       "rst_ps7_0_100M_peripheral_aresetn": {
         "ports": [
           "rst_ps7_0_100M/peripheral_aresetn",
-          "axi_gpio_0/s_axi_aresetn",
-          "axi_gpio_1/s_axi_aresetn",
-          "axi_bram_ctrl_1/s_axi_aresetn",
           "axi_bram_ctrl_0/s_axi_aresetn",
-          "axi_smc/aresetn",
-          "blk_mem_gen_0/rstb",
-          "blk_mem_gen_1/rstb"
+          "axi_gpio_0/s_axi_aresetn",
+          "axi_bram_ctrl_1/s_axi_aresetn",
+          "axi_gpio_1/s_axi_aresetn"
         ]
       },
       "rst_ps7_0_100M_peripheral_reset": {
         "ports": [
           "rst_ps7_0_100M/peripheral_reset",
+          "blk_mem_gen_0/rstb",
+          "blk_mem_gen_1/rstb",
           "RFC8439_0/rst"
         ]
       },

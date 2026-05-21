@@ -12,7 +12,7 @@ module RFC8439 #(
 
     output wire [31:0] Src_RAM_addr,
     output wire        Src_RAM_en,
-    output wire        Src_RAM_we,
+    output wire [3:0]  Src_RAM_we,
     output wire [31:0] Src_RAM_D,
     input  wire [31:0] Src_RAM_Q,
 
@@ -61,6 +61,10 @@ module RFC8439 #(
     reg [31:0]  msg_len_reg, ad_len_reg;
     reg         mode_dec_reg;
 
+    reg         start_d;
+    wire        start_pulse;
+    assign start_pulse = start & ~start_d;
+
     reg [4:0]   main_state, next_main_state;
     reg [1:0]   rd_state, next_rd_state;
     reg [1:0]   wr_state, next_wr_state;
@@ -104,12 +108,6 @@ module RFC8439 #(
     end
     endfunction
 
-    function [31:0] swap32(input [31:0] word);
-    begin
-        swap32 = {word[7:0], word[15:8], word[23:16], word[31:24]};
-    end
-    endfunction
-
     function [4:0] min16(input [31:0] value);
     begin
         min16 = (|value[31:4]) ? 5'd16 : value[4:0];
@@ -148,7 +146,8 @@ module RFC8439 #(
     wire [511:0] chacha_keystream_w;
 
     wire [31:0] msg_src_base_w = align16(SRC_AAD_BASE_BYTES + ad_len_reg);
-    wire [4:0]  current_len = min16(total_len - process_pos);
+    wire [31:0] remain_len_w = (process_pos < total_len) ? (total_len - process_pos) : 32'd0;
+    wire [4:0] current_len = min16(remain_len_w);
 
     wire prefetch_from_chunk2_w = (chunk_idx == 2'd2) && ((process_pos + 32'd32) < total_len);
     wire prefetch_from_chunk3_w = (chunk_idx == 2'd3) && ((process_pos + {27'd0, current_len}) < total_len);
@@ -246,7 +245,7 @@ module RFC8439 #(
 
     assign Src_RAM_en   = (rd_state == R_REQ);
     assign Src_RAM_addr = (rd_state == R_REQ) ? ram_addr_from_byte(current_rd_byte_base) : 32'd0;
-    assign Src_RAM_we   = 1'b0;
+    assign Src_RAM_we = 4'b0000;
     assign Src_RAM_D    = 32'd0;
 
     reg [3:0] wr_be_w;
@@ -312,24 +311,24 @@ module RFC8439 #(
             key_cfg   <= 256'd0;
             nonce_cfg <= 96'd0;
         end else begin
-            if (main_state == M_IDLE && start) begin
-                key_cfg   <= 256'd0;
-                nonce_cfg <= 96'd0;
-            end else if (main_state == M_LOAD_KEY0_WAIT && rd_valid) begin
-                key_cfg[255:224] <= swap32(rd_data[31:0]);
-                key_cfg[223:192] <= swap32(rd_data[63:32]);
-                key_cfg[191:160] <= swap32(rd_data[95:64]);
-                key_cfg[159:128] <= swap32(rd_data[127:96]);
-            end else if (main_state == M_LOAD_KEY1_WAIT && rd_valid) begin
-                key_cfg[127:96] <= swap32(rd_data[31:0]);
-                key_cfg[95:64]  <= swap32(rd_data[63:32]);
-                key_cfg[63:32]  <= swap32(rd_data[95:64]);
-                key_cfg[31:0]   <= swap32(rd_data[127:96]);
-            end else if (main_state == M_LOAD_NONCE_WAIT && rd_valid) begin
-                nonce_cfg[95:64] <= swap32(rd_data[31:0]);
-                nonce_cfg[63:32] <= swap32(rd_data[63:32]);
-                nonce_cfg[31:0]  <= swap32(rd_data[95:64]);
-            end
+            if (main_state == M_IDLE && start_pulse) begin
+            key_cfg   <= 256'd0;
+            nonce_cfg <= 96'd0;
+        end else if (main_state == M_LOAD_KEY0_WAIT && rd_valid) begin
+            key_cfg[31:0]    <= rd_data[31:0];
+            key_cfg[63:32]   <= rd_data[63:32];
+            key_cfg[95:64]   <= rd_data[95:64];
+            key_cfg[127:96]  <= rd_data[127:96];
+        end else if (main_state == M_LOAD_KEY1_WAIT && rd_valid) begin
+            key_cfg[159:128] <= rd_data[31:0];
+            key_cfg[191:160] <= rd_data[63:32];
+            key_cfg[223:192] <= rd_data[95:64];
+            key_cfg[255:224] <= rd_data[127:96];
+        end else if (main_state == M_LOAD_NONCE_WAIT && rd_valid) begin
+            nonce_cfg[31:0]  <= rd_data[31:0];
+            nonce_cfg[63:32] <= rd_data[63:32];
+            nonce_cfg[95:64] <= rd_data[95:64];
+        end
         end
     end
 
@@ -348,7 +347,7 @@ module RFC8439 #(
     always @(*) begin
         next_main_state = main_state;
         case (main_state)
-            M_IDLE: if (start) next_main_state = M_LOAD_KEY0_REQ;
+            M_IDLE: if (start_pulse) next_main_state = M_LOAD_KEY0_REQ;
             M_LOAD_KEY0_REQ: next_main_state = M_LOAD_KEY0_WAIT;
             M_LOAD_KEY0_WAIT: if (rd_valid) next_main_state = M_LOAD_KEY1_REQ;
             M_LOAD_KEY1_REQ: next_main_state = M_LOAD_KEY1_WAIT;
@@ -424,17 +423,25 @@ module RFC8439 #(
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
+            start_d <= 1'b0;
+        end else begin
+            start_d <= start;
+        end
+    end
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
             msg_len_reg <= 32'd0;
             ad_len_reg <= 32'd0;
             mode_dec_reg <= 1'b0;
             done <= 1'b0;
             mac_error <= 1'b0;
         end else begin
-            done <= 1'b0;
-            if (main_state == M_IDLE && start) begin
+            if (main_state == M_IDLE && start_pulse) begin
                 msg_len_reg <= msg_length;
                 ad_len_reg <= ad_length;
                 mode_dec_reg <= mode_decrypt;
+                done <= 1'b0;
                 mac_error <= 1'b0;
             end else if (main_state == M_TAG_VER_WAIT && rd_valid) begin
                 mac_error <= (rd_data != tag_buffer);
@@ -451,7 +458,7 @@ module RFC8439 #(
             chunk_idx <= 2'd0;
             chacha_counter_reg <= 32'd0;
         end else begin
-            if (main_state == M_IDLE && start) begin
+            if (main_state == M_IDLE && start_pulse) begin
                 process_pos <= 32'd0;
                 total_len <= 32'd0;
                 chunk_idx <= 2'd0;
@@ -547,7 +554,7 @@ module RFC8439 #(
             ks_prefetch_busy <= 1'b0;
             tag_buffer <= 128'd0;
         end else begin
-            if (main_state == M_IDLE && start) begin
+            if (main_state == M_IDLE && start_pulse) begin
                 ks_next_buffer <= 512'd0;
                 ks_next_valid <= 1'b0;
                 ks_prefetch_busy <= 1'b0;

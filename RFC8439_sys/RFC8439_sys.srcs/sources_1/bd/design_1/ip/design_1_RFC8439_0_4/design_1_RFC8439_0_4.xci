@@ -1,15 +1,15 @@
 {
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
-    "xci_name": "design_1_RFC8439_0_2",
+    "xci_name": "design_1_RFC8439_0_4",
     "cell_name": "RFC8439_0",
     "component_reference": "xilinx.com:module_ref:RFC8439:1.0",
     "ip_revision": "1",
-    "gen_directory": "../../../../../../RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_2",
+    "gen_directory": "../../../../../../RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_4",
     "parameters": {
       "component_parameters": {
         "ADDR_MODE_WORD": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "Component_Name": [ { "value": "design_1_RFC8439_0_2", "resolve_type": "user", "usage": "all" } ]
+        "Component_Name": [ { "value": "design_1_RFC8439_0_4", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "ADDR_MODE_WORD": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ]
@@ -31,7 +31,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "1" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_2" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_4" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2023.2" } ],
@@ -48,12 +48,9 @@
         "mac_error": [ { "direction": "out" } ],
         "msg_length": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
         "ad_length": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
-        "config_addr": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
-        "config_data": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
-        "config_we": [ { "direction": "in" } ],
         "Src_RAM_addr": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
         "Src_RAM_en": [ { "direction": "out" } ],
-        "Src_RAM_we": [ { "direction": "out" } ],
+        "Src_RAM_we": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
         "Src_RAM_D": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
         "Src_RAM_Q": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
         "Dst_RAM_addr": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
