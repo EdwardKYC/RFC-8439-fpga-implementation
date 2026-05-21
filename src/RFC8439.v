@@ -312,23 +312,23 @@ module RFC8439 #(
             nonce_cfg <= 96'd0;
         end else begin
             if (main_state == M_IDLE && start_pulse) begin
-                key_cfg   <= 256'd0;
-                nonce_cfg <= 96'd0;
-            end else if (main_state == M_LOAD_KEY0_WAIT && rd_valid) begin
-                key_cfg[255:224] <= rd_data[31:0];
-                key_cfg[223:192] <= rd_data[63:32];
-                key_cfg[191:160] <= rd_data[95:64];
-                key_cfg[159:128] <= rd_data[127:96];
-            end else if (main_state == M_LOAD_KEY1_WAIT && rd_valid) begin
-                key_cfg[127:96] <= rd_data[31:0];
-                key_cfg[95:64]  <= rd_data[63:32];
-                key_cfg[63:32]  <= rd_data[95:64];
-                key_cfg[31:0]   <= rd_data[127:96];
-            end else if (main_state == M_LOAD_NONCE_WAIT && rd_valid) begin
-                nonce_cfg[95:64] <= rd_data[31:0];
-                nonce_cfg[63:32] <= rd_data[63:32];
-                nonce_cfg[31:0]  <= rd_data[95:64];
-            end
+            key_cfg   <= 256'd0;
+            nonce_cfg <= 96'd0;
+        end else if (main_state == M_LOAD_KEY0_WAIT && rd_valid) begin
+            key_cfg[31:0]    <= rd_data[31:0];
+            key_cfg[63:32]   <= rd_data[63:32];
+            key_cfg[95:64]   <= rd_data[95:64];
+            key_cfg[127:96]  <= rd_data[127:96];
+        end else if (main_state == M_LOAD_KEY1_WAIT && rd_valid) begin
+            key_cfg[159:128] <= rd_data[31:0];
+            key_cfg[191:160] <= rd_data[63:32];
+            key_cfg[223:192] <= rd_data[95:64];
+            key_cfg[255:224] <= rd_data[127:96];
+        end else if (main_state == M_LOAD_NONCE_WAIT && rd_valid) begin
+            nonce_cfg[31:0]  <= rd_data[31:0];
+            nonce_cfg[63:32] <= rd_data[63:32];
+            nonce_cfg[95:64] <= rd_data[95:64];
+        end
         end
     end
 
