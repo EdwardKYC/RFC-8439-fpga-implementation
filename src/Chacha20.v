@@ -90,14 +90,18 @@ module Chacha20 (
                     keystream_buf[2] <= CONSTANT3;
                     keystream_buf[3] <= CONSTANT4;
                     for (i = 0; i < 8; i = i + 1) begin
-                        init_buf[4+i] <= key[255 - i*32 -: 32];
-                        keystream_buf[4+i] <= key[255 - i*32 -: 32];
+                    // 直接將 key[31:0] 放入 init_buf[4], key[63:32] 放入 init_buf[5] ...
+                        init_buf[4+i] <= key[i*32 +: 32];
+                        keystream_buf[4+i] <= key[i*32 +: 32];
                     end
+
                     init_buf[12] <= counter;
                     keystream_buf[12] <= counter;
+
                     for (j = 0; j < 3; j = j + 1) begin
-                        init_buf[13+j] <= nonce[95 - j*32 -: 32];
-                        keystream_buf[13+j] <= nonce[95 - j*32 -: 32];
+                        // 直接將 nonce[31:0] 放入 init_buf[13], nonce[63:32] 放入 init_buf[14] ...
+                        init_buf[13+j] <= nonce[j*32 +: 32];
+                        keystream_buf[13+j] <= nonce[j*32 +: 32];
                     end
                 end
             end
