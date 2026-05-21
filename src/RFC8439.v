@@ -12,7 +12,7 @@ module RFC8439 #(
 
     output wire [31:0] Src_RAM_addr,
     output wire        Src_RAM_en,
-    output wire        Src_RAM_we,
+    output wire [3:0]  Src_RAM_we,
     output wire [31:0] Src_RAM_D,
     input  wire [31:0] Src_RAM_Q,
 
@@ -146,7 +146,8 @@ module RFC8439 #(
     wire [511:0] chacha_keystream_w;
 
     wire [31:0] msg_src_base_w = align16(SRC_AAD_BASE_BYTES + ad_len_reg);
-    wire [4:0]  current_len = min16(total_len - process_pos);
+    wire [31:0] remain_len_w = (process_pos < total_len) ? (total_len - process_pos) : 32'd0;
+    wire [4:0] current_len = min16(remain_len_w);
 
     wire prefetch_from_chunk2_w = (chunk_idx == 2'd2) && ((process_pos + 32'd32) < total_len);
     wire prefetch_from_chunk3_w = (chunk_idx == 2'd3) && ((process_pos + {27'd0, current_len}) < total_len);
@@ -244,7 +245,7 @@ module RFC8439 #(
 
     assign Src_RAM_en   = (rd_state == R_REQ);
     assign Src_RAM_addr = (rd_state == R_REQ) ? ram_addr_from_byte(current_rd_byte_base) : 32'd0;
-    assign Src_RAM_we   = 1'b0;
+    assign Src_RAM_we = 4'b0000;
     assign Src_RAM_D    = 32'd0;
 
     reg [3:0] wr_be_w;
@@ -436,11 +437,11 @@ module RFC8439 #(
             done <= 1'b0;
             mac_error <= 1'b0;
         end else begin
-            done <= 1'b0;
             if (main_state == M_IDLE && start_pulse) begin
                 msg_len_reg <= msg_length;
                 ad_len_reg <= ad_length;
                 mode_dec_reg <= mode_decrypt;
+                done <= 1'b0;
                 mac_error <= 1'b0;
             end else if (main_state == M_TAG_VER_WAIT && rd_valid) begin
                 mac_error <= (rd_data != tag_buffer);
