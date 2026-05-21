@@ -8,7 +8,7 @@
 // 在 VCS 編譯時加入參數： +define+T2 (以此類推)
 // ==========================================
 `ifdef T1
-    `define TEST_FILE  "../chacha_keystream.txt"
+    `define TEST_FILE  "../testcase/chacha_keystream.txt"
     `define TEST_KEY   256'h1f1e1d1c_1b1a1918_17161514_13121110_0f0e0d0c_0b0a0908_07060504_03020100
     `define TEST_NONCE 96'h00000000_4a000000_09000000
     `define TEST_COUNT 32'd0
