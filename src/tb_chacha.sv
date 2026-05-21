@@ -9,9 +9,9 @@
 // ==========================================
 `ifdef T1
     `define TEST_FILE  "../chacha_test.txt"
-    `define TEST_KEY   256'h000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f
-    `define TEST_NONCE 96'h000000090000004a00000000
-    `define TEST_COUNT 32'd1
+    `define TEST_KEY   256'h1f1e1d1c_1b1a1918_17161514_13121110_0f0e0d0c_0b0a0908_07060504_03020100
+    `define TEST_NONCE 96'h00000000_4a000000_09000000
+    `define TEST_COUNT 32'd0
 `elsif T2
     `define TEST_FILE  "../chacha_test2.txt"
     `define TEST_KEY   256'h0000000000000000000000000000000000000000000000000000000000000000
