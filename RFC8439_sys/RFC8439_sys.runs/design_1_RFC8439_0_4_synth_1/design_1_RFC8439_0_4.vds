@@ -1,0 +1,599 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri May 22 02:30:13 2026
+# Process ID: 34036
+# Current directory: C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/design_1_RFC8439_0_4_synth_1
+# Command line: vivado.exe -log design_1_RFC8439_0_4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_RFC8439_0_4.tcl
+# Log file: C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/design_1_RFC8439_0_4_synth_1/design_1_RFC8439_0_4.vds
+# Journal file: C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/design_1_RFC8439_0_4_synth_1\vivado.jou
+# Running On: LAPTOP-9PRMHLIN, OS: Windows, CPU Frequency: 3187 MHz, CPU Physical cores: 12, Host memory: 16783 MB
+#-----------------------------------------------------------
+source design_1_RFC8439_0_4.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 488.629 ; gain = 182.621
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/RFC-8439-fpga-implementation/IP_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_RFC8439_0_4
+Command: synth_design -top design_1_RFC8439_0_4 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 18716
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1361.184 ; gain = 438.039
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_RFC8439_0_4' [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_4/synth/design_1_RFC8439_0_4.v:53]
+INFO: [Synth 8-6157] synthesizing module 'RFC8439' [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/RFC8439.v:1]
+	Parameter ADDR_MODE_WORD bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Chacha20' [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/Chacha20.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Quarter_round' [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/Quarter_round.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Quarter_round' (0#1) [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/Quarter_round.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/Chacha20.v:81]
+INFO: [Synth 8-6155] done synthesizing module 'Chacha20' (0#1) [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/Chacha20.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Poly1305' [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/Poly1305.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Poly1305' (0#1) [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/Poly1305.v:1]
+INFO: [Synth 8-226] default block is never used [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/RFC8439.v:405]
+INFO: [Synth 8-6155] done synthesizing module 'RFC8439' (0#1) [C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.srcs/sources_1/imports/src/RFC8439.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_RFC8439_0_4' (0#1) [c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_4/synth/design_1_RFC8439_0_4.v:53]
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[31] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[30] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[29] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[28] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[27] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[26] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[25] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[24] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[23] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[22] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[21] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[20] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[19] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[18] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[17] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[16] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[15] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[14] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[13] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[12] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[11] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[10] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[9] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[8] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[7] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[6] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[5] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[4] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[3] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[2] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[1] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[0] in module RFC8439 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1497.062 ; gain = 573.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1497.062 ; gain = 573.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1497.062 ; gain = 573.918
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 1497.062 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1558.812 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 1566.578 ; gain = 7.766
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1566.578 ; gain = 643.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1566.578 ; gain = 643.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1566.578 ; gain = 643.434
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Chacha20'
+INFO: [Synth 8-802] inferred FSM for state register 'main_state_reg' in module 'RFC8439'
+INFO: [Synth 8-802] inferred FSM for state register 'rd_state_reg' in module 'RFC8439'
+INFO: [Synth 8-802] inferred FSM for state register 'wr_state_reg' in module 'RFC8439'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                    CALC |                               01 |                               01
+                     ADD |                               10 |                               10
+                    DONE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Chacha20'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  W_IDLE |                              001 |                               00
+                W_WR_REQ |                              010 |                               01
+                  W_DONE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wr_state_reg' using encoding 'one-hot' in module 'RFC8439'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  R_IDLE |                               00 |                               00
+                   R_REQ |                               01 |                               01
+                   R_CAP |                               10 |                               10
+                  R_DONE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rd_state_reg' using encoding 'sequential' in module 'RFC8439'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  M_IDLE |                            01011 |                            00000
+         M_LOAD_KEY0_REQ |                            10000 |                            00001
+        M_LOAD_KEY0_WAIT |                            01101 |                            00010
+         M_LOAD_KEY1_REQ |                            01001 |                            00011
+        M_LOAD_KEY1_WAIT |                            01010 |                            00100
+        M_LOAD_NONCE_REQ |                            11010 |                            00101
+       M_LOAD_NONCE_WAIT |                            11001 |                            00110
+              M_INIT_KEY |                            10110 |                            00111
+             M_INIT_WAIT |                            10111 |                            01000
+             M_AAD_CHECK |                            00110 |                            01001
+               M_AAD_REQ |                            10100 |                            01010
+              M_AAD_WAIT |                            10010 |                            01011
+              M_AAD_POLY |                            00101 |                            01100
+             M_MSG_CHECK |                            00010 |                            01101
+            M_MSG_KS_REQ |                            00000 |                            01110
+           M_MSG_KS_WAIT |                            00001 |                            01111
+               M_MSG_REQ |                            00011 |                            10000
+              M_MSG_WAIT |                            01100 |                            10001
+              M_MSG_DISP |                            01000 |                            10010
+           M_MSG_WR_WAIT |                            00111 |                            10011
+              M_LEN_POLY |                            00100 |                            10100
+              M_TAG_WAIT |                            11000 |                            10101
+            M_TAG_VERIFY |                            10001 |                            10110
+          M_TAG_VER_WAIT |                            01111 |                            10111
+             M_TAG_WRITE |                            10101 |                            11000
+           M_TAG_WR_WAIT |                            10011 |                            11001
+                  M_DONE |                            01110 |                            11010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'main_state_reg' using encoding 'sequential' in module 'RFC8439'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1566.578 ; gain = 643.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   5 Input  131 Bit       Adders := 1     
+	   2 Input  128 Bit       Adders := 2     
+	   2 Input   64 Bit       Adders := 4     
+	   5 Input   60 Bit       Adders := 1     
+	   2 Input   57 Bit       Adders := 4     
+	   2 Input   54 Bit       Adders := 5     
+	   3 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 78    
+	   3 Input   32 Bit       Adders := 6     
+	   2 Input   25 Bit       Adders := 1     
+	   3 Input    5 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 1     
+	   3 Input    3 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input    128 Bit         XORs := 1     
+	   2 Input     32 Bit         XORs := 32    
++---Registers : 
+	              512 Bit    Registers := 2     
+	              256 Bit    Registers := 2     
+	              160 Bit    Registers := 1     
+	              128 Bit    Registers := 5     
+	               96 Bit    Registers := 1     
+	               64 Bit    Registers := 5     
+	               32 Bit    Registers := 44    
+	               27 Bit    Registers := 5     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input  512 Bit        Muxes := 4     
+	   2 Input  256 Bit        Muxes := 4     
+	   2 Input  160 Bit        Muxes := 1     
+	   2 Input  128 Bit        Muxes := 5     
+	   4 Input  128 Bit        Muxes := 1     
+	   3 Input  128 Bit        Muxes := 1     
+	   2 Input   96 Bit        Muxes := 1     
+	  20 Input   64 Bit        Muxes := 1     
+	   2 Input   56 Bit        Muxes := 4     
+	   4 Input   32 Bit        Muxes := 16    
+	   2 Input   32 Bit        Muxes := 15    
+	  20 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 1     
+	   2 Input   30 Bit        Muxes := 2     
+	   2 Input   27 Bit        Muxes := 10    
+	   6 Input   27 Bit        Muxes := 10    
+	   2 Input    8 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 3     
+	   5 Input    5 Bit        Muxes := 1     
+	  34 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 6     
+	   3 Input    3 Bit        Muxes := 1     
+	   7 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 36    
+	  20 Input    1 Bit        Muxes := 14    
+	   6 Input    1 Bit        Muxes := 4     
+	   3 Input    1 Bit        Muxes := 4     
+	   5 Input    1 Bit        Muxes := 2     
+	  27 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP p1_w, operation Mode is: A*B.
+DSP Report: operator p1_w is absorbed into DSP p1_w.
+DSP Report: operator p1_w is absorbed into DSP p1_w.
+DSP Report: Generating DSP p1_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p1_w is absorbed into DSP p1_w.
+DSP Report: operator p1_w is absorbed into DSP p1_w.
+DSP Report: Generating DSP p1_w, operation Mode is: A*B.
+DSP Report: operator p1_w is absorbed into DSP p1_w.
+DSP Report: operator p1_w is absorbed into DSP p1_w.
+DSP Report: Generating DSP p1_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p1_w is absorbed into DSP p1_w.
+DSP Report: operator p1_w is absorbed into DSP p1_w.
+DSP Report: Generating DSP p2_w, operation Mode is: A*B.
+DSP Report: operator p2_w is absorbed into DSP p2_w.
+DSP Report: operator p2_w is absorbed into DSP p2_w.
+DSP Report: Generating DSP p2_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p2_w is absorbed into DSP p2_w.
+DSP Report: operator p2_w is absorbed into DSP p2_w.
+DSP Report: Generating DSP p2_w, operation Mode is: A*B.
+DSP Report: operator p2_w is absorbed into DSP p2_w.
+DSP Report: operator p2_w is absorbed into DSP p2_w.
+DSP Report: Generating DSP p2_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p2_w is absorbed into DSP p2_w.
+DSP Report: operator p2_w is absorbed into DSP p2_w.
+DSP Report: Generating DSP p3_w, operation Mode is: A*B.
+DSP Report: operator p3_w is absorbed into DSP p3_w.
+DSP Report: operator p3_w is absorbed into DSP p3_w.
+DSP Report: Generating DSP p3_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p3_w is absorbed into DSP p3_w.
+DSP Report: operator p3_w is absorbed into DSP p3_w.
+DSP Report: Generating DSP p3_w, operation Mode is: A*B.
+DSP Report: operator p3_w is absorbed into DSP p3_w.
+DSP Report: operator p3_w is absorbed into DSP p3_w.
+DSP Report: Generating DSP p3_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p3_w is absorbed into DSP p3_w.
+DSP Report: operator p3_w is absorbed into DSP p3_w.
+DSP Report: Generating DSP p4_w, operation Mode is: A*B.
+DSP Report: operator p4_w is absorbed into DSP p4_w.
+DSP Report: operator p4_w is absorbed into DSP p4_w.
+DSP Report: Generating DSP p4_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p4_w is absorbed into DSP p4_w.
+DSP Report: operator p4_w is absorbed into DSP p4_w.
+DSP Report: Generating DSP p4_w, operation Mode is: A*B.
+DSP Report: operator p4_w is absorbed into DSP p4_w.
+DSP Report: operator p4_w is absorbed into DSP p4_w.
+DSP Report: Generating DSP p4_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p4_w is absorbed into DSP p4_w.
+DSP Report: operator p4_w is absorbed into DSP p4_w.
+DSP Report: Generating DSP p0_w, operation Mode is: A*B.
+DSP Report: operator p0_w is absorbed into DSP p0_w.
+DSP Report: operator p0_w is absorbed into DSP p0_w.
+DSP Report: Generating DSP p0_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p0_w is absorbed into DSP p0_w.
+DSP Report: operator p0_w is absorbed into DSP p0_w.
+DSP Report: Generating DSP p0_w, operation Mode is: A*B.
+DSP Report: operator p0_w is absorbed into DSP p0_w.
+DSP Report: operator p0_w is absorbed into DSP p0_w.
+DSP Report: Generating DSP p0_w, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator p0_w is absorbed into DSP p0_w.
+DSP Report: operator p0_w is absorbed into DSP p0_w.
+WARNING: [Synth 8-7129] Port mac_key[127] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[126] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[125] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[124] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[97] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[96] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[95] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[94] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[93] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[92] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[65] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[64] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[63] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[62] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[61] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[60] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[33] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[32] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[31] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[30] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[29] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mac_key[28] in module Poly1305 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[31] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[30] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[29] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[28] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[27] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[26] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[25] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[24] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[23] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[22] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[21] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[20] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[19] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[18] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[17] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[16] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[15] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[14] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[13] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[12] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[11] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[10] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[9] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[8] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[7] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[6] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[5] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[4] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[3] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[2] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[1] in module RFC8439 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Dst_RAM_Q[0] in module RFC8439 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1566.578 ; gain = 643.434
+---------------------------------------------------------------------------------
+ Sort Area is  p0_w_0 : 0 0 : 2701 4226 : Used 1 time 0
+ Sort Area is  p0_w_0 : 0 1 : 1525 4226 : Used 1 time 0
+ Sort Area is  p1_w_c : 0 0 : 2701 4226 : Used 1 time 0
+ Sort Area is  p1_w_c : 0 1 : 1525 4226 : Used 1 time 0
+ Sort Area is  p2_w_a : 0 0 : 2701 4226 : Used 1 time 0
+ Sort Area is  p2_w_a : 0 1 : 1525 4226 : Used 1 time 0
+ Sort Area is  p3_w_8 : 0 0 : 2701 4226 : Used 1 time 0
+ Sort Area is  p3_w_8 : 0 1 : 1525 4226 : Used 1 time 0
+ Sort Area is  p4_w_6 : 0 0 : 2701 4226 : Used 1 time 0
+ Sort Area is  p4_w_6 : 0 1 : 1525 4226 : Used 1 time 0
+ Sort Area is  p0_w_3 : 0 0 : 1556 2527 : Used 1 time 0
+ Sort Area is  p0_w_3 : 0 1 : 971 2527 : Used 1 time 0
+ Sort Area is  p1_w_d : 0 0 : 1556 2527 : Used 1 time 0
+ Sort Area is  p1_w_d : 0 1 : 971 2527 : Used 1 time 0
+ Sort Area is  p2_w_b : 0 0 : 1556 2527 : Used 1 time 0
+ Sort Area is  p2_w_b : 0 1 : 971 2527 : Used 1 time 0
+ Sort Area is  p3_w_9 : 0 0 : 1556 2527 : Used 1 time 0
+ Sort Area is  p3_w_9 : 0 1 : 971 2527 : Used 1 time 0
+ Sort Area is  p4_w_7 : 0 0 : 1556 2527 : Used 1 time 0
+ Sort Area is  p4_w_7 : 0 1 : 971 2527 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|RFC8439     | mask128    | 32x16         | LUT            | 
+|RFC8439     | mask128    | 32x16         | LUT            | 
+|RFC8439     | mask128    | 32x16         | LUT            | 
+|RFC8439     | mask128    | 32x16         | LUT            | 
++------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1566.578 ; gain = 643.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1566.578 ; gain = 643.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1597.336 ; gain = 674.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1610.426 ; gain = 687.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1610.426 ; gain = 687.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1610.426 ; gain = 687.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1610.426 ; gain = 687.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1610.426 ; gain = 687.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1610.426 ; gain = 687.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B          | 17     | 10     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Poly1305    | PCIN>>17+A*B | 0      | 9      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |  1001|
+|2     |DSP48E1 |    20|
+|3     |LUT1    |    63|
+|4     |LUT2    |  2045|
+|5     |LUT3    |  1480|
+|6     |LUT4    |  1851|
+|7     |LUT5    |  1233|
+|8     |LUT6    |  1658|
+|9     |MUXF7   |    73|
+|10    |FDCE    |  3293|
+|11    |FDPE    |     6|
+|12    |FDRE    |   896|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1610.426 ; gain = 687.281
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 55 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1610.426 ; gain = 617.766
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1610.426 ; gain = 687.281
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 1622.523 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1094 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1626.191 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 6130a5d0
+INFO: [Common 17-83] Releasing license: Synthesis
+39 Infos, 87 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1626.191 ; gain = 1120.527
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1626.191 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/design_1_RFC8439_0_4_synth_1/design_1_RFC8439_0_4.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_RFC8439_0_4, cache-ID = 4cd76ea82d1eb733
+INFO: [Coretcl 2-1174] Renamed 11 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1626.191 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.runs/design_1_RFC8439_0_4_synth_1/design_1_RFC8439_0_4.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_RFC8439_0_4_utilization_synth.rpt -pb design_1_RFC8439_0_4_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri May 22 02:31:08 2026...

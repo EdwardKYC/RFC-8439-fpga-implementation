@@ -225,7 +225,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "100.000000"
+            "value": "35.714283"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -309,7 +309,7 @@
             "value": "0"
           },
           "PCW_CLK0_FREQ": {
-            "value": "100000000"
+            "value": "35714283"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -609,7 +609,7 @@
             "value": "TRUE"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "100"
+            "value": "36"
           },
           "PCW_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "50"
@@ -652,6 +652,9 @@
           },
           "PCW_INCLUDE_ACP_TRANS_CHECK": {
             "value": "0"
+          },
+          "PCW_IRQ_F2P_MODE": {
+            "value": "DIRECT"
           },
           "PCW_MIO_0_IOTYPE": {
             "value": "LVCMOS 3.3V"
@@ -1287,7 +1290,7 @@
             "value": "200"
           },
           "PCW_PERIPHERAL_BOARD_PRESET": {
-            "value": "None"
+            "value": "part0"
           },
           "PCW_PLL_BYPASSMODE_ENABLE": {
             "value": "0"
@@ -1411,6 +1414,18 @@
           },
           "PCW_SPI_PERIPHERAL_VALID": {
             "value": "0"
+          },
+          "PCW_S_AXI_HP0_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP1_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP2_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP3_DATA_WIDTH": {
+            "value": "64"
           },
           "PCW_TPIU_PERIPHERAL_CLKSRC": {
             "value": "External"
@@ -2272,7 +2287,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "100000000",
+                "value": "35714283",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {

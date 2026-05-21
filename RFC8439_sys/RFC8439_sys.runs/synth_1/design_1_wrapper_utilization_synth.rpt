@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Sun May 17 20:53:49 2026
+| Date         : Fri May 22 02:31:45 2026
 | Host         : LAPTOP-9PRMHLIN running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -177,14 +177,16 @@ Table of Contents
 +---------------------------------+------+
 |             Ref Name            | Used |
 +---------------------------------+------+
-| design_1_rst_ps7_0_100M_0       |    1 |
+| design_1_rst_ps7_0_100M_1       |    1 |
 | design_1_processing_system7_0_0 |    1 |
 | design_1_blk_mem_gen_0_1        |    1 |
 | design_1_blk_mem_gen_0_0        |    1 |
-| design_1_axi_smc_0              |    1 |
+| design_1_axi_smc_1              |    1 |
+| design_1_axi_gpio_0_1           |    1 |
+| design_1_axi_gpio_0_0           |    1 |
 | design_1_axi_bram_ctrl_1_0      |    1 |
 | design_1_axi_bram_ctrl_0_0      |    1 |
-| design_1_RFC8439_0_0            |    1 |
+| design_1_RFC8439_0_4            |    1 |
 +---------------------------------+------+
 
 
