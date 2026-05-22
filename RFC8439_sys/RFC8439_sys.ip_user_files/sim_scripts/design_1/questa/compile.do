@@ -207,6 +207,13 @@ vlog -work xil_defaultlib  -incr -mfcu  -sv -L axi_vip_v1_1_15 -L smartconnect_v
 "../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_41/sim/bd_6f02_m03wn_0.sv" \
 "../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_42/sim/bd_6f02_m03bn_0.sv" \
 "../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_43/sim/bd_6f02_m03e_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_44/sim/bd_6f02_m04s2a_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_45/sim/bd_6f02_m04arn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_46/sim/bd_6f02_m04rn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_47/sim/bd_6f02_m04awn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_48/sim/bd_6f02_m04wn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_49/sim/bd_6f02_m04bn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_50/sim/bd_6f02_m04e_0.sv" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/35de/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_axi_smc_1/bd_0/sim/bd_6f02.v" \
@@ -222,6 +229,12 @@ vcom -work xil_defaultlib  -93  \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/35de/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_RFC8439_0_4/sim/design_1_RFC8439_0_4.v" \
+"../../../bd/design_1/ip/design_1_Cycle_counter_0_0/sim/design_1_Cycle_counter_0_0.v" \
+
+vcom -work xil_defaultlib  -93  \
+"../../../bd/design_1/ip/design_1_axi_gpio_2_0/sim/design_1_axi_gpio_2_0.vhd" \
+
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RFC8439_sys.gen/sources_1/bd/design_1/ipshared/35de/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../bd/design_1/sim/design_1.v" \
 
 vlog -work xil_defaultlib \

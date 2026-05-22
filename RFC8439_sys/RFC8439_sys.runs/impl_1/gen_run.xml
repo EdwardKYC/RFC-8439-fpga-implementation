@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1779422627">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1779473353">
   <File Type="ROUTE-PWR" Name="design_1_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="design_1_wrapper_power_summary_routed.pb"/>
@@ -98,7 +98,7 @@
     <File Path="$PSRCDIR/sources_1/imports/src/Poly1305.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../src/Poly1305.v"/>
-        <Attr Name="ImportTime" Val="1779384838"/>
+        <Attr Name="ImportTime" Val="1779470657"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -117,6 +117,15 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../src/RFC8439.v"/>
         <Attr Name="ImportTime" Val="1779384872"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/Cycle_counter.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../src/Cycle_counter.v"/>
+        <Attr Name="ImportTime" Val="1779455260"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -162,29 +171,32 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Performance_ExplorePostRoutePhysOpt" Flow="Vivado Implementation 2023">
-      <Desc>Similar to Peformance_Explore, but enables the physical optimization step (phys_opt_design) with the Explore directive after routing.</Desc>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
+      <Desc>Default settings for Implementation.</Desc>
     </StratHandle>
     <Step Id="init_design"/>
-    <Step Id="opt_design">
-      <Option Id="Directive">0</Option>
-    </Step>
+    <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
-    <Step Id="place_design">
-      <Option Id="Directive">0</Option>
-    </Step>
+    <Step Id="place_design"/>
     <Step Id="post_place_power_opt_design"/>
     <Step Id="phys_opt_design">
       <Option Id="Directive">2</Option>
     </Step>
     <Step Id="route_design">
       <Option Id="Directive">1</Option>
-      <Option Id="MoreOptsStr"><![CDATA[-tns_cleanup]]></Option>
     </Step>
-    <Step Id="post_route_phys_opt_design" EnableStepBool="1">
+    <Step Id="post_route_phys_opt_design">
       <Option Id="Directive">1</Option>
     </Step>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_bram_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_Cycle_counter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_smc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps7_0_100M_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_RFC8439_0_4"/>
 </GenRun>

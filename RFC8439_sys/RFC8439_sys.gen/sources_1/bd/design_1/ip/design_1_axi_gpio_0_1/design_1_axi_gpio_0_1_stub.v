@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Fri May 22 02:29:57 2026
+// Date        : Sat May 23 02:09:02 2026
 // Host        : LAPTOP-9PRMHLIN running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top design_1_axi_gpio_0_1 -prefix
-//               design_1_axi_gpio_0_1_ design_1_axi_gpio_0_1_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_stub.v
 // Design      : design_1_axi_gpio_0_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

@@ -43,4 +43,10 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_rs
 # IP: bd/design_1/ip/design_1_RFC8439_0_4/design_1_RFC8439_0_4.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_RFC8439_0_4 || ORIG_REF_NAME==design_1_RFC8439_0_4} -quiet] -quiet
 
+# IP: bd/design_1/ip/design_1_Cycle_counter_0_0/design_1_Cycle_counter_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_Cycle_counter_0_0 || ORIG_REF_NAME==design_1_Cycle_counter_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_2_0 || ORIG_REF_NAME==design_1_axi_gpio_2_0} -quiet] -quiet
+
 # XDC: c:/RFC-8439-fpga-implementation/RFC8439_sys/RFC8439_sys.gen/sources_1/bd/design_1/design_1_ooc.xdc
