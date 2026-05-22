@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "RFC8439,Vivado 2023.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_RFC8439_0_4,RFC8439,{}" *)
-(* CORE_GENERATION_INFO = "design_1_RFC8439_0_4,RFC8439,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=RFC8439,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,ADDR_MODE_WORD=1}" *)
+(* CORE_GENERATION_INFO = "design_1_RFC8439_0_4,RFC8439,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=RFC8439,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,ADDR_MODE_WORD=0}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_RFC8439_0_4 (
@@ -100,7 +100,7 @@ output wire [31 : 0] Dst_RAM_D;
 input wire [31 : 0] Dst_RAM_Q;
 
   RFC8439 #(
-    .ADDR_MODE_WORD(1)
+    .ADDR_MODE_WORD(0)
   ) inst (
     .clk(clk),
     .rst(rst),

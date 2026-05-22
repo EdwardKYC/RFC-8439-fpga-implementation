@@ -8,11 +8,11 @@
     "gen_directory": "../../../../../../RFC8439_sys.gen/sources_1/bd/design_1/ip/design_1_RFC8439_0_4",
     "parameters": {
       "component_parameters": {
-        "ADDR_MODE_WORD": [ { "value": "1", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "ADDR_MODE_WORD": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "design_1_RFC8439_0_4", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
-        "ADDR_MODE_WORD": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "ADDR_MODE_WORD": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],

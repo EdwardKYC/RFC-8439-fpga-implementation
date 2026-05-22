@@ -99,7 +99,7 @@ output wire [31 : 0] Dst_RAM_D;
 input wire [31 : 0] Dst_RAM_Q;
 
   RFC8439 #(
-    .ADDR_MODE_WORD(1)
+    .ADDR_MODE_WORD(0)
   ) inst (
     .clk(clk),
     .rst(rst),

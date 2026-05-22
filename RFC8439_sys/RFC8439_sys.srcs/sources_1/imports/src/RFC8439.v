@@ -1,5 +1,5 @@
 module RFC8439 #(
-    parameter ADDR_MODE_WORD = 1
+    parameter ADDR_MODE_WORD = 0
 )(
     input  wire        clk,
     input  wire        rst,
