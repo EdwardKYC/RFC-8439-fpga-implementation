@@ -10,40 +10,45 @@ module Poly1305 (
     output reg  [127:0]  mac_tag,
     output reg           tag_valid
 );
-    localparam [4:0] ST_IDLE = 5'd0;
+    localparam [5:0] ST_IDLE = 6'd0;
 
-    localparam [4:0] ST_ADD0 = 5'd1;
-    localparam [4:0] ST_ADD1 = 5'd2;
-    localparam [4:0] ST_ADD2 = 5'd3;
-    localparam [4:0] ST_ADD3 = 5'd4;
-    localparam [4:0] ST_ADD4 = 5'd5;
-    localparam [4:0] ST_ADD5 = 5'd6;
+    localparam [5:0] ST_ADD0 = 6'd1;
+    localparam [5:0] ST_ADD1 = 6'd2;
+    localparam [5:0] ST_ADD2 = 6'd3;
+    localparam [5:0] ST_ADD3 = 6'd4;
+    localparam [5:0] ST_ADD4 = 6'd5;
+    localparam [5:0] ST_ADD5 = 6'd6;
 
-    localparam [4:0] ST_MUL0 = 5'd7;
-    localparam [4:0] ST_MUL1 = 5'd8;
-    localparam [4:0] ST_MUL2 = 5'd9;
-    localparam [4:0] ST_MUL3 = 5'd10;
-    localparam [4:0] ST_MUL4 = 5'd11;
+    localparam [5:0] ST_MUL0_LOAD = 6'd7;
+    localparam [5:0] ST_MUL0_SAVE = 6'd8;
+    localparam [5:0] ST_MUL1_LOAD = 6'd9;
+    localparam [5:0] ST_MUL1_SAVE = 6'd10;
+    localparam [5:0] ST_MUL2_LOAD = 6'd11;
+    localparam [5:0] ST_MUL2_SAVE = 6'd12;
+    localparam [5:0] ST_MUL3_LOAD = 6'd13;
+    localparam [5:0] ST_MUL3_SAVE = 6'd14;
+    localparam [5:0] ST_MUL4_LOAD = 6'd15;
+    localparam [5:0] ST_MUL4_SAVE = 6'd16;
 
-    localparam [4:0] ST_RED0 = 5'd12;
-    localparam [4:0] ST_RED1 = 5'd13;
-    localparam [4:0] ST_RED2 = 5'd14;
-    localparam [4:0] ST_RED3 = 5'd15;
-    localparam [4:0] ST_RED4 = 5'd16;
-    localparam [4:0] ST_RED5 = 5'd17;
-    localparam [4:0] ST_RED6 = 5'd18;
-    localparam [4:0] ST_RED7 = 5'd19;
+    localparam [5:0] ST_RED0 = 6'd17;
+    localparam [5:0] ST_RED1 = 6'd18;
+    localparam [5:0] ST_RED2 = 6'd19;
+    localparam [5:0] ST_RED3 = 6'd20;
+    localparam [5:0] ST_RED4 = 6'd21;
+    localparam [5:0] ST_RED5 = 6'd22;
+    localparam [5:0] ST_RED6 = 6'd23;
+    localparam [5:0] ST_RED7 = 6'd24;
 
-    localparam [4:0] ST_FIN_PACK = 5'd20;
-    localparam [4:0] ST_FIN_RED  = 5'd21;
-    localparam [4:0] ST_FIN_ADD  = 5'd22;
-    localparam [4:0] ST_FIN_DONE = 5'd23;
+    localparam [5:0] ST_FIN_PACK = 6'd25;
+    localparam [5:0] ST_FIN_RED  = 6'd26;
+    localparam [5:0] ST_FIN_ADD  = 6'd27;
+    localparam [5:0] ST_FIN_DONE = 6'd28;
 
     localparam [31:0] LIMB_MASK32 = 32'h03ff_ffff;
     localparam [130:0] P130 = 131'h3fffffffffffffffffffffffffffffffb;
 
-    reg [4:0] state;
-    reg [4:0] next_state;
+    reg [5:0] state;
+    reg [5:0] next_state;
 
     reg [31:0] h0, h1, h2, h3, h4;
     reg [26:0] r0, r1, r2, r3, r4;
@@ -125,54 +130,6 @@ module Poly1305 (
         {1'b0, h_red_reg[127:0]} + {1'b0, s_reg};
 
     always @(*) begin
-        ma0 = 27'd0; ma1 = 27'd0; ma2 = 27'd0; ma3 = 27'd0; ma4 = 27'd0;
-        mb0 = 27'd0; mb1 = 27'd0; mb2 = 27'd0; mb3 = 27'd0; mb4 = 27'd0;
-        sx0 = 1'b0;  sx1 = 1'b0;  sx2 = 1'b0;  sx3 = 1'b0;  sx4 = 1'b0;
-
-        case (state)
-            ST_MUL0: begin
-                ma0 = h0_w; mb0 = r0; sx0 = 1'b0;
-                ma1 = h1_w; mb1 = r4; sx1 = 1'b1;
-                ma2 = h2_w; mb2 = r3; sx2 = 1'b1;
-                ma3 = h3_w; mb3 = r2; sx3 = 1'b1;
-                ma4 = h4_w; mb4 = r1; sx4 = 1'b1;
-            end
-
-            ST_MUL1: begin
-                ma0 = h0_w; mb0 = r1; sx0 = 1'b0;
-                ma1 = h1_w; mb1 = r0; sx1 = 1'b0;
-                ma2 = h2_w; mb2 = r4; sx2 = 1'b1;
-                ma3 = h3_w; mb3 = r3; sx3 = 1'b1;
-                ma4 = h4_w; mb4 = r2; sx4 = 1'b1;
-            end
-
-            ST_MUL2: begin
-                ma0 = h0_w; mb0 = r2; sx0 = 1'b0;
-                ma1 = h1_w; mb1 = r1; sx1 = 1'b0;
-                ma2 = h2_w; mb2 = r0; sx2 = 1'b0;
-                ma3 = h3_w; mb3 = r4; sx3 = 1'b1;
-                ma4 = h4_w; mb4 = r3; sx4 = 1'b1;
-            end
-
-            ST_MUL3: begin
-                ma0 = h0_w; mb0 = r3; sx0 = 1'b0;
-                ma1 = h1_w; mb1 = r2; sx1 = 1'b0;
-                ma2 = h2_w; mb2 = r1; sx2 = 1'b0;
-                ma3 = h3_w; mb3 = r0; sx3 = 1'b0;
-                ma4 = h4_w; mb4 = r4; sx4 = 1'b1;
-            end
-
-            ST_MUL4: begin
-                ma0 = h0_w; mb0 = r4; sx0 = 1'b0;
-                ma1 = h1_w; mb1 = r3; sx1 = 1'b0;
-                ma2 = h2_w; mb2 = r2; sx2 = 1'b0;
-                ma3 = h3_w; mb3 = r1; sx3 = 1'b0;
-                ma4 = h4_w; mb4 = r0; sx4 = 1'b0;
-            end
-        endcase
-    end
-
-    always @(*) begin
         next_state = state;
 
         case (state)
@@ -183,13 +140,18 @@ module Poly1305 (
             ST_ADD2: next_state = ST_ADD3;
             ST_ADD3: next_state = ST_ADD4;
             ST_ADD4: next_state = ST_ADD5;
-            ST_ADD5: next_state = ST_MUL0;
+            ST_ADD5: next_state = ST_MUL0_LOAD;
 
-            ST_MUL0: next_state = ST_MUL1;
-            ST_MUL1: next_state = ST_MUL2;
-            ST_MUL2: next_state = ST_MUL3;
-            ST_MUL3: next_state = ST_MUL4;
-            ST_MUL4: next_state = ST_RED0;
+            ST_MUL0_LOAD: next_state = ST_MUL0_SAVE;
+            ST_MUL0_SAVE: next_state = ST_MUL1_LOAD;
+            ST_MUL1_LOAD: next_state = ST_MUL1_SAVE;
+            ST_MUL1_SAVE: next_state = ST_MUL2_LOAD;
+            ST_MUL2_LOAD: next_state = ST_MUL2_SAVE;
+            ST_MUL2_SAVE: next_state = ST_MUL3_LOAD;
+            ST_MUL3_LOAD: next_state = ST_MUL3_SAVE;
+            ST_MUL3_SAVE: next_state = ST_MUL4_LOAD;
+            ST_MUL4_LOAD: next_state = ST_MUL4_SAVE;
+            ST_MUL4_SAVE: next_state = ST_RED0;
 
             ST_RED0: next_state = ST_RED1;
             ST_RED1: next_state = ST_RED2;
@@ -222,6 +184,10 @@ module Poly1305 (
             s_reg <= 128'd0;
 
             d0 <= 64'd0; d1 <= 64'd0; d2 <= 64'd0; d3 <= 64'd0; d4 <= 64'd0;
+
+            ma0 <= 27'd0; ma1 <= 27'd0; ma2 <= 27'd0; ma3 <= 27'd0; ma4 <= 27'd0;
+            mb0 <= 27'd0; mb1 <= 27'd0; mb2 <= 27'd0; mb3 <= 27'd0; mb4 <= 27'd0;
+            sx0 <= 1'b0;  sx1 <= 1'b0;  sx2 <= 1'b0;  sx3 <= 1'b0;  sx4 <= 1'b0;
 
             h_full_reg <= 131'd0;
             h_red_reg  <= 131'd0;
@@ -299,11 +265,55 @@ module Poly1305 (
                     h0 <= h0 & LIMB_MASK32;
                 end
 
-                ST_MUL0: d0 <= d_sum_w;
-                ST_MUL1: d1 <= d_sum_w;
-                ST_MUL2: d2 <= d_sum_w;
-                ST_MUL3: d3 <= d_sum_w;
-                ST_MUL4: d4 <= d_sum_w;
+                ST_MUL0_LOAD: begin
+                    ma0 <= h0_w; mb0 <= r0; sx0 <= 1'b0;
+                    ma1 <= h1_w; mb1 <= r4; sx1 <= 1'b1;
+                    ma2 <= h2_w; mb2 <= r3; sx2 <= 1'b1;
+                    ma3 <= h3_w; mb3 <= r2; sx3 <= 1'b1;
+                    ma4 <= h4_w; mb4 <= r1; sx4 <= 1'b1;
+                end
+
+                ST_MUL0_SAVE: d0 <= d_sum_w;
+
+                ST_MUL1_LOAD: begin
+                    ma0 <= h0_w; mb0 <= r1; sx0 <= 1'b0;
+                    ma1 <= h1_w; mb1 <= r0; sx1 <= 1'b0;
+                    ma2 <= h2_w; mb2 <= r4; sx2 <= 1'b1;
+                    ma3 <= h3_w; mb3 <= r3; sx3 <= 1'b1;
+                    ma4 <= h4_w; mb4 <= r2; sx4 <= 1'b1;
+                end
+
+                ST_MUL1_SAVE: d1 <= d_sum_w;
+
+                ST_MUL2_LOAD: begin
+                    ma0 <= h0_w; mb0 <= r2; sx0 <= 1'b0;
+                    ma1 <= h1_w; mb1 <= r1; sx1 <= 1'b0;
+                    ma2 <= h2_w; mb2 <= r0; sx2 <= 1'b0;
+                    ma3 <= h3_w; mb3 <= r4; sx3 <= 1'b1;
+                    ma4 <= h4_w; mb4 <= r3; sx4 <= 1'b1;
+                end
+
+                ST_MUL2_SAVE: d2 <= d_sum_w;
+
+                ST_MUL3_LOAD: begin
+                    ma0 <= h0_w; mb0 <= r3; sx0 <= 1'b0;
+                    ma1 <= h1_w; mb1 <= r2; sx1 <= 1'b0;
+                    ma2 <= h2_w; mb2 <= r1; sx2 <= 1'b0;
+                    ma3 <= h3_w; mb3 <= r0; sx3 <= 1'b0;
+                    ma4 <= h4_w; mb4 <= r4; sx4 <= 1'b1;
+                end
+
+                ST_MUL3_SAVE: d3 <= d_sum_w;
+
+                ST_MUL4_LOAD: begin
+                    ma0 <= h0_w; mb0 <= r4; sx0 <= 1'b0;
+                    ma1 <= h1_w; mb1 <= r3; sx1 <= 1'b0;
+                    ma2 <= h2_w; mb2 <= r2; sx2 <= 1'b0;
+                    ma3 <= h3_w; mb3 <= r1; sx3 <= 1'b0;
+                    ma4 <= h4_w; mb4 <= r0; sx4 <= 1'b0;
+                end
+
+                ST_MUL4_SAVE: d4 <= d_sum_w;
 
                 ST_RED0: begin
                     h0 <= {6'd0, d0[25:0]};

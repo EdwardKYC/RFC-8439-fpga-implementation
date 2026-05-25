@@ -1,5 +1,5 @@
 module RFC8439 #(
-    parameter ADDR_MODE_WORD = 1
+    parameter ADDR_MODE_WORD = 0
 )(
     input  wire        clk,
     input  wire        rst,
@@ -64,6 +64,10 @@ module RFC8439 #(
     reg         start_d;
     wire        start_pulse;
     assign start_pulse = start & ~start_d;
+    reg  [1:0] core_rst_cnt;
+    wire       core_rst;
+
+    assign core_rst = rst | (core_rst_cnt != 2'd0);
 
     reg [4:0]   main_state, next_main_state;
     reg [1:0]   rd_state, next_rd_state;
@@ -284,7 +288,7 @@ module RFC8439 #(
 
     Chacha20 u_chacha20 (
         .clk       (clk),
-        .rst       (rst),
+        .rst       (core_rst),
         .start     (chacha_start_w),
         .ready     (chacha_ready_w),
         .key       (key_cfg),
@@ -295,7 +299,7 @@ module RFC8439 #(
 
     Poly1305 u_poly1305 (
         .clk       (clk),
-        .rst       (rst),
+        .rst       (core_rst),
         .valid_in  (poly_valid_w),
         .ready_out (poly_ready_w),
         .mac_key   (poly_key_reg),
@@ -310,25 +314,25 @@ module RFC8439 #(
         if (rst) begin
             key_cfg   <= 256'd0;
             nonce_cfg <= 96'd0;
-        end else begin
-            if (main_state == M_IDLE && start_pulse) begin
-            key_cfg   <= 256'd0;
-            nonce_cfg <= 96'd0;
-        end else if (main_state == M_LOAD_KEY0_WAIT && rd_valid) begin
-            key_cfg[31:0]    <= rd_data[31:0];
-            key_cfg[63:32]   <= rd_data[63:32];
-            key_cfg[95:64]   <= rd_data[95:64];
-            key_cfg[127:96]  <= rd_data[127:96];
-        end else if (main_state == M_LOAD_KEY1_WAIT && rd_valid) begin
-            key_cfg[159:128] <= rd_data[31:0];
-            key_cfg[191:160] <= rd_data[63:32];
-            key_cfg[223:192] <= rd_data[95:64];
-            key_cfg[255:224] <= rd_data[127:96];
-        end else if (main_state == M_LOAD_NONCE_WAIT && rd_valid) begin
-            nonce_cfg[31:0]  <= rd_data[31:0];
-            nonce_cfg[63:32] <= rd_data[63:32];
-            nonce_cfg[95:64] <= rd_data[95:64];
-        end
+            end else begin
+                if (main_state == M_IDLE && start_pulse) begin
+                key_cfg   <= 256'd0;
+                nonce_cfg <= 96'd0;
+            end else if (main_state == M_LOAD_KEY0_WAIT && rd_valid) begin
+                key_cfg[31:0]    <= rd_data[31:0];
+                key_cfg[63:32]   <= rd_data[63:32];
+                key_cfg[95:64]   <= rd_data[95:64];
+                key_cfg[127:96]  <= rd_data[127:96];
+            end else if (main_state == M_LOAD_KEY1_WAIT && rd_valid) begin
+                key_cfg[159:128] <= rd_data[31:0];
+                key_cfg[191:160] <= rd_data[63:32];
+                key_cfg[223:192] <= rd_data[95:64];
+                key_cfg[255:224] <= rd_data[127:96];
+            end else if (main_state == M_LOAD_NONCE_WAIT && rd_valid) begin
+                nonce_cfg[31:0]  <= rd_data[31:0];
+                nonce_cfg[63:32] <= rd_data[63:32];
+                nonce_cfg[95:64] <= rd_data[95:64];
+            end
         end
     end
 
@@ -428,7 +432,18 @@ module RFC8439 #(
             start_d <= start;
         end
     end
-
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            core_rst_cnt <= 2'd0;
+        end else begin
+            if (main_state == M_IDLE && start_pulse) begin
+                // reset Chacha20 / Poly1305 итн╙ clock
+                core_rst_cnt <= 2'd3;
+            end else if (core_rst_cnt != 2'd0) begin
+                core_rst_cnt <= core_rst_cnt - 2'd1;
+            end
+        end
+    end
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             msg_len_reg <= 32'd0;
@@ -555,9 +570,12 @@ module RFC8439 #(
             tag_buffer <= 128'd0;
         end else begin
             if (main_state == M_IDLE && start_pulse) begin
-                ks_next_buffer <= 512'd0;
-                ks_next_valid <= 1'b0;
+                poly_key_reg     <= 256'd0;
+                ks_buffer        <= 512'd0;
+                ks_next_buffer   <= 512'd0;
+                ks_next_valid    <= 1'b0;
                 ks_prefetch_busy <= 1'b0;
+                tag_buffer       <= 128'd0;
             end
 
             if (prefetch_start_w) begin

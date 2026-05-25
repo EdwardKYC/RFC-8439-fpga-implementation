@@ -1,0 +1,36 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" --include "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/ec67/hdl" --include "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/6b2b/hdl" --include "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/7fb4/hdl" --include "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/c2c6" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_processing_system7_0_0/sim/AES_SYS_processing_system7_0_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_v_axi4s_vid_out_0_0/sim/AES_SYS_v_axi4s_vid_out_0_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_clk_wiz_0_0/AES_SYS_clk_wiz_0_0_clk_wiz.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_clk_wiz_0_0/AES_SYS_clk_wiz_0_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xlconcat_0_0/sim/AES_SYS_xlconcat_0_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xbar_0/sim/AES_SYS_xbar_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xbar_1/sim/AES_SYS_xbar_1.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xlconstant_0_0/sim/AES_SYS_xlconstant_0_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xbar_2/sim/AES_SYS_xbar_2.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_bram_0/sim/AES_SYS_axi_bram_ctrl_0_bram_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_RFC8439_0_0/sim/AES_SYS_RFC8439_0_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_bram_2/sim/AES_SYS_axi_bram_ctrl_0_bram_2.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_11/sim/AES_SYS_auto_pc_11.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_0/sim/AES_SYS_auto_pc_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_1/sim/AES_SYS_auto_pc_1.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_2/sim/AES_SYS_auto_pc_2.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_3/sim/AES_SYS_auto_pc_3.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_4/sim/AES_SYS_auto_pc_4.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_5/sim/AES_SYS_auto_pc_5.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_6/sim/AES_SYS_auto_pc_6.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_7/sim/AES_SYS_auto_pc_7.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_8/sim/AES_SYS_auto_pc_8.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_9/sim/AES_SYS_auto_pc_9.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_10/sim/AES_SYS_auto_pc_10.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_12/sim/AES_SYS_auto_pc_12.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_us_0/sim/AES_SYS_auto_us_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_13/sim/AES_SYS_auto_pc_13.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_0/sim/AES_SYS_auto_ds_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_1/sim/AES_SYS_auto_ds_1.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/sim/AES_SYS.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
