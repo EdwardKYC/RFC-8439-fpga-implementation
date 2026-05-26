@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
 // Date        : Mon May 25 20:28:24 2026
 // Host        : LAPTOP-JHH6RF8B running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xbar_2/AES_SYS_xbar_2_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top AES_SYS_xbar_2 -prefix
+//               AES_SYS_xbar_2_ AES_SYS_xbar_2_stub.v
 // Design      : AES_SYS_xbar_2
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

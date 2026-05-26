@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1779737457">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1779829750">
   <File Type="ROUTE-PWR" Name="AES_SYS_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="AES_SYS_wrapper.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="AES_SYS_wrapper_power_summary_routed.pb"/>
@@ -312,24 +312,16 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_v_axi4s_vid_out_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_1_1"/>
   <BlockFileSet Type="BlockSrcs" Name="AES_SYS_rgb2dvi_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_vdma_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_v_tc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_rst_ps7_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_intc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_xbar_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_cdma_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_bram_ctrl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_8_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_5_0"/>
   <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_6_0"/>
   <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_10_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_2_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_4_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_gpio_3_1"/>
   <BlockFileSet Type="BlockSrcs" Name="AES_SYS_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_xbar_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_axi_bram_ctrl_0_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="AES_SYS_RFC8439_0_0"/>
 </GenRun>

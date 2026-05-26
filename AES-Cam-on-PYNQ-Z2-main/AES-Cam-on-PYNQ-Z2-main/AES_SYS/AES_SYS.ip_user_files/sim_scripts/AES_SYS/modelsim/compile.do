@@ -271,12 +271,17 @@ vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../AES_SYS.gen/sources
 
 vcom -work xil_defaultlib  -93  \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/sim/AES_SYS_axi_bram_ctrl_0_2.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_proc_sys_reset_0_0/sim/AES_SYS_proc_sys_reset_0_0.vhd" \
+
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/ec67/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/6b2b/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/7fb4/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xlconstant_1_0/sim/AES_SYS_xlconstant_1_0.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/sim/AES_SYS.v" \
 
 vlog -work axi_protocol_converter_v2_1_29  -incr -mfcu  "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/ec67/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/6b2b/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/7fb4/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/a63f/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/ec67/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/6b2b/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/7fb4/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
-"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_11/sim/AES_SYS_auto_pc_11.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_12/sim/AES_SYS_auto_pc_12.v" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_0/sim/AES_SYS_auto_pc_0.v" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_1/sim/AES_SYS_auto_pc_1.v" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_2/sim/AES_SYS_auto_pc_2.v" \
@@ -288,7 +293,8 @@ vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../AES_SYS.gen/sources
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_8/sim/AES_SYS_auto_pc_8.v" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_9/sim/AES_SYS_auto_pc_9.v" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_10/sim/AES_SYS_auto_pc_10.v" \
-"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_12/sim/AES_SYS_auto_pc_12.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_11/sim/AES_SYS_auto_pc_11.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_13/sim/AES_SYS_auto_pc_13.v" \
 
 vlog -work axi_clock_converter_v2_1_28  -incr -mfcu  "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/ec67/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/6b2b/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/7fb4/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/769c/hdl/axi_clock_converter_v2_1_vl_rfs.v" \
@@ -298,10 +304,12 @@ vlog -work axi_dwidth_converter_v2_1_29  -incr -mfcu  "+incdir+../../../../AES_S
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/ec67/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/6b2b/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/7fb4/hdl" "+incdir+../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/c2c6" "+incdir+C:/Xilinx/Vivado/2023.2/data/xilinx_vip/include" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_us_0/sim/AES_SYS_auto_us_0.v" \
-"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_13/sim/AES_SYS_auto_pc_13.v" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_14/sim/AES_SYS_auto_pc_14.v" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_0/sim/AES_SYS_auto_ds_0.v" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_1/sim/AES_SYS_auto_ds_1.v" \
-"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/sim/AES_SYS.v" \
+
+vcom -work xil_defaultlib  -93  \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_4_0/sim/AES_SYS_axi_gpio_4_0.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

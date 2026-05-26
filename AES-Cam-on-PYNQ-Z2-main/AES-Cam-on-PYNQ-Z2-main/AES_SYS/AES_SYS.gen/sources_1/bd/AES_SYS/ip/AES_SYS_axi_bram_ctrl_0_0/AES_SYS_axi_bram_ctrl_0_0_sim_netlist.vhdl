@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
 -- Date        : Mon May 25 20:28:14 2026
 -- Host        : LAPTOP-JHH6RF8B running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_0/AES_SYS_axi_bram_ctrl_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top AES_SYS_axi_bram_ctrl_0_0 -prefix
+--               AES_SYS_axi_bram_ctrl_0_0_ AES_SYS_axi_bram_ctrl_0_0_sim_netlist.vhdl
 -- Design      : AES_SYS_axi_bram_ctrl_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -39,8 +39,6 @@ entity AES_SYS_axi_bram_ctrl_0_0_sng_port_arb is
     AW2Arb_Active_Clr : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_bram_ctrl_0_0_sng_port_arb : entity is "sng_port_arb";
 end AES_SYS_axi_bram_ctrl_0_0_sng_port_arb;
 
 architecture STRUCTURE of AES_SYS_axi_bram_ctrl_0_0_sng_port_arb is
@@ -409,8 +407,6 @@ entity AES_SYS_axi_bram_ctrl_0_0_wrap_brst is
     \save_init_bram_addr_ld_reg[3]_0\ : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_bram_ctrl_0_0_wrap_brst : entity is "wrap_brst";
 end AES_SYS_axi_bram_ctrl_0_0_wrap_brst;
 
 architecture STRUCTURE of AES_SYS_axi_bram_ctrl_0_0_wrap_brst is
@@ -1870,8 +1866,6 @@ entity AES_SYS_axi_bram_ctrl_0_0_rd_chnl is
     s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_bram_ctrl_0_0_rd_chnl : entity is "rd_chnl";
 end AES_SYS_axi_bram_ctrl_0_0_rd_chnl;
 
 architecture STRUCTURE of AES_SYS_axi_bram_ctrl_0_0_rd_chnl is
@@ -4713,8 +4707,6 @@ entity AES_SYS_axi_bram_ctrl_0_0_wr_chnl is
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_bram_ctrl_0_0_wr_chnl : entity is "wr_chnl";
 end AES_SYS_axi_bram_ctrl_0_0_wr_chnl;
 
 architecture STRUCTURE of AES_SYS_axi_bram_ctrl_0_0_wr_chnl is
@@ -5646,8 +5638,6 @@ entity AES_SYS_axi_bram_ctrl_0_0_full_axi is
     s_axi_awlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_bram_ctrl_0_0_full_axi : entity is "full_axi";
 end AES_SYS_axi_bram_ctrl_0_0_full_axi;
 
 architecture STRUCTURE of AES_SYS_axi_bram_ctrl_0_0_full_axi is
@@ -6110,8 +6100,6 @@ entity AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl_top is
     s_axi_awlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl_top : entity is "axi_bram_ctrl_top";
 end AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl_top;
 
 architecture STRUCTURE of AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl_top is
@@ -6261,8 +6249,6 @@ entity AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl is
   attribute C_S_AXI_PROTOCOL of AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is "AXI4";
   attribute C_S_AXI_SUPPORTS_NARROW_BURST : integer;
   attribute C_S_AXI_SUPPORTS_NARROW_BURST of AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is "axi_bram_ctrl";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl : entity is "yes";
 end AES_SYS_axi_bram_ctrl_0_0_axi_bram_ctrl;

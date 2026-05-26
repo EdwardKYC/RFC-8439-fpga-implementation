@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Mon May 25 20:21:47 2026
+// Date        : Mon May 25 20:21:46 2026
 // Host        : LAPTOP-JHH6RF8B running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_intc_0_0/AES_SYS_axi_intc_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top AES_SYS_axi_intc_0_0 -prefix
+//               AES_SYS_axi_intc_0_0_ AES_SYS_axi_intc_0_0_sim_netlist.v
 // Design      : AES_SYS_axi_intc_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -155,7 +155,6 @@ module AES_SYS_axi_intc_0_0
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "address_decoder" *) 
 module AES_SYS_axi_intc_0_0_address_decoder
    (Bus_RNW_reg_reg_0,
     Bus_RNW_reg_reg_1,
@@ -981,9 +980,9 @@ endmodule
 (* C_IRQ_IS_LEVEL = "1" *) (* C_IVAR_RESET_VALUE = "64'b0000000000000000000000000000000000000000000000000000000000010000" *) (* C_KIND_OF_EDGE = "32'b11111111111111111111111111111111" *) 
 (* C_KIND_OF_INTR = "32'b11111111111111111111111111111100" *) (* C_KIND_OF_LVL = "32'b11111111111111111111111111111111" *) (* C_MB_CLK_NOT_CONNECTED = "1" *) 
 (* C_NUM_INTR_INPUTS = "2" *) (* C_NUM_SW_INTR = "0" *) (* C_NUM_SYNC_FF = "2" *) 
-(* C_S_AXI_ADDR_WIDTH = "9" *) (* C_S_AXI_DATA_WIDTH = "32" *) (* ORIG_REF_NAME = "axi_intc" *) 
-(* hdl = "VHDL" *) (* imp_netlist = "TRUE" *) (* ip_group = "LOGICORE" *) 
-(* iptype = "PERIPHERAL" *) (* run_ngcbuild = "TRUE" *) (* style = "HDL" *) 
+(* C_S_AXI_ADDR_WIDTH = "9" *) (* C_S_AXI_DATA_WIDTH = "32" *) (* hdl = "VHDL" *) 
+(* imp_netlist = "TRUE" *) (* ip_group = "LOGICORE" *) (* iptype = "PERIPHERAL" *) 
+(* run_ngcbuild = "TRUE" *) (* style = "HDL" *) 
 module AES_SYS_axi_intc_0_0_axi_intc
    (s_axi_aclk,
     s_axi_aresetn,
@@ -1281,7 +1280,6 @@ module AES_SYS_axi_intc_0_0_axi_intc
         .R(INTC_CORE_I_n_0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module AES_SYS_axi_intc_0_0_axi_lite_ipif
    (s_axi_rresp,
     s_axi_rvalid_i_reg,
@@ -1498,7 +1496,6 @@ module AES_SYS_axi_intc_0_0_axi_lite_ipif
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "intc_core" *) 
 module AES_SYS_axi_intc_0_0_intc_core
    (SR,
     \IVR_GEN.ivr_reg[1]_0 ,
@@ -1897,7 +1894,6 @@ module AES_SYS_axi_intc_0_0_intc_core
         .O(SR));
 endmodule
 
-(* ORIG_REF_NAME = "slave_attachment" *) 
 module AES_SYS_axi_intc_0_0_slave_attachment
    (s_axi_rresp,
     s_axi_rvalid_i_reg_0,

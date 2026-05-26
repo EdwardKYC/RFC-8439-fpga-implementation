@@ -70,7 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {HDL-1065} -limit 10000
+set_param chipscope.maxJobs 8
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -145,7 +145,10 @@ set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_3_1/AES_SYS_axi_gpio_3_1.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_bram_2/AES_SYS_axi_bram_ctrl_0_bram_2_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_4_0/AES_SYS_axi_gpio_4_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_4_0/AES_SYS_axi_gpio_4_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_4_0/AES_SYS_axi_gpio_4_0.xdc]
+set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_0/AES_SYS_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_1/AES_SYS_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_2/AES_SYS_auto_pc_2_ooc.xdc]
@@ -157,11 +160,12 @@ set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_8/AES_SYS_auto_pc_8_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_9/AES_SYS_auto_pc_9_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_10/AES_SYS_auto_pc_10_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13_ooc.xdc]
 set_property used_in_synthesis false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_us_0/AES_SYS_auto_us_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_us_0/AES_SYS_auto_us_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_us_0/AES_SYS_auto_us_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_14/AES_SYS_auto_pc_14_ooc.xdc]
 set_property used_in_synthesis false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_0/AES_SYS_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_0/AES_SYS_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_0/AES_SYS_auto_ds_0_ooc.xdc]

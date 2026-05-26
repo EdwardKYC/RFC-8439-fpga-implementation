@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Mon May 25 20:21:47 2026
+-- Date        : Mon May 25 20:21:46 2026
 -- Host        : LAPTOP-JHH6RF8B running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_intc_0_0/AES_SYS_axi_intc_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top AES_SYS_axi_intc_0_0 -prefix
+--               AES_SYS_axi_intc_0_0_ AES_SYS_axi_intc_0_0_sim_netlist.vhdl
 -- Design      : AES_SYS_axi_intc_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -62,8 +62,6 @@ entity AES_SYS_axi_intc_0_0_address_decoder is
     \CIE_GEN.CIE_BIT_GEN[0].cie_reg[0]\ : in STD_LOGIC;
     Bus_RNW_reg_reg_4 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_intc_0_0_address_decoder : entity is "address_decoder";
 end AES_SYS_axi_intc_0_0_address_decoder;
 
 architecture STRUCTURE of AES_SYS_axi_intc_0_0_address_decoder is
@@ -996,8 +994,6 @@ entity AES_SYS_axi_intc_0_0_intc_core is
     intr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \REG_GEN[0].ier_reg[0]_1\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_intc_0_0_intc_core : entity is "intc_core";
 end AES_SYS_axi_intc_0_0_intc_core;
 
 architecture STRUCTURE of AES_SYS_axi_intc_0_0_intc_core is
@@ -1493,8 +1489,6 @@ entity AES_SYS_axi_intc_0_0_slave_attachment is
     p_0_in3_in : in STD_LOGIC;
     \CIE_GEN.CIE_BIT_GEN[0].cie_reg[0]\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_intc_0_0_slave_attachment : entity is "slave_attachment";
 end AES_SYS_axi_intc_0_0_slave_attachment;
 
 architecture STRUCTURE of AES_SYS_axi_intc_0_0_slave_attachment is
@@ -2349,8 +2343,6 @@ entity AES_SYS_axi_intc_0_0_axi_lite_ipif is
     p_0_in3_in : in STD_LOGIC;
     \CIE_GEN.CIE_BIT_GEN[0].cie_reg[0]\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_intc_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end AES_SYS_axi_intc_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of AES_SYS_axi_intc_0_0_axi_lite_ipif is
@@ -2502,8 +2494,6 @@ entity AES_SYS_axi_intc_0_0_axi_intc is
   attribute C_S_AXI_ADDR_WIDTH of AES_SYS_axi_intc_0_0_axi_intc : entity is 9;
   attribute C_S_AXI_DATA_WIDTH : integer;
   attribute C_S_AXI_DATA_WIDTH of AES_SYS_axi_intc_0_0_axi_intc : entity is 32;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_intc_0_0_axi_intc : entity is "axi_intc";
   attribute hdl : string;
   attribute hdl of AES_SYS_axi_intc_0_0_axi_intc : entity is "VHDL";
   attribute imp_netlist : string;

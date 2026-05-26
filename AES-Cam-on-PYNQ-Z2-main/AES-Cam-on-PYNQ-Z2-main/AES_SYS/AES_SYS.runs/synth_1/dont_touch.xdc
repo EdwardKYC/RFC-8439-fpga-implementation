@@ -96,8 +96,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_axi
 # IP: bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_axi_bram_ctrl_0_2 || ORIG_REF_NAME==AES_SYS_axi_bram_ctrl_0_2} -quiet] -quiet
 
-# IP: bd/AES_SYS/ip/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_pc_11 || ORIG_REF_NAME==AES_SYS_auto_pc_11} -quiet] -quiet
+# IP: bd/AES_SYS/ip/AES_SYS_axi_gpio_4_0/AES_SYS_axi_gpio_4_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_axi_gpio_4_0 || ORIG_REF_NAME==AES_SYS_axi_gpio_4_0} -quiet] -quiet
+
+# IP: bd/AES_SYS/ip/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_pc_12 || ORIG_REF_NAME==AES_SYS_auto_pc_12} -quiet] -quiet
 
 # IP: bd/AES_SYS/ip/AES_SYS_auto_pc_0/AES_SYS_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_pc_0 || ORIG_REF_NAME==AES_SYS_auto_pc_0} -quiet] -quiet
@@ -132,14 +135,17 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_aut
 # IP: bd/AES_SYS/ip/AES_SYS_auto_pc_10/AES_SYS_auto_pc_10.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_pc_10 || ORIG_REF_NAME==AES_SYS_auto_pc_10} -quiet] -quiet
 
-# IP: bd/AES_SYS/ip/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_pc_12 || ORIG_REF_NAME==AES_SYS_auto_pc_12} -quiet] -quiet
+# IP: bd/AES_SYS/ip/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_pc_11 || ORIG_REF_NAME==AES_SYS_auto_pc_11} -quiet] -quiet
+
+# IP: bd/AES_SYS/ip/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_pc_13 || ORIG_REF_NAME==AES_SYS_auto_pc_13} -quiet] -quiet
 
 # IP: bd/AES_SYS/ip/AES_SYS_auto_us_0/AES_SYS_auto_us_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_us_0 || ORIG_REF_NAME==AES_SYS_auto_us_0} -quiet] -quiet
 
-# IP: bd/AES_SYS/ip/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_pc_13 || ORIG_REF_NAME==AES_SYS_auto_pc_13} -quiet] -quiet
+# IP: bd/AES_SYS/ip/AES_SYS_auto_pc_14/AES_SYS_auto_pc_14.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_pc_14 || ORIG_REF_NAME==AES_SYS_auto_pc_14} -quiet] -quiet
 
 # IP: bd/AES_SYS/ip/AES_SYS_auto_ds_0/AES_SYS_auto_ds_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_SYS_auto_ds_0 || ORIG_REF_NAME==AES_SYS_auto_ds_0} -quiet] -quiet

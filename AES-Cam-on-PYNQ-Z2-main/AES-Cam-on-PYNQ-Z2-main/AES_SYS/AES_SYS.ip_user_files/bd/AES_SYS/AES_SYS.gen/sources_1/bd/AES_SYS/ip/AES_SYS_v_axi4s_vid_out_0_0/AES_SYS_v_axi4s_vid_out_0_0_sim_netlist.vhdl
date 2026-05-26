@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
 -- Date        : Wed Jun 11 02:34:32 2025
 -- Host        : ukp66482 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {c:/Users/kartg/Desktop/Github/AES-Cam on
---               PYNQ-Z2/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_v_axi4s_vid_out_0_0/AES_SYS_v_axi4s_vid_out_0_0_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim -rename_top AES_SYS_v_axi4s_vid_out_0_0 -prefix
+--               AES_SYS_v_axi4s_vid_out_0_0_ AES_SYS_v_axi4s_vid_out_0_0_sim_netlist.vhdl
 -- Design      : AES_SYS_v_axi4s_vid_out_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -39,8 +39,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_formatter is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 23 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_formatter : entity is "v_axi4s_vid_out_v4_0_17_formatter";
 end AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_formatter;
 
 architecture STRUCTURE of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_formatter is
@@ -479,8 +477,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_sync is
     vtg_field_id : in STD_LOGIC;
     fivid_reset_full_frame : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_sync : entity is "v_axi4s_vid_out_v4_0_17_sync";
 end AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_sync;
 
 architecture STRUCTURE of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_sync is
@@ -4331,8 +4327,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_xpm_cdc_single is
   attribute DEST_SYNC_FF of AES_SYS_v_axi4s_vid_out_0_0_xpm_cdc_single : entity is 4;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of AES_SYS_v_axi4s_vid_out_0_0_xpm_cdc_single : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of AES_SYS_v_axi4s_vid_out_0_0_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -4507,8 +4501,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_xpm_counter_updn is
     \count_value_i_reg[0]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     wr_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_xpm_counter_updn : entity is "xpm_counter_updn";
 end AES_SYS_v_axi4s_vid_out_0_0_xpm_counter_updn;
 
 architecture STRUCTURE of AES_SYS_v_axi4s_vid_out_0_0_xpm_counter_updn is
@@ -6191,8 +6183,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit is
     rst : in STD_LOGIC;
     \count_value_i_reg[3]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit : entity is "xpm_fifo_reg_bit";
 end AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit;
 
 architecture STRUCTURE of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_reg_bit is
@@ -6267,8 +6257,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_rst is
     rd_en : in STD_LOGIC;
     wr_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_rst : entity is "xpm_fifo_rst";
 end AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_rst;
 
 architecture STRUCTURE of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_rst is
@@ -6459,8 +6447,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_xpm_memory_base is
   attribute MESSAGE_CONTROL of AES_SYS_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 0;
   attribute NUM_CHAR_LOC : integer;
   attribute NUM_CHAR_LOC of AES_SYS_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_xpm_memory_base : entity is "xpm_memory_base";
   attribute P_ECC_MODE : integer;
   attribute P_ECC_MODE of AES_SYS_v_axi4s_vid_out_0_0_xpm_memory_base : entity is 0;
   attribute P_ENABLE_BYTE_WRITE_A : integer;
@@ -6877,8 +6863,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_cdc_single is
     src_in : in STD_LOGIC;
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_cdc_single : entity is "v_axi4s_vid_out_v4_0_17_cdc_single";
 end AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_cdc_single;
 
 architecture STRUCTURE of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_cdc_single is
@@ -7028,8 +7012,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_base is
   attribute FULL_RESET_VALUE of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 1;
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is "1'b1";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is "xpm_fifo_base";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_base : entity is 8;
   attribute PE_THRESH_MAX : integer;
@@ -7797,8 +7779,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_sync is
   attribute FIFO_WRITE_DEPTH of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 1024;
   attribute FULL_RESET_VALUE : integer;
   attribute FULL_RESET_VALUE of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is "xpm_fifo_sync";
   attribute PROG_EMPTY_THRESH : integer;
   attribute PROG_EMPTY_THRESH of AES_SYS_v_axi4s_vid_out_0_0_xpm_fifo_sync : entity is 10;
   attribute PROG_FULL_THRESH : integer;
@@ -8043,8 +8023,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_fifo_sync is
     fifo_eol_dly : in STD_LOGIC;
     sof_state_out : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_fifo_sync : entity is "v_axi4s_vid_out_v4_0_17_fifo_sync";
 end AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_fifo_sync;
 
 architecture STRUCTURE of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_fifo_sync is
@@ -8290,8 +8268,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_coupler is
     fifo_eol_dly : in STD_LOGIC;
     sof_state_out : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_coupler : entity is "v_axi4s_vid_out_v4_0_17_coupler";
 end AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_coupler;
 
 architecture STRUCTURE of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17_coupler is
@@ -8411,8 +8387,6 @@ entity AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17 is
   attribute C_VTG_MASTER_SLAVE of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17 : entity is 0;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17 : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17 : entity is "v_axi4s_vid_out_v4_0_17";
 end AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17;
 
 architecture STRUCTURE of AES_SYS_v_axi4s_vid_out_0_0_v_axi4s_vid_out_v4_0_17 is

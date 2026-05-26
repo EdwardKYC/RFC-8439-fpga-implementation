@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
 -- Date        : Mon May 25 20:21:45 2026
 -- Host        : LAPTOP-JHH6RF8B running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_clk_wiz_0_0/AES_SYS_clk_wiz_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top AES_SYS_clk_wiz_0_0 -prefix
+--               AES_SYS_clk_wiz_0_0_ AES_SYS_clk_wiz_0_0_sim_netlist.vhdl
 -- Design      : AES_SYS_clk_wiz_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,14 +15,14 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity AES_SYS_clk_wiz_0_0_clk_wiz is
+entity AES_SYS_clk_wiz_0_0_AES_SYS_clk_wiz_0_0_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-end AES_SYS_clk_wiz_0_0_clk_wiz;
+end AES_SYS_clk_wiz_0_0_AES_SYS_clk_wiz_0_0_clk_wiz;
 
-architecture STRUCTURE of AES_SYS_clk_wiz_0_0_clk_wiz is
+architecture STRUCTURE of AES_SYS_clk_wiz_0_0_AES_SYS_clk_wiz_0_0_clk_wiz is
   signal clk_in1_AES_SYS_clk_wiz_0_0 : STD_LOGIC;
   signal clk_out1_AES_SYS_clk_wiz_0_0 : STD_LOGIC;
   signal clkfbout_AES_SYS_clk_wiz_0_0 : STD_LOGIC;
@@ -176,7 +176,7 @@ end AES_SYS_clk_wiz_0_0;
 
 architecture STRUCTURE of AES_SYS_clk_wiz_0_0 is
 begin
-inst: entity work.AES_SYS_clk_wiz_0_0_clk_wiz
+inst: entity work.AES_SYS_clk_wiz_0_0_AES_SYS_clk_wiz_0_0_clk_wiz
      port map (
       clk_in1 => clk_in1,
       clk_out1 => clk_out1

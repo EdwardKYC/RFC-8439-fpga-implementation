@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Mon May 25 20:22:36 2026
+-- Date        : Mon May 25 20:22:35 2026
 -- Host        : LAPTOP-JHH6RF8B running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_cdma_0_0/AES_SYS_axi_cdma_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top AES_SYS_axi_cdma_0_0 -prefix
+--               AES_SYS_axi_cdma_0_0_ AES_SYS_axi_cdma_0_0_sim_netlist.vhdl
 -- Design      : AES_SYS_axi_cdma_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -62,8 +62,6 @@ entity AES_SYS_axi_cdma_0_0_axi_cdma_lite_if is
     s_axi_lite_wdata : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s_axi_lite_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_cdma_lite_if : entity is "axi_cdma_lite_if";
 end AES_SYS_axi_cdma_0_0_axi_cdma_lite_if;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_cdma_lite_if is
@@ -2027,8 +2025,6 @@ entity AES_SYS_axi_cdma_0_0_axi_cdma_pulse_gen is
     sig_halt_cmplt_reg : in STD_LOGIC;
     sig_to_edge_detect_reg : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_cdma_pulse_gen : entity is "axi_cdma_pulse_gen";
 end AES_SYS_axi_cdma_0_0_axi_cdma_pulse_gen;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_cdma_pulse_gen is
@@ -2429,8 +2425,6 @@ entity AES_SYS_axi_cdma_0_0_axi_cdma_register is
     \sig_sa_register_lsb_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \sig_da_register_lsb_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_cdma_register : entity is "axi_cdma_register";
 end AES_SYS_axi_cdma_0_0_axi_cdma_register;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_cdma_register is
@@ -3781,8 +3775,6 @@ entity AES_SYS_axi_cdma_0_0_axi_cdma_simple_cntlr is
     sig_mm2s_status_reg0 : in STD_LOGIC;
     sig_dm_s2mm_sts_tdata : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_cdma_simple_cntlr : entity is "axi_cdma_simple_cntlr";
 end AES_SYS_axi_cdma_0_0_axi_cdma_simple_cntlr;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_cdma_simple_cntlr is
@@ -4280,8 +4272,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_fifo is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 58 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_fifo : entity is "axi_datamover_fifo";
 end AES_SYS_axi_cdma_0_0_axi_datamover_fifo;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_fifo is
@@ -6190,8 +6180,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_rd_status_cntl is
     sig_data2rsc_decerr : in STD_LOGIC;
     sig_data2rsc_valid : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_rd_status_cntl : entity is "axi_datamover_rd_status_cntl";
 end AES_SYS_axi_cdma_0_0_axi_datamover_rd_status_cntl;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_rd_status_cntl is
@@ -6303,8 +6291,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_reset is
     sig_stream_rst : in STD_LOGIC;
     m_axi_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_reset : entity is "axi_datamover_reset";
 end AES_SYS_axi_cdma_0_0_axi_datamover_reset;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_reset is
@@ -6524,8 +6510,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_skid2mm_buf is
     D : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \sig_strb_reg_out_reg[3]_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_skid2mm_buf : entity is "axi_datamover_skid2mm_buf";
 end AES_SYS_axi_cdma_0_0_axi_datamover_skid2mm_buf;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_skid2mm_buf is
@@ -7805,8 +7789,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_strb_gen2 is
     \sig_xfer_strt_strb_ireg3_reg[3]_0\ : in STD_LOGIC;
     \sig_xfer_strt_strb_ireg3_reg[3]_1\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_strb_gen2 : entity is "axi_datamover_strb_gen2";
 end AES_SYS_axi_cdma_0_0_axi_datamover_strb_gen2;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_strb_gen2 is
@@ -7920,8 +7902,6 @@ entity AES_SYS_axi_cdma_0_0_cntr_incr_decr_addn_f is
     sig_stream_rst : in STD_LOGIC;
     m_axi_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_cntr_incr_decr_addn_f : entity is "cntr_incr_decr_addn_f";
 end AES_SYS_axi_cdma_0_0_cntr_incr_decr_addn_f;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_cntr_incr_decr_addn_f is
@@ -9027,8 +9007,6 @@ entity AES_SYS_axi_cdma_0_0_dynshreg_f is
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     m_axi_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_dynshreg_f : entity is "dynshreg_f";
 end AES_SYS_axi_cdma_0_0_dynshreg_f;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_dynshreg_f is
@@ -11370,8 +11348,6 @@ entity AES_SYS_axi_cdma_0_0_axi_cdma_reg_module is
     s_axi_lite_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_lite_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_cdma_reg_module : entity is "axi_cdma_reg_module";
 end AES_SYS_axi_cdma_0_0_axi_cdma_reg_module;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_cdma_reg_module is
@@ -11602,8 +11578,6 @@ entity AES_SYS_axi_cdma_0_0_axi_cdma_reset is
     sig_dm_mm2s_halt_cmplt : in STD_LOGIC;
     cdma_tvect_out : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_cdma_reset : entity is "axi_cdma_reset";
 end AES_SYS_axi_cdma_0_0_axi_cdma_reset;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_cdma_reset is
@@ -12174,8 +12148,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_cmd_status is
     D : in STD_LOGIC_VECTOR ( 58 downto 0 );
     sig_wsc2stat_status : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_cmd_status : entity is "axi_datamover_cmd_status";
 end AES_SYS_axi_cdma_0_0_axi_datamover_cmd_status;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_cmd_status is
@@ -12329,8 +12301,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_pcc is
     sig_cntl2s2mm_cmd_tvalid : in STD_LOGIC;
     \USE_SINGLE_REG.sig_regfifo_empty_reg_reg\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_pcc : entity is "axi_datamover_pcc";
 end AES_SYS_axi_cdma_0_0_axi_datamover_pcc;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_pcc is
@@ -22400,8 +22370,6 @@ entity AES_SYS_axi_cdma_0_0_srl_fifo_rbu_f is
     sig_data2addr_stop_req : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 37 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_srl_fifo_rbu_f : entity is "srl_fifo_rbu_f";
 end AES_SYS_axi_cdma_0_0_srl_fifo_rbu_f;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_srl_fifo_rbu_f is
@@ -23054,8 +23022,6 @@ entity AES_SYS_axi_cdma_0_0_srl_fifo_f is
     sig_data2addr_stop_req : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 37 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_srl_fifo_f : entity is "srl_fifo_f";
 end AES_SYS_axi_cdma_0_0_srl_fifo_f;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_srl_fifo_f is
@@ -24046,8 +24012,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_addr_cntl is
     sig_addr_valid_reg_reg_0 : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 37 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_addr_cntl : entity is "axi_datamover_addr_cntl";
 end AES_SYS_axi_cdma_0_0_axi_datamover_addr_cntl;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_addr_cntl is
@@ -25214,8 +25178,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_rddata_cntl is
     \in\ : in STD_LOGIC_VECTOR ( 15 downto 0 );
     \sig_addr_posted_cntr_reg[2]_1\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_rddata_cntl : entity is "axi_datamover_rddata_cntl";
 end AES_SYS_axi_cdma_0_0_axi_datamover_rddata_cntl;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_rddata_cntl is
@@ -26117,8 +26079,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_wr_status_cntl is
     m_axi_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \in\ : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_wr_status_cntl : entity is "axi_datamover_wr_status_cntl";
 end AES_SYS_axi_cdma_0_0_axi_datamover_wr_status_cntl;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_wr_status_cntl is
@@ -26547,8 +26507,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_wrdata_cntl is
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 );
     sig_next_calc_error_reg_reg_2 : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_wrdata_cntl : entity is "axi_datamover_wrdata_cntl";
 end AES_SYS_axi_cdma_0_0_axi_datamover_wrdata_cntl;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_wrdata_cntl is
@@ -27548,8 +27506,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_mm2s_full_wrap is
     sig_halt_reg_dly3 : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 58 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_mm2s_full_wrap : entity is "axi_datamover_mm2s_full_wrap";
 end AES_SYS_axi_cdma_0_0_axi_datamover_mm2s_full_wrap;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_mm2s_full_wrap is
@@ -27908,8 +27864,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover_s2mm_full_wrap is
     m_axi_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     D : in STD_LOGIC_VECTOR ( 58 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover_s2mm_full_wrap : entity is "axi_datamover_s2mm_full_wrap";
 end AES_SYS_axi_cdma_0_0_axi_datamover_s2mm_full_wrap;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover_s2mm_full_wrap is
@@ -28374,8 +28328,6 @@ entity AES_SYS_axi_cdma_0_0_axi_datamover is
     D : in STD_LOGIC_VECTOR ( 58 downto 0 );
     \USE_SINGLE_REG.sig_regfifo_dout_reg_reg[66]\ : in STD_LOGIC_VECTOR ( 32 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_datamover : entity is "axi_datamover";
 end AES_SYS_axi_cdma_0_0_axi_datamover;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_datamover is
@@ -28602,8 +28554,6 @@ entity AES_SYS_axi_cdma_0_0_axi_cdma_simple_wrap is
     m_axi_arready : in STD_LOGIC;
     m_axi_awready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_cdma_simple_wrap : entity is "axi_cdma_simple_wrap";
 end AES_SYS_axi_cdma_0_0_axi_cdma_simple_wrap;
 
 architecture STRUCTURE of AES_SYS_axi_cdma_0_0_axi_cdma_simple_wrap is
@@ -28965,8 +28915,6 @@ entity AES_SYS_axi_cdma_0_0_axi_cdma is
   attribute C_USE_DATAMOVER_LITE of AES_SYS_axi_cdma_0_0_axi_cdma : entity is 0;
   attribute C_WRITE_ADDR_PIPE_DEPTH : integer;
   attribute C_WRITE_ADDR_PIPE_DEPTH of AES_SYS_axi_cdma_0_0_axi_cdma : entity is 4;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of AES_SYS_axi_cdma_0_0_axi_cdma : entity is "axi_cdma";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of AES_SYS_axi_cdma_0_0_axi_cdma : entity is "yes";
 end AES_SYS_axi_cdma_0_0_axi_cdma;

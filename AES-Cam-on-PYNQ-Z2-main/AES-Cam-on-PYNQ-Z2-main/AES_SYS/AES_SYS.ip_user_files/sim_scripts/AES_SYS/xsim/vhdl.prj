@@ -22,6 +22,8 @@ vhdl xil_defaultlib  \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_2_1/sim/AES_SYS_axi_gpio_2_1.vhd" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_3_1/sim/AES_SYS_axi_gpio_3_1.vhd" \
 "../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/sim/AES_SYS_axi_bram_ctrl_0_2.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_proc_sys_reset_0_0/sim/AES_SYS_proc_sys_reset_0_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_4_0/sim/AES_SYS_axi_gpio_4_0.vhd" \
 
 # Do not sort compile order
 nosort

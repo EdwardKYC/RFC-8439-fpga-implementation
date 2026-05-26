@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "AES_SYS_auto_pc_10",
-    "cell_name": "ps7_0_axi_periph/m13_couplers/auto_pc",
+    "cell_name": "ps7_0_axi_periph/m11_couplers/auto_pc",
     "component_reference": "xilinx.com:ip:axi_protocol_converter:2.1",
     "ip_revision": "29",
     "gen_directory": "../../../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_10",

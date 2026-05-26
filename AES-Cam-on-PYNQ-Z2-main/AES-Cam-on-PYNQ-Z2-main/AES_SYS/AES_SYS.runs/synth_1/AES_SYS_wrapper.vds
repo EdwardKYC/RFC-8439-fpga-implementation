@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Tue May 26 03:29:28 2026
-# Process ID: 35596
+# Start of session at: Wed May 27 05:09:12 2026
+# Process ID: 45944
 # Current directory: C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1
 # Command line: vivado.exe -log AES_SYS_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AES_SYS_wrapper.tcl
 # Log file: C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/AES_SYS_wrapper.vds
@@ -12,7 +12,7 @@
 # Running On: LAPTOP-JHH6RF8B, OS: Windows, CPU Frequency: 2419 MHz, CPU Physical cores: 24, Host memory: 34049 MB
 #-----------------------------------------------------------
 source AES_SYS_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 503.090 ; gain = 186.605
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 503.504 ; gain = 182.266
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
@@ -30,277 +30,282 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 17004
+INFO: [Synth 8-7075] Helper process launched with PID 18104
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1417.965 ; gain = 439.402
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1419.031 ; gain = 440.109
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'AES_SYS_wrapper' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/hdl/AES_SYS_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'AES_SYS' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:13]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_RFC8439_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_RFC8439_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_RFC8439_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_RFC8439_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_bram_ctrl_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_bram_ctrl_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_bram_ctrl_0_bram_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_bram_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_bram_ctrl_0_bram_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_bram_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'rsta_busy' of module 'AES_SYS_axi_bram_ctrl_0_bram_0' is unconnected for instance 'axi_bram_ctrl_0_bram' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:633]
-WARNING: [Synth 8-7071] port 'rstb_busy' of module 'AES_SYS_axi_bram_ctrl_0_bram_0' is unconnected for instance 'axi_bram_ctrl_0_bram' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:633]
-WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_0_bram' of module 'AES_SYS_axi_bram_ctrl_0_bram_0' has 16 connections declared, but only 14 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:633]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_bram_ctrl_0_bram_2' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_bram_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_bram_ctrl_0_bram_2' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_bram_2_stub.v:6]
-WARNING: [Synth 8-7071] port 'rsta_busy' of module 'AES_SYS_axi_bram_ctrl_0_bram_2' is unconnected for instance 'axi_bram_ctrl_0_bram1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:648]
-WARNING: [Synth 8-7071] port 'rstb_busy' of module 'AES_SYS_axi_bram_ctrl_0_bram_2' is unconnected for instance 'axi_bram_ctrl_0_bram1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:648]
-WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_0_bram1' of module 'AES_SYS_axi_bram_ctrl_0_bram_2' has 16 connections declared, but only 14 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:648]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_bram_ctrl_0_2' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_bram_ctrl_0_2' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_2_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_cdma_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_cdma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_cdma_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_cdma_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'cdma_introut' of module 'AES_SYS_axi_cdma_0_0' is unconnected for instance 'axi_cdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:704]
-WARNING: [Synth 8-7071] port 'cdma_tvect_out' of module 'AES_SYS_axi_cdma_0_0' is unconnected for instance 'axi_cdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:704]
-WARNING: [Synth 8-7023] instance 'axi_cdma_0' of module 'AES_SYS_axi_cdma_0_0' has 50 connections declared, but only 48 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:704]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_1_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_1_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_1_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_1_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_10_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_10_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_10_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_2_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_2_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_2_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_2_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_3_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_3_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_3_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_3_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_5_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_5_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_5_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_5_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_6_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_6_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_6_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_6_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_8_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_8_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_8_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_8_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_intc_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_intc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_intc_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_intc_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_mem_intercon_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1711]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_16Q4FY0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6516]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_12' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_12_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_12' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_12_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_16Q4FY0' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6516]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_8JA42S' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12276]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_8JA42S' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12276]
-INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_16K8IUF' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12380]
-INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_16K8IUF' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12380]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_xbar_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_xbar_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_1_stub.v:6]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2274]
-WARNING: [Synth 8-689] width (64) of port connection 's_axi_rdata' does not match port width (128) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2291]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2292]
-WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2294]
-WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2295]
-WARNING: [Synth 8-7071] port 's_axi_bid' of module 'AES_SYS_xbar_1' is unconnected for instance 'xbar' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2224]
-WARNING: [Synth 8-7071] port 's_axi_rid' of module 'AES_SYS_xbar_1' is unconnected for instance 'xbar' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2224]
-WARNING: [Synth 8-7023] instance 'xbar' of module 'AES_SYS_xbar_1' has 78 connections declared, but only 76 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2224]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_mem_intercon_0' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1711]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_mem_intercon_1_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2303]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_J8F3RU' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6921]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_13' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_13_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_13' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_13_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_J8F3RU' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6921]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1I3GJ2X' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7281]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_ds_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_ds_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_ds_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_ds_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'AES_SYS_auto_ds_0' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7560]
-WARNING: [Synth 8-7071] port 'm_axi_awqos' of module 'AES_SYS_auto_ds_0' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7560]
-WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'AES_SYS_auto_ds_0' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7560]
-WARNING: [Synth 8-7071] port 'm_axi_arqos' of module 'AES_SYS_auto_ds_0' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7560]
-WARNING: [Synth 8-7023] instance 'auto_ds' of module 'AES_SYS_auto_ds_0' has 72 connections declared, but only 68 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7560]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_1I3GJ2X' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7281]
-INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_14CMS65' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7906]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_ds_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_ds_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_ds_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_ds_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'AES_SYS_auto_ds_1' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8185]
-WARNING: [Synth 8-7071] port 'm_axi_awqos' of module 'AES_SYS_auto_ds_1' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8185]
-WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'AES_SYS_auto_ds_1' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8185]
-WARNING: [Synth 8-7071] port 'm_axi_arqos' of module 'AES_SYS_auto_ds_1' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8185]
-WARNING: [Synth 8-7023] instance 'auto_ds' of module 'AES_SYS_auto_ds_1' has 72 connections declared, but only 68 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8185]
-INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_14CMS65' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7906]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1HY4XMU' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11545]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_us_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_us_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_us_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_us_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'AES_SYS_auto_us_0' is unconnected for instance 'auto_us' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11808]
-WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'AES_SYS_auto_us_0' is unconnected for instance 'auto_us' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11808]
-WARNING: [Synth 8-7023] instance 'auto_us' of module 'AES_SYS_auto_us_0' has 72 connections declared, but only 70 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11808]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1HY4XMU' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11545]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_xbar_2' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_xbar_2' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_mem_intercon_1_0' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2303]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_vdma_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_vdma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_vdma_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_vdma_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mm2s_frame_ptr_out' of module 'AES_SYS_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1154]
-WARNING: [Synth 8-7071] port 's2mm_frame_ptr_out' of module 'AES_SYS_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1154]
-WARNING: [Synth 8-7071] port 'm_axis_mm2s_tkeep' of module 'AES_SYS_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1154]
-WARNING: [Synth 8-7071] port 's_axis_s2mm_tready' of module 'AES_SYS_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1154]
-WARNING: [Synth 8-7023] instance 'axi_vdma_0' of module 'AES_SYS_axi_vdma_0_0' has 67 connections declared, but only 63 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1154]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_clk_wiz_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_clk_wiz_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_clk_wiz_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_clk_wiz_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_processing_system7_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_processing_system7_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_BID' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RID' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RCOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_WCOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_RACOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_WACOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'AES_SYS_processing_system7_0_0' has 156 connections declared, but only 144 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1223]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_ps7_0_axi_periph_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:3319]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_15SVXQ2' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6236]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_0' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6459]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_0' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6459]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_0' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6459]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_15SVXQ2' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6236]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_4QD8OP' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7631]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_1' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7850]
-WARNING: [Synth 8-7071] port 'm_axi_wstrb' of module 'AES_SYS_auto_pc_1' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7850]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_1' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7850]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_1' has 56 connections declared, but only 53 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7850]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_4QD8OP' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7631]
-INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_IH15TP' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8256]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_2' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_2' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_2_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_2' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8479]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_2' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8479]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_2' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8479]
-INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_IH15TP' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8256]
-INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_1IPRCAM' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8536]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_3' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_3' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_3_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_3' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8755]
-WARNING: [Synth 8-7071] port 'm_axi_wstrb' of module 'AES_SYS_auto_pc_3' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8755]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_3' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8755]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_3' has 56 connections declared, but only 53 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8755]
-INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_1IPRCAM' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8536]
-INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_1RPOSL1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8811]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_4' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_4' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_4_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_4' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9034]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_4' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9034]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_4' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9034]
-INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_1RPOSL1' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8811]
-INFO: [Synth 8-6157] synthesizing module 'm05_couplers_imp_R75986' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9091]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_5' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_5' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_5_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_5' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9314]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_5' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9314]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_5' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9314]
-INFO: [Synth 8-6155] done synthesizing module 'm05_couplers_imp_R75986' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9091]
-INFO: [Synth 8-6157] synthesizing module 'm06_couplers_imp_DRJGXE' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9371]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_6' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_6' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_6_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_6' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9594]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_6' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9594]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_6' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9594]
-INFO: [Synth 8-6155] done synthesizing module 'm06_couplers_imp_DRJGXE' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9371]
-INFO: [Synth 8-6157] synthesizing module 'm07_couplers_imp_1EK8SVL' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9651]
-INFO: [Synth 8-6155] done synthesizing module 'm07_couplers_imp_1EK8SVL' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9651]
-INFO: [Synth 8-6157] synthesizing module 'm08_couplers_imp_V9Y57O' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9909]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_7' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_7_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_7' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_7_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_7' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10132]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_7' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10132]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_7' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10132]
-INFO: [Synth 8-6155] done synthesizing module 'm08_couplers_imp_V9Y57O' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9909]
-INFO: [Synth 8-6157] synthesizing module 'm09_couplers_imp_1WKDZFR' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10189]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_8' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_8_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_8' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_8_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_8' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10412]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_8' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10412]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_8' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10412]
-INFO: [Synth 8-6155] done synthesizing module 'm09_couplers_imp_1WKDZFR' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10189]
-INFO: [Synth 8-6157] synthesizing module 'm10_couplers_imp_XUE9P7' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10469]
-INFO: [Synth 8-6155] done synthesizing module 'm10_couplers_imp_XUE9P7' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10469]
-INFO: [Synth 8-6157] synthesizing module 'm11_couplers_imp_1YKRC2G' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10727]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_9' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_9_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_9' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_9_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_9' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10950]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_9' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10950]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_9' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10950]
-INFO: [Synth 8-6155] done synthesizing module 'm11_couplers_imp_1YKRC2G' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10727]
-INFO: [Synth 8-6157] synthesizing module 'm12_couplers_imp_1C7SWGS' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11007]
-INFO: [Synth 8-6155] done synthesizing module 'm12_couplers_imp_1C7SWGS' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11007]
-INFO: [Synth 8-6157] synthesizing module 'm13_couplers_imp_BRAEXR' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11265]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_10' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_10_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_10' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_10_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_10' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11488]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_10' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11488]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_10' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11488]
-INFO: [Synth 8-6155] done synthesizing module 'm13_couplers_imp_BRAEXR' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11265]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_4VQ6EE' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11881]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_11' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_11_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_11' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_11_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'AES_SYS_auto_pc_11' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12196]
-WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'AES_SYS_auto_pc_11' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12196]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_11' has 79 connections declared, but only 77 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12196]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_4VQ6EE' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11881]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_xbar_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_xbar_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_ps7_0_axi_periph_0' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:3319]
-WARNING: [Synth 8-7071] port 'M07_AXI_araddr' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_arburst' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_arcache' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_arlen' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_arlock' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_arprot' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_arqos' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_arregion' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_arsize' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_arvalid' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awaddr' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awburst' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awcache' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awlen' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awlock' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awprot' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awqos' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awregion' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awsize' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_awvalid' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_bready' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_rready' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_wdata' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_wlast' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_wstrb' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M07_AXI_wvalid' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_araddr' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_arburst' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_arcache' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_arlen' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_arlock' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_arprot' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_arqos' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_arregion' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_arsize' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_arvalid' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_awaddr' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_awburst' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_awcache' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-WARNING: [Synth 8-7071] port 'M10_AXI_awlen' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_RFC8439_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_RFC8439_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_RFC8439_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_RFC8439_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_bram_ctrl_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_bram_ctrl_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_bram_ctrl_0_bram_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_bram_ctrl_0_bram_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_bram_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'AES_SYS_axi_bram_ctrl_0_bram_0' is unconnected for instance 'axi_bram_ctrl_0_bram' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:651]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'AES_SYS_axi_bram_ctrl_0_bram_0' is unconnected for instance 'axi_bram_ctrl_0_bram' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:651]
+WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_0_bram' of module 'AES_SYS_axi_bram_ctrl_0_bram_0' has 16 connections declared, but only 14 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:651]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_bram_ctrl_0_bram_2' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_bram_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_bram_ctrl_0_bram_2' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_bram_2_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'AES_SYS_axi_bram_ctrl_0_bram_2' is unconnected for instance 'axi_bram_ctrl_0_bram1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:666]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'AES_SYS_axi_bram_ctrl_0_bram_2' is unconnected for instance 'axi_bram_ctrl_0_bram1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:666]
+WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_0_bram1' of module 'AES_SYS_axi_bram_ctrl_0_bram_2' has 16 connections declared, but only 14 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:666]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_bram_ctrl_0_2' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_bram_ctrl_0_2' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_bram_ctrl_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_cdma_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_cdma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_cdma_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_cdma_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'cdma_introut' of module 'AES_SYS_axi_cdma_0_0' is unconnected for instance 'axi_cdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:722]
+WARNING: [Synth 8-7071] port 'cdma_tvect_out' of module 'AES_SYS_axi_cdma_0_0' is unconnected for instance 'axi_cdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:722]
+WARNING: [Synth 8-7023] instance 'axi_cdma_0' of module 'AES_SYS_axi_cdma_0_0' has 50 connections declared, but only 48 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:722]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_1_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_1_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_1_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_1_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_10_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_10_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_10_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_2_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_2_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_2_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_2_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_3_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_3_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_3_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_3_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_4_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_4_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_4_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_4_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_5_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_5_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_5_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_5_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_6_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_6_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_6_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_6_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_gpio_8_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_8_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_gpio_8_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_gpio_8_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_intc_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_intc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_intc_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_intc_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_mem_intercon_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1759]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_16Q4FY0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6474]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_13' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_13_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_13' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_13_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_16Q4FY0' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6474]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_8JA42S' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12256]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_8JA42S' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12256]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_16K8IUF' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12360]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_16K8IUF' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12360]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_xbar_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_xbar_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_1_stub.v:6]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_arready' does not match port width (2) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2322]
+WARNING: [Synth 8-689] width (64) of port connection 's_axi_rdata' does not match port width (128) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2339]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rlast' does not match port width (2) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2340]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_rresp' does not match port width (4) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2342]
+WARNING: [Synth 8-689] width (1) of port connection 's_axi_rvalid' does not match port width (2) of module 'AES_SYS_xbar_1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2343]
+WARNING: [Synth 8-7071] port 's_axi_bid' of module 'AES_SYS_xbar_1' is unconnected for instance 'xbar' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2272]
+WARNING: [Synth 8-7071] port 's_axi_rid' of module 'AES_SYS_xbar_1' is unconnected for instance 'xbar' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2272]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'AES_SYS_xbar_1' has 78 connections declared, but only 76 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2272]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_mem_intercon_0' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1759]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_mem_intercon_1_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2351]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_J8F3RU' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6879]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_14' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_14_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_14' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_14_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_J8F3RU' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6879]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1I3GJ2X' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7239]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_ds_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_ds_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_ds_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'AES_SYS_auto_ds_0' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7518]
+WARNING: [Synth 8-7071] port 'm_axi_awqos' of module 'AES_SYS_auto_ds_0' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7518]
+WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'AES_SYS_auto_ds_0' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7518]
+WARNING: [Synth 8-7071] port 'm_axi_arqos' of module 'AES_SYS_auto_ds_0' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7518]
+WARNING: [Synth 8-7023] instance 'auto_ds' of module 'AES_SYS_auto_ds_0' has 72 connections declared, but only 68 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7518]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_1I3GJ2X' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7239]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_14CMS65' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7864]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_ds_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_ds_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_ds_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_ds_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'AES_SYS_auto_ds_1' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8143]
+WARNING: [Synth 8-7071] port 'm_axi_awqos' of module 'AES_SYS_auto_ds_1' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8143]
+WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'AES_SYS_auto_ds_1' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8143]
+WARNING: [Synth 8-7071] port 'm_axi_arqos' of module 'AES_SYS_auto_ds_1' is unconnected for instance 'auto_ds' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8143]
+WARNING: [Synth 8-7023] instance 'auto_ds' of module 'AES_SYS_auto_ds_1' has 72 connections declared, but only 68 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8143]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_14CMS65' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7864]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1HY4XMU' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11525]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_us_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_us_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_us_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_us_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'AES_SYS_auto_us_0' is unconnected for instance 'auto_us' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11788]
+WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'AES_SYS_auto_us_0' is unconnected for instance 'auto_us' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11788]
+WARNING: [Synth 8-7023] instance 'auto_us' of module 'AES_SYS_auto_us_0' has 72 connections declared, but only 70 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11788]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1HY4XMU' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11525]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_xbar_2' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_xbar_2' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_mem_intercon_1_0' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:2351]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_axi_vdma_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_vdma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_axi_vdma_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_axi_vdma_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mm2s_frame_ptr_out' of module 'AES_SYS_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1193]
+WARNING: [Synth 8-7071] port 's2mm_frame_ptr_out' of module 'AES_SYS_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1193]
+WARNING: [Synth 8-7071] port 'm_axis_mm2s_tkeep' of module 'AES_SYS_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1193]
+WARNING: [Synth 8-7071] port 's_axis_s2mm_tready' of module 'AES_SYS_axi_vdma_0_0' is unconnected for instance 'axi_vdma_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1193]
+WARNING: [Synth 8-7023] instance 'axi_vdma_0' of module 'AES_SYS_axi_vdma_0_0' has 67 connections declared, but only 63 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1193]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_clk_wiz_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_clk_wiz_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_processing_system7_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_processing_system7_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_BID' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RID' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RCOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_WCOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_RACOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_WACOUNT' of module 'AES_SYS_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'AES_SYS_processing_system7_0_0' has 156 connections declared, but only 144 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1262]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_ps7_0_axi_periph_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:3367]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_15SVXQ2' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6194]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_0' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6417]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_0' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6417]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_0' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6417]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_15SVXQ2' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:6194]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_4QD8OP' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7589]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_1' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_1' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_1' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7808]
+WARNING: [Synth 8-7071] port 'm_axi_wstrb' of module 'AES_SYS_auto_pc_1' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7808]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_1' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7808]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_1' has 56 connections declared, but only 53 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7808]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_4QD8OP' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:7589]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_IH15TP' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8214]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_2' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_2' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_2_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_2' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8437]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_2' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8437]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_2' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8437]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_IH15TP' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8214]
+INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_1IPRCAM' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8494]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_3' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_3' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_3_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_3' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8713]
+WARNING: [Synth 8-7071] port 'm_axi_wstrb' of module 'AES_SYS_auto_pc_3' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8713]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_3' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8713]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_3' has 56 connections declared, but only 53 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8713]
+INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_1IPRCAM' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8494]
+INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_1RPOSL1' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8769]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_4' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_4' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_4_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_4' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8992]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_4' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8992]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_4' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8992]
+INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_1RPOSL1' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:8769]
+INFO: [Synth 8-6157] synthesizing module 'm05_couplers_imp_R75986' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9049]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_5' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_5' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_5_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_5' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9272]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_5' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9272]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_5' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9272]
+INFO: [Synth 8-6155] done synthesizing module 'm05_couplers_imp_R75986' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9049]
+INFO: [Synth 8-6157] synthesizing module 'm06_couplers_imp_DRJGXE' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9329]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_6' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_6' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_6_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_6' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9552]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_6' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9552]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_6' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9552]
+INFO: [Synth 8-6155] done synthesizing module 'm06_couplers_imp_DRJGXE' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9329]
+INFO: [Synth 8-6157] synthesizing module 'm07_couplers_imp_1EK8SVL' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9609]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_7' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_7_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_7' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_7_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_7' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9832]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_7' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9832]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_7' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9832]
+INFO: [Synth 8-6155] done synthesizing module 'm07_couplers_imp_1EK8SVL' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9609]
+INFO: [Synth 8-6157] synthesizing module 'm08_couplers_imp_V9Y57O' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9889]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_8' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_8_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_8' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_8_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_8' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10112]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_8' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10112]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_8' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10112]
+INFO: [Synth 8-6155] done synthesizing module 'm08_couplers_imp_V9Y57O' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:9889]
+INFO: [Synth 8-6157] synthesizing module 'm09_couplers_imp_1WKDZFR' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10169]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_9' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_9_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_9' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_9_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_9' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10392]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_9' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10392]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_9' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10392]
+INFO: [Synth 8-6155] done synthesizing module 'm09_couplers_imp_1WKDZFR' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10169]
+INFO: [Synth 8-6157] synthesizing module 'm10_couplers_imp_XUE9P7' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10449]
+INFO: [Synth 8-6155] done synthesizing module 'm10_couplers_imp_XUE9P7' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10449]
+INFO: [Synth 8-6157] synthesizing module 'm11_couplers_imp_1YKRC2G' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10707]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_10' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_10_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_10' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_10_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_10' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10930]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_10' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10930]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_10' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10930]
+INFO: [Synth 8-6155] done synthesizing module 'm11_couplers_imp_1YKRC2G' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10707]
+INFO: [Synth 8-6157] synthesizing module 'm12_couplers_imp_1C7SWGS' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10987]
+INFO: [Synth 8-6155] done synthesizing module 'm12_couplers_imp_1C7SWGS' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:10987]
+INFO: [Synth 8-6157] synthesizing module 'm13_couplers_imp_BRAEXR' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11245]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_11' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_11_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_11' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_11_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'AES_SYS_auto_pc_11' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11468]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'AES_SYS_auto_pc_11' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11468]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_11' has 56 connections declared, but only 54 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11468]
+INFO: [Synth 8-6155] done synthesizing module 'm13_couplers_imp_BRAEXR' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11245]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_4VQ6EE' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11861]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_auto_pc_12' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_12_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_auto_pc_12' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_auto_pc_12_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'AES_SYS_auto_pc_12' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12176]
+WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'AES_SYS_auto_pc_12' is unconnected for instance 'auto_pc' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12176]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'AES_SYS_auto_pc_12' has 79 connections declared, but only 77 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:12176]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_4VQ6EE' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:11861]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_xbar_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_xbar_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_ps7_0_axi_periph_0' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:3367]
+WARNING: [Synth 8-7071] port 'M10_AXI_araddr' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_arburst' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_arcache' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_arlen' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_arlock' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_arprot' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_arqos' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_arregion' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_arsize' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_arvalid' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awaddr' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awburst' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awcache' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awlen' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awlock' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awprot' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awqos' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awregion' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awsize' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_awvalid' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_bready' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_rready' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_wdata' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_wlast' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_wstrb' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M10_AXI_wvalid' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_araddr' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_arburst' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_arcache' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_arlen' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_arlock' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_arprot' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_arqos' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_arregion' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_arsize' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_arvalid' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_awaddr' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+WARNING: [Synth 8-7071] port 'M12_AXI_awburst' of module 'AES_SYS_ps7_0_axi_periph_0' is unconnected for instance 'ps7_0_axi_periph' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
 INFO: [Common 17-14] Message 'Synth 8-7071' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-WARNING: [Synth 8-7023] instance 'ps7_0_axi_periph' of module 'AES_SYS_ps7_0_axi_periph_0' has 360 connections declared, but only 282 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1368]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_rgb2dvi_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_rgb2dvi_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_rgb2dvi_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_rgb2dvi_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_rst_ps7_0_100M_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_rst_ps7_0_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_rst_ps7_0_100M_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_rst_ps7_0_100M_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_100M' of module 'AES_SYS_rst_ps7_0_100M_0' has 10 connections declared, but only 7 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1662]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_v_axi4s_vid_out_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_v_axi4s_vid_out_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_v_axi4s_vid_out_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_v_axi4s_vid_out_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'v_axi4s_vid_out_0' of module 'AES_SYS_v_axi4s_vid_out_0_0' has 30 connections declared, but only 21 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1670]
-INFO: [Synth 8-6157] synthesizing module 'AES_SYS_v_tc_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_v_tc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_v_tc_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-35596-LAPTOP-JHH6RF8B/realtime/AES_SYS_v_tc_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'v_tc_0' of module 'AES_SYS_v_tc_0_0' has 11 connections declared, but only 10 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1692]
+WARNING: [Synth 8-7023] instance 'ps7_0_axi_periph' of module 'AES_SYS_ps7_0_axi_periph_0' has 342 connections declared, but only 290 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1407]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_rgb2dvi_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_rgb2dvi_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_rst_ps7_0_100M_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_rst_ps7_0_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_rst_ps7_0_100M_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_rst_ps7_0_100M_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_100M' of module 'AES_SYS_rst_ps7_0_100M_0' has 10 connections declared, but only 7 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1709]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_v_axi4s_vid_out_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_v_axi4s_vid_out_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_v_axi4s_vid_out_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_v_axi4s_vid_out_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'v_axi4s_vid_out_0' of module 'AES_SYS_v_axi4s_vid_out_0_0' has 30 connections declared, but only 22 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1717]
+INFO: [Synth 8-6157] synthesizing module 'AES_SYS_v_tc_0_0' [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_v_tc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_SYS_v_tc_0_0' (0#1) [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/.Xil/Vivado-45944-LAPTOP-JHH6RF8B/realtime/AES_SYS_v_tc_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'v_tc_0' of module 'AES_SYS_v_tc_0_0' has 11 connections declared, but only 10 given [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/synth/AES_SYS.v:1740]
 INFO: [Synth 8-6157] synthesizing module 'AES_SYS_xlconcat_0_0' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xlconcat_0_0/synth/AES_SYS_xlconcat_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_5_xlconcat' [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/147b/hdl/xlconcat_v2_1_vl_rfs.v:59]
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_5_xlconcat' (0#1) [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/147b/hdl/xlconcat_v2_1_vl_rfs.v:59]
@@ -413,18 +418,18 @@ WARNING: [Synth 8-7129] Port In100[0] in module xlconcat_v2_1_5_xlconcat is eith
 WARNING: [Synth 8-7129] Port In101[0] in module xlconcat_v2_1_5_xlconcat is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1558.559 ; gain = 579.996
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1559.148 ; gain = 580.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1558.559 ; gain = 579.996
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1559.148 ; gain = 580.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1558.559 ; gain = 579.996
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1559.148 ; gain = 580.227
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 1558.559 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 1559.148 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -445,8 +450,8 @@ Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/A
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_intc_0_0/AES_SYS_axi_intc_0_0/AES_SYS_axi_intc_0_0_in_context.xdc] for cell 'AES_SYS_i/axi_intc_0'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xbar_0/AES_SYS_xbar_0/AES_SYS_xbar_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/xbar'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xbar_0/AES_SYS_xbar_0/AES_SYS_xbar_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/xbar'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/s00_couplers/auto_pc'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12/AES_SYS_auto_pc_11_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12/AES_SYS_auto_pc_11_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_0/AES_SYS_auto_pc_0/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m00_couplers/auto_pc'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_0/AES_SYS_auto_pc_0/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m00_couplers/auto_pc'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_1/AES_SYS_auto_pc_1/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m01_couplers/auto_pc'
@@ -461,20 +466,22 @@ Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/A
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_5/AES_SYS_auto_pc_5/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m05_couplers/auto_pc'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_6/AES_SYS_auto_pc_6/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m06_couplers/auto_pc'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_6/AES_SYS_auto_pc_6/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m06_couplers/auto_pc'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_7/AES_SYS_auto_pc_7/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m08_couplers/auto_pc'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_7/AES_SYS_auto_pc_7/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m08_couplers/auto_pc'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_8/AES_SYS_auto_pc_8/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m09_couplers/auto_pc'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_8/AES_SYS_auto_pc_8/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m09_couplers/auto_pc'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_9/AES_SYS_auto_pc_9/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m11_couplers/auto_pc'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_9/AES_SYS_auto_pc_9/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m11_couplers/auto_pc'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_10/AES_SYS_auto_pc_10/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m13_couplers/auto_pc'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_10/AES_SYS_auto_pc_10/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m13_couplers/auto_pc'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_7/AES_SYS_auto_pc_7/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m07_couplers/auto_pc'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_7/AES_SYS_auto_pc_7/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m07_couplers/auto_pc'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_8/AES_SYS_auto_pc_8/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m08_couplers/auto_pc'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_8/AES_SYS_auto_pc_8/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m08_couplers/auto_pc'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_9/AES_SYS_auto_pc_9/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m09_couplers/auto_pc'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_9/AES_SYS_auto_pc_9/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m09_couplers/auto_pc'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_10/AES_SYS_auto_pc_10/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m11_couplers/auto_pc'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_10/AES_SYS_auto_pc_10/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m11_couplers/auto_pc'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m13_couplers/auto_pc'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_11/AES_SYS_auto_pc_11/AES_SYS_auto_pc_0_in_context.xdc] for cell 'AES_SYS_i/ps7_0_axi_periph/m13_couplers/auto_pc'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_rst_ps7_0_100M_0/AES_SYS_rst_ps7_0_100M_0/AES_SYS_rst_ps7_0_100M_0_in_context.xdc] for cell 'AES_SYS_i/rst_ps7_0_100M'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_rst_ps7_0_100M_0/AES_SYS_rst_ps7_0_100M_0/AES_SYS_rst_ps7_0_100M_0_in_context.xdc] for cell 'AES_SYS_i/rst_ps7_0_100M'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xbar_1/AES_SYS_xbar_1/AES_SYS_xbar_1_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon/xbar'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xbar_1/AES_SYS_xbar_1/AES_SYS_xbar_1_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon/xbar'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon/m00_couplers/auto_pc'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12/AES_SYS_auto_pc_12_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon/m00_couplers/auto_pc'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13/AES_SYS_auto_pc_12_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon/m00_couplers/auto_pc'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13/AES_SYS_auto_pc_12_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon/m00_couplers/auto_pc'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_0_0/AES_SYS_axi_gpio_0_0/AES_SYS_axi_gpio_0_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_0'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_0_0/AES_SYS_axi_gpio_0_0/AES_SYS_axi_gpio_0_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_0'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_cdma_0_0/AES_SYS_axi_cdma_0_0/AES_SYS_axi_cdma_0_0_in_context.xdc] for cell 'AES_SYS_i/axi_cdma_0'
@@ -483,8 +490,8 @@ Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/A
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_xbar_2/AES_SYS_xbar_2/AES_SYS_xbar_2_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/xbar'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_us_0/AES_SYS_auto_us_0/AES_SYS_auto_us_0_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/s00_couplers/auto_us'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_us_0/AES_SYS_auto_us_0/AES_SYS_auto_us_0_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/s00_couplers/auto_us'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/m00_couplers/auto_pc'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13/AES_SYS_auto_pc_13_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/m00_couplers/auto_pc'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_14/AES_SYS_auto_pc_14/AES_SYS_auto_pc_13_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/m00_couplers/auto_pc'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_pc_14/AES_SYS_auto_pc_14/AES_SYS_auto_pc_13_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/m00_couplers/auto_pc'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_0/AES_SYS_auto_ds_0/AES_SYS_auto_ds_0_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/m01_couplers/auto_ds'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_0/AES_SYS_auto_ds_0/AES_SYS_auto_ds_0_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/m01_couplers/auto_ds'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_auto_ds_1/AES_SYS_auto_ds_1/AES_SYS_auto_ds_0_in_context.xdc] for cell 'AES_SYS_i/axi_mem_intercon_1/m02_couplers/auto_ds'
@@ -503,16 +510,18 @@ Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/A
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_10_0/AES_SYS_axi_gpio_10_0/AES_SYS_axi_gpio_10_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_10'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_RFC8439_0_0/AES_SYS_RFC8439_0_0/AES_SYS_RFC8439_0_0_in_context.xdc] for cell 'AES_SYS_i/RFC8439_0'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_RFC8439_0_0/AES_SYS_RFC8439_0_0/AES_SYS_RFC8439_0_0_in_context.xdc] for cell 'AES_SYS_i/RFC8439_0'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_1_1/AES_SYS_axi_gpio_1_1/AES_SYS_axi_gpio_3_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_1'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_1_1/AES_SYS_axi_gpio_1_1/AES_SYS_axi_gpio_3_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_1'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_2_1/AES_SYS_axi_gpio_2_1/AES_SYS_axi_gpio_3_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_2'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_2_1/AES_SYS_axi_gpio_2_1/AES_SYS_axi_gpio_3_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_2'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_1_1/AES_SYS_axi_gpio_1_1/AES_SYS_axi_gpio_1_1_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_1'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_1_1/AES_SYS_axi_gpio_1_1/AES_SYS_axi_gpio_1_1_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_1'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_2_1/AES_SYS_axi_gpio_2_1/AES_SYS_axi_gpio_1_1_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_2'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_2_1/AES_SYS_axi_gpio_2_1/AES_SYS_axi_gpio_1_1_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_2'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_3_1/AES_SYS_axi_gpio_3_1/AES_SYS_axi_gpio_8_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_3'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_3_1/AES_SYS_axi_gpio_3_1/AES_SYS_axi_gpio_8_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_3'
 Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_bram_2/AES_SYS_axi_bram_ctrl_0_bram_2/AES_SYS_axi_bram_ctrl_0_bram_0_in_context.xdc] for cell 'AES_SYS_i/axi_bram_ctrl_0_bram1'
 Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_bram_2/AES_SYS_axi_bram_ctrl_0_bram_2/AES_SYS_axi_bram_ctrl_0_bram_0_in_context.xdc] for cell 'AES_SYS_i/axi_bram_ctrl_0_bram1'
-Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_2_in_context.xdc] for cell 'AES_SYS_i/axi_bram_ctrl_1'
-Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_2_in_context.xdc] for cell 'AES_SYS_i/axi_bram_ctrl_1'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_0_in_context.xdc] for cell 'AES_SYS_i/axi_bram_ctrl_1'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_0_in_context.xdc] for cell 'AES_SYS_i/axi_bram_ctrl_1'
+Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_4_0/AES_SYS_axi_gpio_4_0/AES_SYS_axi_gpio_4_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_4'
+Finished Parsing XDC File [c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_4_0/AES_SYS_axi_gpio_4_0/AES_SYS_axi_gpio_4_0_in_context.xdc] for cell 'AES_SYS_i/axi_gpio_4'
 Parsing XDC File [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/constrs_1/imports/Desktop/PYNQ-Z2 v1.0.xdc]
 Finished Parsing XDC File [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/constrs_1/imports/Desktop/PYNQ-Z2 v1.0.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/constrs_1/imports/Desktop/PYNQ-Z2 v1.0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/AES_SYS_wrapper_propImpl.xdc].
@@ -521,22 +530,22 @@ Parsing XDC File [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/A
 Finished Parsing XDC File [C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1570.188 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1559.629 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1570.188 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1559.629 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -835,6 +844,7 @@ Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/ps7_0_axi_periph/m03_co
 Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/ps7_0_axi_periph/m04_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/ps7_0_axi_periph/m05_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/ps7_0_axi_periph/m06_couplers/auto_pc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/ps7_0_axi_periph/m07_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/ps7_0_axi_periph/m08_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/ps7_0_axi_periph/m09_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/ps7_0_axi_periph/m11_couplers/auto_pc. (constraint file  auto generated constraint).
@@ -865,11 +875,12 @@ Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/axi_gpio_2. (constraint
 Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/axi_gpio_3. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/axi_bram_ctrl_0_bram1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/axi_bram_ctrl_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_SYS_i/axi_gpio_4. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -892,25 +903,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -928,37 +939,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -969,9 +980,9 @@ Report BlackBoxes:
 |      |BlackBox name                  |Instances |
 +------+-------------------------------+----------+
 |1     |AES_SYS_xbar_1                 |         1|
-|2     |AES_SYS_auto_pc_12             |         1|
+|2     |AES_SYS_auto_pc_13             |         1|
 |3     |AES_SYS_xbar_2                 |         1|
-|4     |AES_SYS_auto_pc_13             |         1|
+|4     |AES_SYS_auto_pc_14             |         1|
 |5     |AES_SYS_auto_ds_0              |         1|
 |6     |AES_SYS_auto_ds_1              |         1|
 |7     |AES_SYS_auto_us_0              |         1|
@@ -988,28 +999,30 @@ Report BlackBoxes:
 |18    |AES_SYS_auto_pc_9              |         1|
 |19    |AES_SYS_auto_pc_10             |         1|
 |20    |AES_SYS_auto_pc_11             |         1|
-|21    |AES_SYS_RFC8439_0_0            |         1|
-|22    |AES_SYS_axi_bram_ctrl_0_0      |         1|
-|23    |AES_SYS_axi_bram_ctrl_0_bram_0 |         1|
-|24    |AES_SYS_axi_bram_ctrl_0_bram_2 |         1|
-|25    |AES_SYS_axi_bram_ctrl_0_2      |         1|
-|26    |AES_SYS_axi_cdma_0_0           |         1|
-|27    |AES_SYS_axi_gpio_0_0           |         1|
-|28    |AES_SYS_axi_gpio_1_1           |         1|
-|29    |AES_SYS_axi_gpio_10_0          |         1|
-|30    |AES_SYS_axi_gpio_2_1           |         1|
-|31    |AES_SYS_axi_gpio_3_1           |         1|
-|32    |AES_SYS_axi_gpio_5_0           |         1|
-|33    |AES_SYS_axi_gpio_6_0           |         1|
-|34    |AES_SYS_axi_gpio_8_0           |         1|
-|35    |AES_SYS_axi_intc_0_0           |         1|
-|36    |AES_SYS_axi_vdma_0_0           |         1|
-|37    |AES_SYS_clk_wiz_0_0            |         1|
-|38    |AES_SYS_processing_system7_0_0 |         1|
-|39    |AES_SYS_rgb2dvi_0_0            |         1|
-|40    |AES_SYS_rst_ps7_0_100M_0       |         1|
-|41    |AES_SYS_v_axi4s_vid_out_0_0    |         1|
-|42    |AES_SYS_v_tc_0_0               |         1|
+|21    |AES_SYS_auto_pc_12             |         1|
+|22    |AES_SYS_RFC8439_0_0            |         1|
+|23    |AES_SYS_axi_bram_ctrl_0_0      |         1|
+|24    |AES_SYS_axi_bram_ctrl_0_bram_0 |         1|
+|25    |AES_SYS_axi_bram_ctrl_0_bram_2 |         1|
+|26    |AES_SYS_axi_bram_ctrl_0_2      |         1|
+|27    |AES_SYS_axi_cdma_0_0           |         1|
+|28    |AES_SYS_axi_gpio_0_0           |         1|
+|29    |AES_SYS_axi_gpio_1_1           |         1|
+|30    |AES_SYS_axi_gpio_10_0          |         1|
+|31    |AES_SYS_axi_gpio_2_1           |         1|
+|32    |AES_SYS_axi_gpio_3_1           |         1|
+|33    |AES_SYS_axi_gpio_4_0           |         1|
+|34    |AES_SYS_axi_gpio_5_0           |         1|
+|35    |AES_SYS_axi_gpio_6_0           |         1|
+|36    |AES_SYS_axi_gpio_8_0           |         1|
+|37    |AES_SYS_axi_intc_0_0           |         1|
+|38    |AES_SYS_axi_vdma_0_0           |         1|
+|39    |AES_SYS_clk_wiz_0_0            |         1|
+|40    |AES_SYS_processing_system7_0_0 |         1|
+|41    |AES_SYS_rgb2dvi_0_0            |         1|
+|42    |AES_SYS_rst_ps7_0_100M_0       |         1|
+|43    |AES_SYS_v_axi4s_vid_out_0_0    |         1|
+|44    |AES_SYS_v_tc_0_0               |         1|
 +------+-------------------------------+----------+
 
 Report Cell Usage: 
@@ -1018,50 +1031,51 @@ Report Cell Usage:
 +------+-----------------------------+------+
 |1     |AES_SYS_RFC8439_0            |     1|
 |2     |AES_SYS_auto_ds              |     2|
-|4     |AES_SYS_auto_pc              |    14|
-|18    |AES_SYS_auto_us              |     1|
-|19    |AES_SYS_axi_bram_ctrl_0      |     2|
-|21    |AES_SYS_axi_bram_ctrl_0_bram |     2|
-|23    |AES_SYS_axi_cdma_0           |     1|
-|24    |AES_SYS_axi_gpio_0           |     1|
-|25    |AES_SYS_axi_gpio_10          |     1|
-|26    |AES_SYS_axi_gpio_1           |     1|
-|27    |AES_SYS_axi_gpio_2           |     1|
-|28    |AES_SYS_axi_gpio_3           |     1|
-|29    |AES_SYS_axi_gpio_5           |     1|
-|30    |AES_SYS_axi_gpio_6           |     1|
-|31    |AES_SYS_axi_gpio_8           |     1|
-|32    |AES_SYS_axi_intc_0           |     1|
-|33    |AES_SYS_axi_vdma_0           |     1|
-|34    |AES_SYS_clk_wiz_0            |     1|
-|35    |AES_SYS_processing_system7_0 |     1|
-|36    |AES_SYS_rgb2dvi_0            |     1|
-|37    |AES_SYS_rst_ps7_0_100M       |     1|
-|38    |AES_SYS_v_axi4s_vid_out_0    |     1|
-|39    |AES_SYS_v_tc_0               |     1|
-|40    |AES_SYS_xbar                 |     3|
-|43    |IBUF                         |     6|
+|4     |AES_SYS_auto_pc              |    15|
+|19    |AES_SYS_auto_us              |     1|
+|20    |AES_SYS_axi_bram_ctrl_0      |     2|
+|22    |AES_SYS_axi_bram_ctrl_0_bram |     2|
+|24    |AES_SYS_axi_cdma_0           |     1|
+|25    |AES_SYS_axi_gpio_0           |     1|
+|26    |AES_SYS_axi_gpio_10          |     1|
+|27    |AES_SYS_axi_gpio_1           |     1|
+|28    |AES_SYS_axi_gpio_2           |     1|
+|29    |AES_SYS_axi_gpio_3           |     1|
+|30    |AES_SYS_axi_gpio_4           |     1|
+|31    |AES_SYS_axi_gpio_5           |     1|
+|32    |AES_SYS_axi_gpio_6           |     1|
+|33    |AES_SYS_axi_gpio_8           |     1|
+|34    |AES_SYS_axi_intc_0           |     1|
+|35    |AES_SYS_axi_vdma_0           |     1|
+|36    |AES_SYS_clk_wiz_0            |     1|
+|37    |AES_SYS_processing_system7_0 |     1|
+|38    |AES_SYS_rgb2dvi_0            |     1|
+|39    |AES_SYS_rst_ps7_0_100M       |     1|
+|40    |AES_SYS_v_axi4s_vid_out_0    |     1|
+|41    |AES_SYS_v_tc_0               |     1|
+|42    |AES_SYS_xbar                 |     3|
+|45    |IBUF                         |     6|
 +------+-----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1559.629 ; gain = 580.707
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 55 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1570.188 ; gain = 579.996
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1570.188 ; gain = 591.625
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1559.629 ; gain = 580.227
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1559.629 ; gain = 580.707
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 1575.008 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 1561.746 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1578.652 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1565.379 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: dbf453f9
+Synth Design complete | Checksum: 61371921
 INFO: [Common 17-83] Releasing license: Synthesis
-170 Infos, 232 Warnings, 0 Critical Warnings and 0 Errors encountered.
+174 Infos, 233 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1578.652 ; gain = 1025.984
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1578.652 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1565.379 ; gain = 1012.094
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1565.379 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/synth_1/AES_SYS_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file AES_SYS_wrapper_utilization_synth.rpt -pb AES_SYS_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue May 26 03:30:08 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed May 27 05:09:46 2026...

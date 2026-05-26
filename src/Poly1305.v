@@ -10,6 +10,7 @@ module Poly1305 (
     output reg  [127:0]  mac_tag,
     output reg           tag_valid
 );
+
     localparam [5:0] ST_IDLE = 6'd0;
 
     localparam [5:0] ST_ADD0 = 6'd1;
@@ -59,6 +60,16 @@ module Poly1305 (
 
     reg [63:0] d0, d1, d2, d3, d4;
 
+    // =========================================================
+    // Pipeline registers for multiplier terms
+    // These break the critical path:
+    // multiply -> *5 -> 5-term sum -> d_reg
+    // into:
+    // multiply -> *5 -> t_reg
+    // t_reg -> 5-term sum -> d_reg
+    // =========================================================
+    reg [56:0] t0_reg, t1_reg, t2_reg, t3_reg, t4_reg;
+
     reg [130:0] h_full_reg;
     reg [130:0] h_red_reg;
     reg [127:0] tag_sum_reg;
@@ -94,12 +105,11 @@ module Poly1305 (
     wire [56:0] t3_w = sx3 ? ({3'd0, p3_w} + ({3'd0, p3_w} << 2)) : {3'd0, p3_w};
     wire [56:0] t4_w = sx4 ? ({3'd0, p4_w} + ({3'd0, p4_w} << 2)) : {3'd0, p4_w};
 
-    wire [63:0] d_sum_w =
-        {7'd0, t0_w} +
-        {7'd0, t1_w} +
-        {7'd0, t2_w} +
-        {7'd0, t3_w} +
-        {7'd0, t4_w};
+    // Sum from registered multiplier terms.
+    // This replaces the old direct d_sum_w critical path.
+    wire [63:0] d_sum01_w = {7'd0, t0_reg} + {7'd0, t1_reg};
+    wire [63:0] d_sum23_w = {7'd0, t2_reg} + {7'd0, t3_reg};
+    wire [63:0] d_sum_pipe_w = d_sum01_w + d_sum23_w + {7'd0, t4_reg};
 
     wire [31:0] red5_h0_m = h0 & LIMB_MASK32;
     wire [31:0] red5_h1_a = h1 + (h0 >> 26);
@@ -179,15 +189,49 @@ module Poly1305 (
         if (rst) begin
             state <= ST_IDLE;
 
-            h0 <= 32'd0; h1 <= 32'd0; h2 <= 32'd0; h3 <= 32'd0; h4 <= 32'd0;
-            r0 <= 27'd0; r1 <= 27'd0; r2 <= 27'd0; r3 <= 27'd0; r4 <= 27'd0;
+            h0 <= 32'd0;
+            h1 <= 32'd0;
+            h2 <= 32'd0;
+            h3 <= 32'd0;
+            h4 <= 32'd0;
+
+            r0 <= 27'd0;
+            r1 <= 27'd0;
+            r2 <= 27'd0;
+            r3 <= 27'd0;
+            r4 <= 27'd0;
+
             s_reg <= 128'd0;
 
-            d0 <= 64'd0; d1 <= 64'd0; d2 <= 64'd0; d3 <= 64'd0; d4 <= 64'd0;
+            d0 <= 64'd0;
+            d1 <= 64'd0;
+            d2 <= 64'd0;
+            d3 <= 64'd0;
+            d4 <= 64'd0;
 
-            ma0 <= 27'd0; ma1 <= 27'd0; ma2 <= 27'd0; ma3 <= 27'd0; ma4 <= 27'd0;
-            mb0 <= 27'd0; mb1 <= 27'd0; mb2 <= 27'd0; mb3 <= 27'd0; mb4 <= 27'd0;
-            sx0 <= 1'b0;  sx1 <= 1'b0;  sx2 <= 1'b0;  sx3 <= 1'b0;  sx4 <= 1'b0;
+            t0_reg <= 57'd0;
+            t1_reg <= 57'd0;
+            t2_reg <= 57'd0;
+            t3_reg <= 57'd0;
+            t4_reg <= 57'd0;
+
+            ma0 <= 27'd0;
+            ma1 <= 27'd0;
+            ma2 <= 27'd0;
+            ma3 <= 27'd0;
+            ma4 <= 27'd0;
+
+            mb0 <= 27'd0;
+            mb1 <= 27'd0;
+            mb2 <= 27'd0;
+            mb3 <= 27'd0;
+            mb4 <= 27'd0;
+
+            sx0 <= 1'b0;
+            sx1 <= 1'b0;
+            sx2 <= 1'b0;
+            sx3 <= 1'b0;
+            sx4 <= 1'b0;
 
             h_full_reg <= 131'd0;
             h_red_reg  <= 131'd0;
@@ -195,6 +239,7 @@ module Poly1305 (
 
             is_first <= 1'b1;
             is_final <= 1'b0;
+
         end else begin
             state <= next_state;
 
@@ -208,6 +253,12 @@ module Poly1305 (
                         d2 <= 64'd0;
                         d3 <= 64'd0;
                         d4 <= 64'd0;
+
+                        t0_reg <= 57'd0;
+                        t1_reg <= 57'd0;
+                        t2_reg <= 57'd0;
+                        t3_reg <= 57'd0;
+                        t4_reg <= 57'd0;
 
                         if (is_first) begin
                             r0 <= r_clamped_w[25:0];
@@ -265,6 +316,19 @@ module Poly1305 (
                     h0 <= h0 & LIMB_MASK32;
                 end
 
+                // =====================================================
+                // Multiplication phase
+                //
+                // Each LOAD state sets multiplier operands for the next
+                // polynomial limb.
+                //
+                // Each SAVE state captures the 5 product terms into t*_reg.
+                //
+                // The following LOAD state stores dX <= sum(t*_reg).
+                // This hides the extra pipeline stage without adding a new
+                // FSM state.
+                // =====================================================
+
                 ST_MUL0_LOAD: begin
                     ma0 <= h0_w; mb0 <= r0; sx0 <= 1'b0;
                     ma1 <= h1_w; mb1 <= r4; sx1 <= 1'b1;
@@ -273,9 +337,17 @@ module Poly1305 (
                     ma4 <= h4_w; mb4 <= r1; sx4 <= 1'b1;
                 end
 
-                ST_MUL0_SAVE: d0 <= d_sum_w;
+                ST_MUL0_SAVE: begin
+                    t0_reg <= t0_w;
+                    t1_reg <= t1_w;
+                    t2_reg <= t2_w;
+                    t3_reg <= t3_w;
+                    t4_reg <= t4_w;
+                end
 
                 ST_MUL1_LOAD: begin
+                    d0 <= d_sum_pipe_w;
+
                     ma0 <= h0_w; mb0 <= r1; sx0 <= 1'b0;
                     ma1 <= h1_w; mb1 <= r0; sx1 <= 1'b0;
                     ma2 <= h2_w; mb2 <= r4; sx2 <= 1'b1;
@@ -283,9 +355,17 @@ module Poly1305 (
                     ma4 <= h4_w; mb4 <= r2; sx4 <= 1'b1;
                 end
 
-                ST_MUL1_SAVE: d1 <= d_sum_w;
+                ST_MUL1_SAVE: begin
+                    t0_reg <= t0_w;
+                    t1_reg <= t1_w;
+                    t2_reg <= t2_w;
+                    t3_reg <= t3_w;
+                    t4_reg <= t4_w;
+                end
 
                 ST_MUL2_LOAD: begin
+                    d1 <= d_sum_pipe_w;
+
                     ma0 <= h0_w; mb0 <= r2; sx0 <= 1'b0;
                     ma1 <= h1_w; mb1 <= r1; sx1 <= 1'b0;
                     ma2 <= h2_w; mb2 <= r0; sx2 <= 1'b0;
@@ -293,9 +373,17 @@ module Poly1305 (
                     ma4 <= h4_w; mb4 <= r3; sx4 <= 1'b1;
                 end
 
-                ST_MUL2_SAVE: d2 <= d_sum_w;
+                ST_MUL2_SAVE: begin
+                    t0_reg <= t0_w;
+                    t1_reg <= t1_w;
+                    t2_reg <= t2_w;
+                    t3_reg <= t3_w;
+                    t4_reg <= t4_w;
+                end
 
                 ST_MUL3_LOAD: begin
+                    d2 <= d_sum_pipe_w;
+
                     ma0 <= h0_w; mb0 <= r3; sx0 <= 1'b0;
                     ma1 <= h1_w; mb1 <= r2; sx1 <= 1'b0;
                     ma2 <= h2_w; mb2 <= r1; sx2 <= 1'b0;
@@ -303,9 +391,17 @@ module Poly1305 (
                     ma4 <= h4_w; mb4 <= r4; sx4 <= 1'b1;
                 end
 
-                ST_MUL3_SAVE: d3 <= d_sum_w;
+                ST_MUL3_SAVE: begin
+                    t0_reg <= t0_w;
+                    t1_reg <= t1_w;
+                    t2_reg <= t2_w;
+                    t3_reg <= t3_w;
+                    t4_reg <= t4_w;
+                end
 
                 ST_MUL4_LOAD: begin
+                    d3 <= d_sum_pipe_w;
+
                     ma0 <= h0_w; mb0 <= r4; sx0 <= 1'b0;
                     ma1 <= h1_w; mb1 <= r3; sx1 <= 1'b0;
                     ma2 <= h2_w; mb2 <= r2; sx2 <= 1'b0;
@@ -313,9 +409,19 @@ module Poly1305 (
                     ma4 <= h4_w; mb4 <= r0; sx4 <= 1'b0;
                 end
 
-                ST_MUL4_SAVE: d4 <= d_sum_w;
+                ST_MUL4_SAVE: begin
+                    t0_reg <= t0_w;
+                    t1_reg <= t1_w;
+                    t2_reg <= t2_w;
+                    t3_reg <= t3_w;
+                    t4_reg <= t4_w;
+                end
 
+                // Store final d4 here while beginning reduction.
+                // d4 is not consumed until later RED states, so this is safe.
                 ST_RED0: begin
+                    d4 <= d_sum_pipe_w;
+
                     h0 <= {6'd0, d0[25:0]};
                     d1 <= d1 + (d0 >> 26);
                 end
@@ -384,7 +490,9 @@ module Poly1305 (
                     is_final <= 1'b0;
                 end
 
-                default: ;
+                default: begin
+                    // Hold registers
+                end
             endcase
         end
     end

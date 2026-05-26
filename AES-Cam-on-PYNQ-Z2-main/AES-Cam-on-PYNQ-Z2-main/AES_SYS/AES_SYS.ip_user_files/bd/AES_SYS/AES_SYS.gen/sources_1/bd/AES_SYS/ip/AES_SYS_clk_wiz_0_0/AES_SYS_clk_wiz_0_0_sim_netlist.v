@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
 // Date        : Mon May 25 20:21:45 2026
 // Host        : LAPTOP-JHH6RF8B running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_clk_wiz_0_0/AES_SYS_clk_wiz_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top AES_SYS_clk_wiz_0_0 -prefix
+//               AES_SYS_clk_wiz_0_0_ AES_SYS_clk_wiz_0_0_sim_netlist.v
 // Design      : AES_SYS_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -23,12 +23,12 @@ module AES_SYS_clk_wiz_0_0
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire clk_out1;
 
-  AES_SYS_clk_wiz_0_0_clk_wiz inst
+  AES_SYS_clk_wiz_0_0_AES_SYS_clk_wiz_0_0_clk_wiz inst
        (.clk_in1(clk_in1),
         .clk_out1(clk_out1));
 endmodule
 
-module AES_SYS_clk_wiz_0_0_clk_wiz
+module AES_SYS_clk_wiz_0_0_AES_SYS_clk_wiz_0_0_clk_wiz
    (clk_out1,
     clk_in1);
   output clk_out1;

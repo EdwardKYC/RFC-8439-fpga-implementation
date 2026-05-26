@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/kartg/Desktop/Github/AES-Cam on PYNQ-Z2/AES_SYS/AES_SYS.runs/AES_SYS_axi_gpio_0_0_synth_1'
+HD_PWD='C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.runs/AES_SYS_axi_gpio_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -2,18 +2,18 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Thu Jun 12 00:20:34 2025
-// Host        : DESKTOP-8UU9KV6 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top AES_SYS_axi_gpio_1_1 -prefix
-//               AES_SYS_axi_gpio_1_1_ AES_SYS_axi_gpio_3_0_sim_netlist.v
-// Design      : AES_SYS_axi_gpio_3_0
+// Date        : Wed May 27 03:39:05 2026
+// Host        : LAPTOP-JHH6RF8B running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_1_1/AES_SYS_axi_gpio_1_1_sim_netlist.v
+// Design      : AES_SYS_axi_gpio_1_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z020clg400-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "AES_SYS_axi_gpio_3_0,axi_gpio,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_gpio,Vivado 2023.2" *) 
+(* CHECK_LICENSE_TYPE = "AES_SYS_axi_gpio_1_1,axi_gpio,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_gpio,Vivado 2023.2" *) 
 (* NotValidForBitStream *)
 module AES_SYS_axi_gpio_1_1
    (s_axi_aclk,
@@ -38,7 +38,7 @@ module AES_SYS_axi_gpio_1_1
     gpio_io_o);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 S_AXI_ACLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI_ACLK, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN AES_SYS_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s_axi_aclk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 S_AXI_ARESETN RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI_ARESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN AES_SYS_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [8:0]s_axi_awaddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN AES_SYS_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [8:0]s_axi_awaddr;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *) input s_axi_awvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *) output s_axi_awready;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *) input [31:0]s_axi_wdata;
@@ -134,6 +134,7 @@ module AES_SYS_axi_gpio_1_1
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
+(* ORIG_REF_NAME = "GPIO_Core" *) 
 module AES_SYS_axi_gpio_1_1_GPIO_Core
    (gpio_io_o,
     ip2bus_wrack_i,
@@ -1029,6 +1030,7 @@ module AES_SYS_axi_gpio_1_1_GPIO_Core
         .O(ip2bus_wrack_i));
 endmodule
 
+(* ORIG_REF_NAME = "address_decoder" *) 
 module AES_SYS_axi_gpio_1_1_address_decoder
    (\GEN_BKEND_CE_REGISTERS[3].ce_out_i_reg ,
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg ,
@@ -1211,7 +1213,7 @@ endmodule
 (* C_FAMILY = "zynq" *) (* C_GPIO2_WIDTH = "32" *) (* C_GPIO_WIDTH = "32" *) 
 (* C_INTERRUPT_PRESENT = "0" *) (* C_IS_DUAL = "0" *) (* C_S_AXI_ADDR_WIDTH = "9" *) 
 (* C_S_AXI_DATA_WIDTH = "32" *) (* C_TRI_DEFAULT = "32'b11111111111111111111111111111111" *) (* C_TRI_DEFAULT_2 = "32'b11111111111111111111111111111111" *) 
-(* downgradeipidentifiedwarnings = "yes" *) (* ip_group = "LOGICORE" *) 
+(* ORIG_REF_NAME = "axi_gpio" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_group = "LOGICORE" *) 
 module AES_SYS_axi_gpio_1_1_axi_gpio
    (s_axi_aclk,
     s_axi_aresetn,
@@ -1652,6 +1654,7 @@ module AES_SYS_axi_gpio_1_1_axi_gpio
         .R(bus2ip_reset));
 endmodule
 
+(* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module AES_SYS_axi_gpio_1_1_axi_lite_ipif
    (bus2ip_reset,
     \GEN_BKEND_CE_REGISTERS[3].ce_out_i_reg ,
@@ -1762,6 +1765,7 @@ module AES_SYS_axi_gpio_1_1_axi_lite_ipif
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
+(* ORIG_REF_NAME = "pselect_f" *) 
 module AES_SYS_axi_gpio_1_1_pselect_f
    (ce_expnd_i_3,
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0] );
@@ -1797,6 +1801,7 @@ module AES_SYS_axi_gpio_1_1_pselect_f__parameterized1
         .O(ce_expnd_i_1));
 endmodule
 
+(* ORIG_REF_NAME = "slave_attachment" *) 
 module AES_SYS_axi_gpio_1_1_slave_attachment
    (SR,
     \GEN_BKEND_CE_REGISTERS[3].ce_out_i_reg ,

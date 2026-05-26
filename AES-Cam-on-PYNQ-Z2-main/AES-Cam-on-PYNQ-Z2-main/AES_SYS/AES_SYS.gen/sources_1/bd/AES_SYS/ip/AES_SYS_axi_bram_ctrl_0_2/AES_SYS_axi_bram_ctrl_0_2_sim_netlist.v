@@ -2,18 +2,18 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Mon May 25 20:28:15 2026
+// Date        : Mon May 25 20:28:14 2026
 // Host        : LAPTOP-JHH6RF8B running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/AES_SYS_axi_bram_ctrl_0_2_sim_netlist.v
-// Design      : AES_SYS_axi_bram_ctrl_0_2
+// Command     : write_verilog -force -mode funcsim -rename_top AES_SYS_axi_bram_ctrl_0_2 -prefix
+//               AES_SYS_axi_bram_ctrl_0_2_ AES_SYS_axi_bram_ctrl_0_0_sim_netlist.v
+// Design      : AES_SYS_axi_bram_ctrl_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z020clg400-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "AES_SYS_axi_bram_ctrl_0_2,axi_bram_ctrl,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_bram_ctrl,Vivado 2023.2" *) 
+(* CHECK_LICENSE_TYPE = "AES_SYS_axi_bram_ctrl_0_0,axi_bram_ctrl,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_bram_ctrl,Vivado 2023.2" *) 
 (* NotValidForBitStream *)
 module AES_SYS_axi_bram_ctrl_0_2
    (s_axi_aclk,
@@ -256,7 +256,7 @@ endmodule
 (* C_READ_LATENCY = "1" *) (* C_SINGLE_PORT_BRAM = "1" *) (* C_S_AXI_ADDR_WIDTH = "18" *) 
 (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_DATA_WIDTH = "32" *) 
 (* C_S_AXI_ID_WIDTH = "1" *) (* C_S_AXI_PROTOCOL = "AXI4" *) (* C_S_AXI_SUPPORTS_NARROW_BURST = "0" *) 
-(* ORIG_REF_NAME = "axi_bram_ctrl" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module AES_SYS_axi_bram_ctrl_0_2_axi_bram_ctrl
    (s_axi_aclk,
     s_axi_aresetn,
@@ -572,7 +572,6 @@ module AES_SYS_axi_bram_ctrl_0_2_axi_bram_ctrl
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "axi_bram_ctrl_top" *) 
 module AES_SYS_axi_bram_ctrl_0_2_axi_bram_ctrl_top
    (\GEN_NO_RD_CMD_OPT.axi_rvalid_int_reg ,
     \GEN_NO_RD_CMD_OPT.axi_rlast_int_reg ,
@@ -695,7 +694,6 @@ module AES_SYS_axi_bram_ctrl_0_2_axi_bram_ctrl_top
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "full_axi" *) 
 module AES_SYS_axi_bram_ctrl_0_2_full_axi
    (\GEN_NO_RD_CMD_OPT.axi_rvalid_int_reg ,
     \GEN_NO_RD_CMD_OPT.axi_rlast_int_reg ,
@@ -1111,7 +1109,6 @@ module AES_SYS_axi_bram_ctrl_0_2_full_axi
         .\save_init_bram_addr_ld_reg[3] (SR));
 endmodule
 
-(* ORIG_REF_NAME = "rd_chnl" *) 
 module AES_SYS_axi_bram_ctrl_0_2_rd_chnl
    (s_axi_aresetn_0,
     s_axi_rdata,
@@ -3322,7 +3319,6 @@ module AES_SYS_axi_bram_ctrl_0_2_rd_chnl
         .O(s_axi_rready_0));
 endmodule
 
-(* ORIG_REF_NAME = "sng_port_arb" *) 
 module AES_SYS_axi_bram_ctrl_0_2_sng_port_arb
    (s_axi_awready,
     s_axi_arready,
@@ -3638,7 +3634,6 @@ module AES_SYS_axi_bram_ctrl_0_2_sng_port_arb
         .O(ar_active_re));
 endmodule
 
-(* ORIG_REF_NAME = "wr_chnl" *) 
 module AES_SYS_axi_bram_ctrl_0_2_wr_chnl
    (aw_active_d1,
     bram_wrdata_a,
@@ -4393,7 +4388,6 @@ module AES_SYS_axi_bram_ctrl_0_2_wr_chnl
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "wrap_brst" *) 
 module AES_SYS_axi_bram_ctrl_0_2_wrap_brst
    (SR,
     curr_wrap_burst_reg_reg,

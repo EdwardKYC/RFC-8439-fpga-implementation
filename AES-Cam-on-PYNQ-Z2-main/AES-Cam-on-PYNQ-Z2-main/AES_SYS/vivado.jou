@@ -3,10 +3,10 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Tue May 26 02:26:14 2026
-# Process ID: 43312
+# Start of session at: Wed May 27 01:53:01 2026
+# Process ID: 49700
 # Current directory: C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent44380 C:\code\RFC-8439-fpga-implementation\AES-Cam-on-PYNQ-Z2-main\AES-Cam-on-PYNQ-Z2-main\AES_SYS\AES_SYS.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent54140 C:\code\RFC-8439-fpga-implementation\AES-Cam-on-PYNQ-Z2-main\AES-Cam-on-PYNQ-Z2-main\AES_SYS\AES_SYS.xpr
 # Log file: C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/vivado.log
 # Journal file: C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS\vivado.jou
 # Running On: LAPTOP-JHH6RF8B, OS: Windows, CPU Frequency: 2419 MHz, CPU Physical cores: 24, Host memory: 34049 MB
@@ -14,13 +14,94 @@
 start_gui
 open_project C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.xpr
 update_compile_order -fileset sources_1
+open_bd_design {C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0
+endgroup
+set_property location {3 923 1685} [get_bd_cells proc_sys_reset_0]
+connect_bd_net [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins clk_wiz_0/clk_out1]
+connect_bd_net [get_bd_pins proc_sys_reset_0/dcm_locked] [get_bd_pins clk_wiz_0/clk_out1]
+delete_bd_objs [get_bd_nets xlconstant_0_dout]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins v_tc_0/clken]
+undo
+undo
+delete_bd_objs [get_bd_nets xlconstant_0_dout]
+undo
+delete_bd_objs [get_bd_nets xlconstant_0_dout]
+connect_bd_net [get_bd_pins v_axi4s_vid_out_0/aclken] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins v_axi4s_vid_out_0/vid_io_out_ce] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins v_tc_0/clken] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins v_axi4s_vid_out_0/aresetn]
+connect_bd_net [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins v_tc_0/resetn]
+connect_bd_net [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins rgb2dvi_0/aRst_n]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_4
+endgroup
+set_property location {3 987 1143} [get_bd_cells axi_gpio_4]
+set_property location {4 1361 1632} [get_bd_cells axi_gpio_4]
+undo
+undo
+undo
+regenerate_bd_layout
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto}}  [get_bd_pins proc_sys_reset_0/ext_reset_in]
+undo
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1
+endgroup
+set_property location {1 202 1688} [get_bd_cells xlconstant_1]
+set_property CONFIG.CONST_VAL {0} [get_bd_cells xlconstant_1]
+connect_bd_net [get_bd_pins xlconstant_1/dout] [get_bd_pins proc_sys_reset_0/ext_reset_in]
+connect_bd_net [get_bd_pins xlconstant_1/dout] [get_bd_pins proc_sys_reset_0/aux_reset_in]
+set_property location {1 199 1790} [get_bd_cells xlconstant_1]
+connect_bd_net [get_bd_pins xlconstant_1/dout] [get_bd_pins proc_sys_reset_0/mb_debug_sys_rst]
+regenerate_bd_layout
+set_property location {2 628 1448} [get_bd_cells xlconstant_1]
+validate_bd_design
 generate_target all [get_files  C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_11] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_0] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_1] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_2] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_3] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_4] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_5] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_6] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_7] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_8] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_9] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_10] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_12] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_us_0] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_13] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_ds_0] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_ds_1] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_proc_sys_reset_0_0] }
 export_ip_user_files -of_objects [get_files C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd] -no_script -sync -force -quiet
 create_ip_run [get_files -of_objects [get_fileset sources_1] C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
+launch_runs AES_SYS_proc_sys_reset_0_0_synth_1 -jobs 32
+wait_on_run AES_SYS_proc_sys_reset_0_0_synth_1
 export_simulation -of_objects [get_files C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd] -directory C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files/sim_scripts -ip_user_files_dir C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files -ipstatic_source_dir C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/modelsim} {questa=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/questa} {riviera=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/riviera} {activehdl=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-update_module_reference AES_SYS_RFC8439_0_0
+reset_run synth_1
+launch_runs synth_1 -jobs 32
+wait_on_run synth_1
+launch_runs impl_1 -jobs 32
+wait_on_run impl_1
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 32
+wait_on_run impl_1
+open_bd_design {C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd}
+set_property location {2 521 1347} [get_bd_cells clk_wiz_0]
+delete_bd_objs [get_bd_nets clk_wiz_0_clk_out1]
+undo
+delete_bd_objs [get_bd_nets clk_wiz_0_clk_out1]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins proc_sys_reset_0/slowest_sync_clk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins v_tc_0/clk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins v_axi4s_vid_out_0/aclk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins rgb2dvi_0/PixelClk]
+connect_bd_net [get_bd_pins proc_sys_reset_0/dcm_locked] [get_bd_pins xlconstant_0/dout]
+save_bd_design
 generate_target all [get_files  C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
-catch { config_ip_cache -export [get_ips -all AES_SYS_RFC8439_0_0] }
 catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_11] }
 catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_0] }
 catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_1] }
@@ -40,14 +121,66 @@ catch { config_ip_cache -export [get_ips -all AES_SYS_auto_ds_0] }
 catch { config_ip_cache -export [get_ips -all AES_SYS_auto_ds_1] }
 export_ip_user_files -of_objects [get_files C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd] -no_script -sync -force -quiet
 create_ip_run [get_files -of_objects [get_fileset sources_1] C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
-launch_runs AES_SYS_RFC8439_0_0_synth_1 -jobs 16
-wait_on_run AES_SYS_RFC8439_0_0_synth_1
 export_simulation -of_objects [get_files C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd] -directory C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files/sim_scripts -ip_user_files_dir C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files -ipstatic_source_dir C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/modelsim} {questa=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/questa} {riviera=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/riviera} {activehdl=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
 reset_run synth_1
-launch_runs synth_1 -jobs 16
-wait_on_run synth_1
-launch_runs impl_1 -jobs 32
-wait_on_run impl_1
 launch_runs impl_1 -to_step write_bitstream -jobs 32
 wait_on_run impl_1
-open_run impl_1
+disconnect_bd_net /rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axi_vdma_0/axi_resetn]
+connect_bd_net [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins axi_vdma_0/axi_resetn]
+generate_target all [get_files  C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_11] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_0] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_1] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_2] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_3] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_4] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_5] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_6] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_7] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_8] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_9] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_10] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_12] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_us_0] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_13] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_ds_0] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_ds_1] }
+export_ip_user_files -of_objects [get_files C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
+export_simulation -of_objects [get_files C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd] -directory C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files/sim_scripts -ip_user_files_dir C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files -ipstatic_source_dir C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/modelsim} {questa=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/questa} {riviera=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/riviera} {activehdl=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+disconnect_bd_net /proc_sys_reset_0_peripheral_aresetn [get_bd_pins axi_vdma_0/axi_resetn]
+connect_bd_net [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+generate_target all [get_files  C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 32
+wait_on_run impl_1
+delete_bd_objs [get_bd_nets v_axi4s_vid_out_0_vtg_ce]
+connect_bd_net [get_bd_pins v_tc_0/gen_clken] [get_bd_pins xlconstant_0/dout]
+generate_target all [get_files  C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_11] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_0] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_1] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_2] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_3] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_4] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_5] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_6] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_7] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_8] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_9] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_10] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_12] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_us_0] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_pc_13] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_ds_0] }
+catch { config_ip_cache -export [get_ips -all AES_SYS_auto_ds_1] }
+export_ip_user_files -of_objects [get_files C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
+export_simulation -of_objects [get_files C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd] -directory C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files/sim_scripts -ip_user_files_dir C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files -ipstatic_source_dir C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/modelsim} {questa=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/questa} {riviera=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/riviera} {activehdl=C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd]
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 32
+wait_on_run impl_1
+close_design
+open_bd_design {C:/code/RFC-8439-fpga-implementation/AES-Cam-on-PYNQ-Z2-main/AES-Cam-on-PYNQ-Z2-main/AES_SYS/AES_SYS.srcs/sources_1/bd/AES_SYS/AES_SYS.bd}

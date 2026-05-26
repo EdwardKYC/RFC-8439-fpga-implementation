@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
 // Date        : Wed Jun 11 02:34:32 2025
 // Host        : ukp66482 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {c:/Users/kartg/Desktop/Github/AES-Cam on
-//               PYNQ-Z2/AES_SYS/AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_v_axi4s_vid_out_0_0/AES_SYS_v_axi4s_vid_out_0_0_stub.v}
+// Command     : write_verilog -force -mode synth_stub -rename_top AES_SYS_v_axi4s_vid_out_0_0 -prefix
+//               AES_SYS_v_axi4s_vid_out_0_0_ AES_SYS_v_axi4s_vid_out_0_0_stub.v
 // Design      : AES_SYS_v_axi4s_vid_out_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
