@@ -1,0 +1,29 @@
+vhdl xil_defaultlib  \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_vdma_0_0/sim/AES_SYS_axi_vdma_0_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_v_tc_0_0/sim/AES_SYS_v_tc_0_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/bd5a/src/ClockGen.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/bd5a/src/SyncAsync.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/bd5a/src/SyncAsyncReset.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/bd5a/src/DVI_Constants.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/bd5a/src/OutputSERDES.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/bd5a/src/TMDS_Encoder.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ipshared/bd5a/src/rgb2dvi.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_rgb2dvi_0_0/sim/AES_SYS_rgb2dvi_0_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_intc_0_0/sim/AES_SYS_axi_intc_0_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_rst_ps7_0_100M_0/sim/AES_SYS_rst_ps7_0_100M_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_0_0/sim/AES_SYS_axi_gpio_0_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_cdma_0_0/sim/AES_SYS_axi_cdma_0_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_0/sim/AES_SYS_axi_bram_ctrl_0_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_5_0/sim/AES_SYS_axi_gpio_5_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_6_0/sim/AES_SYS_axi_gpio_6_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_8_0/sim/AES_SYS_axi_gpio_8_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_10_0/sim/AES_SYS_axi_gpio_10_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_1_1/sim/AES_SYS_axi_gpio_1_1.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_2_1/sim/AES_SYS_axi_gpio_2_1.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_3_1/sim/AES_SYS_axi_gpio_3_1.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_bram_ctrl_0_2/sim/AES_SYS_axi_bram_ctrl_0_2.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_proc_sys_reset_0_0/sim/AES_SYS_proc_sys_reset_0_0.vhd" \
+"../../../../AES_SYS.gen/sources_1/bd/AES_SYS/ip/AES_SYS_axi_gpio_4_0/sim/AES_SYS_axi_gpio_4_0.vhd" \
+
+# Do not sort compile order
+nosort

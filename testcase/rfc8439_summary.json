@@ -1,0 +1,122 @@
+[
+  {
+    "name": "TC0_AD12_MSG114",
+    "ad_length": 12,
+    "msg_length": 114,
+    "tag_words": [
+      "590be11a",
+      "6ae2094f",
+      "cb2e907e",
+      "910660d0"
+    ],
+    "ct_words_used": 29,
+    "pt_words_used": 29,
+    "src_encrypt_words_used": 32,
+    "src_decrypt_words_used": 36
+  },
+  {
+    "name": "TC1_AD0_MSG114",
+    "ad_length": 0,
+    "msg_length": 114,
+    "tag_words": [
+      "68a4236a",
+      "5694d51f",
+      "9fd2a1ae",
+      "16724782"
+    ],
+    "ct_words_used": 29,
+    "pt_words_used": 29,
+    "src_encrypt_words_used": 29,
+    "src_decrypt_words_used": 33
+  },
+  {
+    "name": "TC2_AD12_MSG64",
+    "ad_length": 12,
+    "msg_length": 64,
+    "tag_words": [
+      "898d7257",
+      "e3441f81",
+      "1c0d9f44",
+      "5ee9a325"
+    ],
+    "ct_words_used": 16,
+    "pt_words_used": 16,
+    "src_encrypt_words_used": 19,
+    "src_decrypt_words_used": 23
+  },
+  {
+    "name": "TC3_AD12_MSG65",
+    "ad_length": 12,
+    "msg_length": 65,
+    "tag_words": [
+      "2a2c4471",
+      "3f333963",
+      "32b58eb3",
+      "27fd646d"
+    ],
+    "ct_words_used": 17,
+    "pt_words_used": 17,
+    "src_encrypt_words_used": 20,
+    "src_decrypt_words_used": 24
+  },
+  {
+    "name": "TC4_AD7_MSG13",
+    "ad_length": 7,
+    "msg_length": 13,
+    "tag_words": [
+      "c236ff1c",
+      "c515ef3f",
+      "ac013b3b",
+      "31a6f8be"
+    ],
+    "ct_words_used": 4,
+    "pt_words_used": 4,
+    "src_encrypt_words_used": 5,
+    "src_decrypt_words_used": 9
+  },
+  {
+    "name": "TC5_AD12_MSG0",
+    "ad_length": 12,
+    "msg_length": 0,
+    "tag_words": [
+      "64e522e6",
+      "67d9387a",
+      "b4bceca7",
+      "5c677f6c"
+    ],
+    "ct_words_used": 0,
+    "pt_words_used": 0,
+    "src_encrypt_words_used": 3,
+    "src_decrypt_words_used": 7
+  },
+  {
+    "name": "TC6_AD0_MSG0",
+    "ad_length": 0,
+    "msg_length": 0,
+    "tag_words": [
+      "7a4d78a0",
+      "fef31647",
+      "7f4ef6b4",
+      "04bf394b"
+    ],
+    "ct_words_used": 0,
+    "pt_words_used": 0,
+    "src_encrypt_words_used": 0,
+    "src_decrypt_words_used": 4
+  },
+  {
+    "name": "TC7_AD15_MSG17",
+    "ad_length": 15,
+    "msg_length": 17,
+    "tag_words": [
+      "0e1e411e",
+      "6d770202",
+      "e6e33e9d",
+      "e70bb107"
+    ],
+    "ct_words_used": 5,
+    "pt_words_used": 5,
+    "src_encrypt_words_used": 8,
+    "src_decrypt_words_used": 12
+  }
+]
