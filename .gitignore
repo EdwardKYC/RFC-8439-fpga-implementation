@@ -1,0 +1,12 @@
+# Vivado generated folders
+RFC8439_sys/RFC8439_sys.gen/
+RFC8439_sys/RFC8439_sys.runs/
+RFC8439_sys/RFC8439_sys.cache/
+RFC8439_sys/RFC8439_sys.hw/
+RFC8439_sys/RFC8439_sys.ip_user_files/
+RFC8439_sys/RFC8439_sys.sim/
+
+# Vivado logs
+RFC8439_sys/*.jou
+RFC8439_sys/*.log
+RFC8439_sys/*.backup.*
